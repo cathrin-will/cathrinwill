@@ -13,7 +13,9 @@ General
 	color: #fff;
 	text-shadow:none;
 }
-
+body {
+	font-family: $nexa-light;
+}
 .wrapper {
 	padding: 1em;
 	@include media-query(lap-and-up) { padding: 2em; }
