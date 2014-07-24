@@ -1,0 +1,36 @@
+/* ==========================================================================
+Header
+========================================================================== */
+
+.wrapper--cookie {
+	padding: .5em;
+	background-color: #333;
+	color: #fff;
+	p {
+		margin-bottom: 0;
+		@include font-size(14px, false);
+		a { color: #fff; }
+	}
+	// .js & { display: none; }
+	@include media-query(portable) {
+		.btn {
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+	@include media-query(lap-and-up) {
+		.btn { float: right; }
+		p { margin: 0; }
+	}
+}
+.outdated-browser {
+	padding: .5em;
+	background-color: #666;
+	color: #fff;
+	p {
+		margin-bottom: 0;
+		@include font-size(14px, false);
+		a { color: #fff; }
+	}
+}
