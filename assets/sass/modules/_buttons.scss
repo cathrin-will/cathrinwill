@@ -2,49 +2,45 @@
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0;
-	padding: .5em 1em;
+	padding: 1em 1.5em;
 	border: none;
 	background-color: $light-grey;
 	white-space: nowrap;
-	@include font-size(12px, false);
 	line-height: 1;
 	cursor: pointer;
 	text-decoration: none;
 	color: $text-color;
-	font-family: $nexa-bold;
+	// font-family: $nexa-bold;
 	@include vendor(transition, $animSpeed);
-	&:hover, &:active, &:focus,
-	a:hover &, a:active &, a:focus & {
+	&:hover, &:active, &:focus{
 		background-color: darken($light-grey, 10%);
 		text-decoration:none;
 	}
-	&:active, &:focus,
-	a:active &, a:focus & {
+	&:active, &:focus{
 		outline:none;
 		box-shadow: inset 0 0 4px rgba(0,0,0,.33);
 		[data-icon] {
 			@include vendor(transform, translateX(.33em));
 		}
 	}
-	[data-icon] {
-		display: inline-block;
-		@include vendor(transform, translate3d(0,0,0));
-		@include vendor(transition, $animSpeed);
+}
+.btn--green {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+	color: #fff;
+	@include hoverActiveFocus{
+		background-color: #449d44;
+		border-color: #398439;
 	}
 }
-
-.btn--plain {
-	margin: 0;
-	padding: 0;
-	border: none;
-	background: transparent;
-	color: $text-color;
-	.lt-ie8 & {
-		vertical-align: middle;
-		margin-left: 3px;
+.btn--red {
+	background-color: #d9534f;
+	border-color: #d43f3a;
+	color: #fff;
+	@include hoverActiveFocus{
+		background-color: #c9302c;
+		border-color: #ac2925;
 	}
-	&:hover, &:active, &:focus,
-	a:hover &, a:active &, a:focus & { color: darken( $text-color, 10% ); }
 }
 
 .btn--lg {
@@ -55,18 +51,4 @@
 .btn--full {
 	width: 100%;
 	margin-bottom: 1em;
-}
-
-.btn--primary {
-	background-color: red;
-	color: #fff;
-	text-transform: uppercase;
-	text-align: center;
-	@include font-size(18px, false);
-	&:hover, &:active, &:focus,
-	a:hover &, a:active &, a:focus & {
-		background-color: lighten(red, 10%);
-	}
-	&:active, a:active & { background-color: darken(red, 10%); }
-	@include media-query(desk) { min-width: 12em; }
 }

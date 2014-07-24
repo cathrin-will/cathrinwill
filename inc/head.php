@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ann-Cathrin Will - Portfolio </title>
+	<title><?php if($title){echo $title;}else{echo "Ann-Cathrin Will";} ?></title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="author" content="Ann-Cathrin Will" >
 	<meta name="description" content="Front-end Web Developer Ann-Cathrin Will HTML CSS Woking" >

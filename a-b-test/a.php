@@ -1,3 +1,4 @@
+<?php  $title =  "A/B Testing";?>
 <?php include("../inc/head.php"); ?>
 <body>
 	<?php include("../inc/cookie.php"); include("../inc/header.php"); ?>
@@ -18,7 +19,8 @@
 					<p>In terms of a website or email half the users would see Lil bub and the other half would see tard, you can then measure which one they liked more.</p>
 					<p>Let’s try it here, below you will either see a green button or a red button.</p>
 						<div class="text--center">
-							<a href="#" class="btn">Hmmmm shiny button</a>
+							<a href="#" class="btn btn--green">Hmmmm shiny button</a>
+							<a href="#" class="btn btn--red">Hmmmm shiny button</a>
 						</div>
 					<!-- <em>(link: red button users who clicked, green button users who clicked)
 						As you can see *** is currently more popular.</em> -->
