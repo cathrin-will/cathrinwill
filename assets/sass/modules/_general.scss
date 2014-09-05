@@ -15,22 +15,26 @@ General
 }
 body {
 	font-family: $nexa-light;
+	color: $text-color;
 }
 .wrapper {
 	padding: 1em;
 	@include media-query(lap-and-up) { padding: 2em; }
-	@include media-query(desk) { padding: 3em 1em; }
+	@include media-query(desk) { padding: 2em 1em; }
 }
 
 .grid-wrapper {
-	max-width: 1100px;
+	max-width: $grid-max;
 	margin: 0 auto;
 }
 
 a {
-	color: blue;
+	color: $link-color;
 	@include vendor(transition, $animSpeed);
 	@include hoverActiveFocus {
 		text-decoration: none;
 	}
+}
+.img--shadow {
+	@include vendor(box-shadow, 3px 2px 5px 0px rgba(50, 50, 50, 0.75));
 }

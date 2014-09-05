@@ -26,7 +26,7 @@
 $use-grids:         true;
 $use-flexbox:       false;
 $use-columns:       false;
-$use-nav:           false;
+$use-nav:           true;
 $use-options:       false;
 $use-pagination:    false;
 $use-breadcrumb:    false;
@@ -64,17 +64,26 @@ $use-greybox:       false;
  */
 
 /* Dimensions */
-$grid-max:          1100px;
+$grid-max:          900px;
 
 /* Fonts */
 $nexa-light: 		"nexa-light",sans-serif;
 $nexa-bold: 		"nexa-bold",sans-serif;
 /* Colors */
 $text-color:        #303030;
+$link-color:        #0ab8b0;
 $magenta:           #99007B;
 $light-grey:        #e5e5e5;
 $grey:              #666;
 $dark-grey:         #303030;
+
+// color scheme
+$lime-green: 		#CFF09E;
+$light-green: 		#A8DBA8;
+$sea-green: 		#79BD9A;
+$sea-green: 		#79BD9A;
+$greenish: 			#3B8686;
+$blue: 				#0B486B;
 
 $social-twitter:    #28aae1;
 $social-youtube:    #ab392c;

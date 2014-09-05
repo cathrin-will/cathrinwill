@@ -1,3 +1,40 @@
+<?php
+// 	$dbhost = '10.168.1.45';
+// 	$dbuser = 'cathrinw_ann';
+// 	$dbpass = 'n00dleface';
+// 	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+// 	if(! $conn )
+// 	{
+// 	  die('Could not connect: ' . mysql_error());
+// 	}
+// if(isset($_POST['button-green'])){
+// 	echo "set";
+
+// 	if(! get_magic_quotes_gpc() )
+// 	{
+// 		// $btn_red = addslashes ($_POST['btn-red']);
+// 		$btn_green = addslashes ($_POST['btn-green']);
+// 		echo "$btn_green";
+// 	}
+// 	else
+// 	{
+// 		// $btn_red = $_POST['btn-red'];
+// 		$btn_green = $_POST['btn-green'];
+// 		echo $btn_green;
+// 	}
+// 	$sql = "UPDATE cathrinw_abtest.colour SET green = 6 WHERE id = 1";
+
+// 	mysql_select_db('cathrinw_abtest');
+// 	$retval = mysql_query( $sql, $conn );
+// 	if(! $retval )
+// 	{
+// 	  die('Could not enter data: ' . mysql_error());
+// 	}
+// 	echo "Entered data successfully\n";
+// 	mysql_close($conn);
+// }
+
+?>
 <?php  $title =  "A/B Testing";?>
 <?php include("../inc/head.php"); ?>
 <body>
@@ -7,23 +44,39 @@
 		<div class="grid-wrapper">
 			<div class="grid">
 				<div class="grid__item one-whole">
+				<?php
+
+				// $result=mysql_query("SELECT * FROM colour WHERE itemID=1");
+    //            $row=mysql_fetch_array($result);
+    //            extract($row);
+	      ?>
 					<h1>What is A/B testing?</h1>
-					<p>Just like the name suggest it’s testing two different versions of an element against each other.</p> <p>Element A vs element B</p>
+					<p>Just like the name suggest it’s <a href="#">testing two</a> different versions of an element against each other.</p> <p>Element A vs element B</p>
 					<p>For instance which cat do you prefer:</p>
-
-					Cat A (Lil bub)
-					Cat B (Tard)
-
-
-
-					<p>In terms of a website or email half the users would see Lil bub and the other half would see tard, you can then measure which one they liked more.</p>
-					<p>Let’s try it here, below you will either see a green button or a red button.</p>
-						<div class="text--center">
-							<a href="#" class="btn btn--green">Hmmmm shiny button</a>
-							<a href="#" class="btn btn--red">Hmmmm shiny button</a>
+					<div class="grid">
+						<div class="grid__item one-half text--center">
+							<h4>Cat A (Lil bub)</h4>
+							<a href="/assets/img/cats/lil-bub-600x450.jpg" class="pop--img">
+								<img src="/assets/img/cats/lil-bub-600x450.jpg" alt="Lil bub" width="300" height="225" class="img--center img--shadow">
+							</a>
+						</div><!--
+						--><div class="grid__item one-half text--center">
+							<h4>Cat B (Tard)</h4>
+							<a href="/assets/img/cats/grumpy-cat-600x450.jpg" class="pop--img">
+								<img src="/assets/img/cats/grumpy-cat-600x450.jpg" alt="Grump Cat" width="300" height="225" class="img--center img--shadow">
+							</a>
 						</div>
-					<!-- <em>(link: red button users who clicked, green button users who clicked)
-						As you can see *** is currently more popular.</em> -->
+					</div>
+					<p>In terms of a website half the users would see Lil bub and the other half would see Tard, you can then measure which one they liked more.</p>
+					<p>Let's try it here, below you will either see a green button or a red button.</p>
+						<div class="text--center">
+							<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+								<button type="submit" id="button-green" value="6" class="btn btn--green">Hmmmm shiny button</button>
+								<!-- <button type="submit" id="button-red" value="9" class="btn btn- -red">Hmmmm shiny button</button> -->
+							</form>
+						</div>
+					<em>(link: red button users who clicked, green button users who clicked)
+						As you can see *** is currently more popular.</em>
 
 					<h2>Why do this?</h2>
 					<p>In short to improve the website or email. Maybe we think users like sliders everywhere and huge hero images on every page, and maybe they do! But the best way to find out is to test this on the users who will be using it.</p>
@@ -60,7 +113,7 @@
 						<li>hyperlink wording</li>
 					</ul>
 					<p>The great thing about websites is we can set up more extensive tests not just A against B but, 3 or 4 variations of an element. Every colour button if you like.</p>
-					<p>And this is something we can sell to any client, regardless of whether website was built by us or not,  finished long ago or only just gone live.</p>
+					<p>And this is something we can sell to any client, regardless of whether the website was built by us or not,  finished long ago or only just gone live.</p>
 				</div>
 			</div><!-- /grid -->
 		</div><!-- /wrapper__inner -->
