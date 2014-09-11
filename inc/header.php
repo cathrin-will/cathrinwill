@@ -13,7 +13,7 @@
 				--><div class="grid__item one-whole lap-and-up-two-thirds">
 					<nav>
 						<ul class="nav">
-							<li id="ga-exp"><a href="/" class="icon-home"> <span class="accessibility">Home</span></a></li>
+							<li id="ga-exp" class="visuallyhidden ga-exp"><a href="/" class="icon-home" data-ga="home icon"> <span class="accessibility">Home</span></a></li>
 							<li><a href="/a-b-test/">A/B test</a></li>
 							<li><a href="/cookies.php">Cookies</a></li>
 						</ul>

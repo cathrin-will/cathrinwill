@@ -1,16 +1,21 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 	<!-- Load the Content Experiment JavaScript API client for the experiment -->
-	<script src="//www.google-analytics.com/cx/api.js?experiment=rGsk0JBASXuRa8GpRhr7xg"></script>
+	<script src="//www.google-analytics.com/cx/api.js?experiment=qgMfbrZGSwSVYHrW3td0zA"></script>
 	<script>
 		  // Ask Google Analytics which variation to show the user.
 		 var chosenVariation = cxApi.chooseVariation();
-
+		 var exp = $('.ga-exp');
 		// Define JavaScript for each page variation of this experiment.
 		var pageVariations = [
-			function() {},  // Original: Do nothing. This will render the default HTML.
+			function() { // Original: Do nothing. This will render the default HTML.
+				// document.getElementById('ga-exp').className = "";
+				exp.removeClass('visuallyhidden');
+			},
 			function() {    // Variation 1: Home text
-				document.getElementById('ga-exp').innerHTML = '<a href="/"> Home</a>';
+				// document.getElementById('ga-exp').className = "";
+				exp.removeClass('visuallyhidden');
+				document.getElementById('ga-exp').innerHTML = '<a href="/" data-ga="home text"> Home</a>';
 			}
 		];
 

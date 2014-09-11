@@ -2,11 +2,30 @@ var main = (function() {
 	'use strict';
 
 /*------------------------------------*\
-	function go - delete me
+	function go - nibble and pieces
 \*------------------------------------*/
-	function go() {
-		console.log('hello');
-	}
+function go() {
+	console.log('hello');
+	/*------------------------------------*\
+	GA event
+	\*------------------------------------*/
+	$('a[data-ga]').on('click', function(e) {
+		console.log('clicked');
+		e.preventDefault();
+		var link = $(this),
+		gaData = link.data('ga');
+
+		ga('send', 'event', {
+			'eventCategory' : 'link',
+			'eventAction' : 'click',
+			'eventLabel' : gaData,
+			'eventValue' : 1,
+			'hitCallback' : function() {
+				window.location.href = link.attr('href');
+			}
+		});
+	});
+}
 
 /*------------------------------------*\
 Cookie Control
@@ -40,6 +59,8 @@ function magPop() {
 		}
 	});
 }
+
+
 /*------------------------------------*\
 Function control centre
 \*------------------------------------*/

@@ -22,5 +22,4 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/touch/apple-touch-icon-72x72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="assets/img/touch/apple-touch-icon-precomposed.png">
 	<script src="/assets/js/vendor/modernizr-custom.min.js"></script>
-
 </head>
