@@ -16,9 +16,9 @@ function cookieControl() {
 
 	$('#cookie-close').on('click',function () {
 		cookie.slideUp('fast');
-		$.cookie('chocolate_chip', 'yes', {expires: 365, path: '/' });
+		$.cookie('peanut_butter_cookie', 'yes', {expires: 365, path: '/' });
 	});
-	var isSet  = $.cookie('chocolate_chip');
+	var isSet  = $.cookie('peanut_butter_cookie');
 
 	if ( isSet == 'yes' ) {
 		cookie.hide();

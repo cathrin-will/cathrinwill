@@ -1,19 +1,23 @@
+/*------------------------------------*\
+	$BUTTONS
+\*------------------------------------*/
 .btn {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0;
 	padding: 1em 1.5em;
 	border: none;
-	background-color: $light-grey;
+	background-color: $lime-green;
 	white-space: nowrap;
 	line-height: 1;
 	cursor: pointer;
 	text-decoration: none;
 	color: $text-color;
-	// font-family: $nexa-bold;
+	width: 100%;
+	margin-bottom: $base-spacing-unit;
 	@include vendor(transition, $animSpeed);
 	&:hover, &:active, &:focus{
-		background-color: darken($light-grey, 10%);
+		background-color: darken($lime-green, 10%);
 		text-decoration:none;
 	}
 	&:active, &:focus{
@@ -22,6 +26,9 @@
 		[data-icon] {
 			@include vendor(transform, translateX(.33em));
 		}
+	}
+	@include media-query (lap-and-up) {
+		width: auto;
 	}
 }
 .btn--green {
