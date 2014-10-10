@@ -2662,6 +2662,9 @@ a:hover, a:active, a:focus {
   -o-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75); }
 
+b, strong {
+  font-family: "nexa-bold", sans-serif; }
+
 /*------------------------------------*\
 	$TABLES
 \*------------------------------------*/
@@ -2764,6 +2767,12 @@ header ul li a {
   -ms-animation-delay: 0.8s;
   -o-animation-delay: 0.8s;
   animation-delay: 0.8s; }
+.social a:hover, .social a:active, .social a:focus {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3); }
 
 .icon-googleplus {
   color: #dd4b39; }
@@ -2823,6 +2832,10 @@ header ul li a {
   background-color: #5cb85c;
   border-color: #4cae4c;
   color: #fff; }
+.btn--green[disabled] {
+  background-color: #7f957f; }
+.btn--green[disabled]:hover, .btn--green[disabled]:active, .btn--green[disabled]:focus {
+  background-color: #7f957f; }
 .btn--green:hover, .btn--green:active, .btn--green:focus {
   background-color: #449d44;
   border-color: #398439; }
@@ -2831,6 +2844,10 @@ header ul li a {
   background-color: #d9534f;
   border-color: #d43f3a;
   color: #fff; }
+.btn--red[disabled] {
+  background-color: #b9716f; }
+.btn--red[disabled]:hover, .btn--red[disabled]:active, .btn--red[disabled]:focus {
+  background-color: #b9716f; }
 .btn--red:hover, .btn--red:active, .btn--red:focus {
   background-color: #c9302c;
   border-color: #ac2925; }

@@ -38,7 +38,9 @@ a {
 .img--shadow {
 	@include vendor(box-shadow, 3px 2px 5px 0px rgba(50, 50, 50, 0.75));
 }
-
+b,strong {
+	font-family: $nexa-bold;
+}
 /*------------------------------------*\
 	$TABLES
 \*------------------------------------*/

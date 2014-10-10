@@ -31,6 +31,16 @@ function go() {
 Cookie Control
 \*------------------------------------*/
 function cookieControl() {
+	var votes = $('#button-green, #button-red');
+	votes.on('click',function () {
+		$.cookie('vote', 'Stop clearing me!', {expires: 365, path: '/' });
+
+	});
+	var isSetVote  = $.cookie('vote');
+	if ( isSetVote == 'Stop clearing me!' ) {
+		votes.attr('disabled','disabled');
+	}
+	//  cookie bar
 	var cookie = $('#cookie');
 
 	$('#cookie-close').on('click',function () {

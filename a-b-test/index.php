@@ -1,9 +1,63 @@
 <?php
-// require('../inc/connect.php');
+	// require('../inc/connect.php');
+	$title =  "A/B Testing";
+	include("../inc/head.php");
+	$red = 0;
+	$green = 0;
 
+	// // get stuff
+	// mysql_select_db('cathrinw_abtest');
+	// $result=mysql_query("SELECT * FROM colour WHERE id = 1");
+	// $row=mysql_fetch_array($result);
+	// extract($row);
+
+	// if (isset($_COOKIE['vote'])) {
+	// 	// nothing
+	// }
+	// else {
+
+	// 	//Process the Vote
+	// 	// update stuff
+	// 	if(isset($_POST['button-green']) ) {
+
+	// 		if(! get_magic_quotes_gpc() ) {
+	// 			$btn_green = addslashes ($_POST['button-green']);
+	// 		}
+	// 		else {
+	// 			$btn_green = $_POST['button-green'];
+	// 		}
+
+	// 		$total_green = $btn_green + $green;
+	// 		$sql = "UPDATE cathrinw_abtest.colour SET green ='".$total_green."' WHERE id = 1 ";
+	// 			// connect
+	// 		mysql_select_db('cathrinw_abtest');
+	// 		$retval = mysql_query( $sql, $conn );
+	// 		// enter stuff
+	// 		if(! $retval ) {
+	// 		  die('Could not enter data: ' . mysql_error());
+	// 		}
+
+	// 	}
+	// 	if(isset($_POST['button-red'])) {
+
+	// 		if(! get_magic_quotes_gpc() ) {
+	// 			$btn_red = addslashes ($_POST['button-red']);
+	// 		}
+	// 		else {
+	// 			$btn_red = $_POST['button-red'];
+	// 		}
+	// 		$total_red = $btn_red + $red;
+	// 		$sql = "UPDATE cathrinw_abtest.colour SET red = '".$total_red."' WHERE id = 1 ";
+	// 			// connect
+	// 		mysql_select_db('cathrinw_abtest');
+	// 		$retval = mysql_query( $sql, $conn );
+	// 		// enter stuff
+	// 		if(! $retval ) {
+	// 		  die('Could not enter data: ' . mysql_error());
+	// 		}
+	// 	}
+	// }
 ?>
-<?php  $title =  "A/B Testing";?>
-<?php include("../inc/head.php"); ?>
 <body>
 	<?php include("../inc/cookie.php"); include("../inc/header.php"); ?>
 
@@ -11,69 +65,43 @@
 		<div class="grid-wrapper">
 			<div class="grid">
 				<div class="grid__item one-whole">
-				<?php
-					// if(isset($_POST['button-green']) || isset($_POST['button-red'])){
 
-					// 	if(! get_magic_quotes_gpc() ) {
-					// 		$btn_red = addslashes ($_POST['btn-red']);
-					// 		$btn_green = addslashes ($_POST['btn-green']);
-					// 		echo "$btn_green";
-					// 	}
-					// 	else {
-					// 		$btn_red = $_POST['btn-red'];
-					// 		$btn_green = $_POST['btn-green'];
-					// 		echo "$btn_green";
-					// 	}
-					// 	var_dump($btn_green);
-					// 	var_dump($_POST);
-					// 	$sql = "UPDATE cathrinw_abtest.colour SET green = 1, red = 1 WHERE id = 1 ";
-
-					// 	mysql_select_db('cathrinw_abtest');
-					// 	$retval = mysql_query( $sql, $conn );
-					// 	if(! $retval )
-					// 	{
-					// 	  die('Could not enter data: ' . mysql_error());
-					// 	}
-					// 	echo "Entered data successfully\n";
-
-
-					// }
-
-					// $result=mysql_query("SELECT * FROM colour WHERE id = 1");
-					// $row=mysql_fetch_array($result);
-					// extract($row);
-
-
-
-		 		 ?>
 
 					<h1>What is A/B testing?</h1>
-					<p>Just like the name suggest A/B testing is <a href="#">testing two</a> different versions of an element against each other.</p> <p>Element A vs element B</p>
+					<p>Just like the name suggest A/B testing is <a href="#">testing two</a> different versions of an element against each other.</p>
+					<p>Element A vs element B.</p>
 					<p>For instance which cat do you prefer:</p>
 					<div class="grid">
 						<div class="grid__item one-whole lap-and-up-one-half text--center">
 							<h4>Cat A (Lil bub)</h4>
 							<a href="/assets/img/cats/lil-bub-600x450.jpg" class="pop--img">
-								<img src="/assets/img/cats/lil-bub-600x450.jpg" alt="Lil bub" width="300" height="225" class="img--center img--shadow">
+								<img src="/assets/img/cats/lil-bub-600x450.jpg" alt="Lil bub" class="img--center img--shadow">
 							</a>
 						</div><!--
 						--><div class="grid__item one-whole lap-and-up-one-half text--center">
 							<h4>Cat B (Tard)</h4>
 							<a href="/assets/img/cats/grumpy-cat-600x450.jpg" class="pop--img">
-								<img src="/assets/img/cats/grumpy-cat-600x450.jpg" alt="Grump Cat" width="300" height="225" class="img--center img--shadow">
+								<img src="/assets/img/cats/grumpy-cat-600x450.jpg" alt="Grump Cat" class="img--center img--shadow">
 							</a>
 						</div>
 					</div>
 					<p>In terms of a website half the users would see Lil bub and the other half would see Tard, you can then measure which one was better received.</p>
 					<p>Let's try it here, below you will either see a green button or a red button.</p>
-						<div class="text--center">
-							<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
-								<button type="submit" id="button-green" name="button-green" value="6" class="btn btn--green">Hmmmm shiny button</button>
-								<button type="submit" id="button-red" name="button-red" value="9" class="btn btn--red">Hmmmm shiny button</button>
+					<div class="grid">
+							<div class="grid__item one-whole lap-and-up-one-half text--center">
+								<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+									<button type="submit" id="button-green" data-ga name="button-green" value="1" class="btn btn--green">Hmmmm shiny button</button><br>
+									<span class="giga"><?php echo $green; ?> </span>
+
+							</div><!--
+						--><div class="grid__item one-whole lap-and-up-one-half text--center">
+
+								<button type="submit" id="button-red" data-ga name="button-red" value="1" class="btn btn--red">Hmmmm shiny button</button><br>
+								<span class="giga"><?php echo $red; ?> </span>
 							</form>
 						</div>
-					<em>
-					Currently <?php echo $green; ?> have clicked the green button and <?php echo $red; ?> have clicked the red button.</em>
+					</div>
+					<p><em>So far the click stats are, green: <strong><?php echo $green; ?></strong> and red: <strong><?php echo $red; ?></strong>.</em></p>
 
 					<h2>Why do this?</h2>
 					<p>In short to improve the website or email. Maybe we think users like sliders everywhere and huge hero images on every page, and maybe they do! But the best way to find out is to test this on the users who will be using it.</p>

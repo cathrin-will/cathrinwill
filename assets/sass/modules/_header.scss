@@ -65,6 +65,9 @@ header {
 				@include vendor(animation-delay, .2s * $i);
 			}
 		}
+		@include hoverActiveFocus {
+			@include vendor(transform, scale(1.3));
+		}
 	}
 }
 .icon-googleplus {

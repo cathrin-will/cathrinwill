@@ -35,7 +35,11 @@
 	background-color: #5cb85c;
 	border-color: #4cae4c;
 	color: #fff;
-	@include hoverActiveFocus{
+	&[disabled] {
+		background-color: desaturate(#5cb85c,30%);
+		@include hoverActiveFocus { background-color: desaturate(#5cb85c,30%); }
+	}
+	@include hoverActiveFocus {
 		background-color: #449d44;
 		border-color: #398439;
 	}
@@ -44,7 +48,11 @@
 	background-color: #d9534f;
 	border-color: #d43f3a;
 	color: #fff;
-	@include hoverActiveFocus{
+	&[disabled] {
+		background-color: desaturate(#d9534f,30%);
+		@include hoverActiveFocus { background-color: desaturate(#d9534f,30%); }
+	}
+	@include hoverActiveFocus {
 		background-color: #c9302c;
 		border-color: #ac2925;
 	}
