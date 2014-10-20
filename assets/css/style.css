@@ -747,7 +747,7 @@ label, input, textarea, button, select, option {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after, .nav:after {
+.cf:after, .nav:after, .island:after, .islet:after {
   content: "";
   display: table;
   clear: both; }
@@ -1642,6 +1642,35 @@ label, .label {
   content: "\002C" "\00A0"; }
 .nav--keywords > li:last-child:after {
   display: none; }
+
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ *
+ */
+.island, .islet {
+  display: block; }
+
+.island {
+  padding: 24px; }
+
+.island > :last-child, .islet > :last-child {
+  margin-bottom: 0; }
+
+/**
+ * Just like `.island`, only smaller.
+ */
+.islet {
+  padding: 12px; }
 
 /**
  * Style trumps; helper and brand classes
@@ -2645,6 +2674,9 @@ body {
   max-width: 900px;
   margin: 0 auto; }
 
+/*------------------------------------*\
+ typography
+\*------------------------------------*/
 a {
   color: #0ab8b0;
   -webkit-transition: 0.25s;
@@ -2655,15 +2687,8 @@ a {
 a:hover, a:active, a:focus {
   text-decoration: none; }
 
-.img--shadow {
-  -webkit-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
-  -ms-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
-  -o-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75); }
-
-b, strong {
-  font-family: "nexa-bold", sans-serif; }
+p, ul {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /*------------------------------------*\
 	$TABLES
@@ -2678,6 +2703,17 @@ b, strong {
   -ms-box-shadow: 0px 1px 2px -1px rgba(50, 50, 50, 0.75);
   -o-box-shadow: 0px 1px 2px -1px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 1px 2px -1px rgba(50, 50, 50, 0.75); }
+
+/*------------------------------------*\
+	$stuff
+\*------------------------------------*/
+.island {
+  border: 2px dashed #ccc;
+  box-shadow: 0px 0px 10px #eee; }
+
+input, select {
+  max-width: 100%;
+  margin-bottom: 10px; }
 
 /*------------------------------------*\
 	$HEADER
@@ -2806,6 +2842,7 @@ header ul li a {
   text-decoration: none;
   color: #303030;
   width: 100%;
+  text-align: center;
   margin-bottom: 24px;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -2948,6 +2985,13 @@ h1, h2, h3, h4, h5, h6 {
 \*------------------------------------*/
 .grid--middle > .grid__item {
   vertical-align: middle; }
+
+.img--shadow {
+  -webkit-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -ms-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -o-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75); }
 
 /*------------------------------------*\
 	$MAGNIFIC
@@ -3326,7 +3370,8 @@ img.mfp-img {
 \*------------------------------------*/
 footer {
   background: #0b486b;
-  color: #3b8686; }
+  color: #3b8686;
+  background: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.26)), -webkit-linear-gradient(108deg, #26d0ce, #1a2980 90%); }
 
 @-webkit-keyframes slideDown {
   0% {

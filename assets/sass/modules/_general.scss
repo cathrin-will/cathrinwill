@@ -27,7 +27,9 @@ body {
 	max-width: $grid-max;
 	margin: 0 auto;
 }
-
+/*------------------------------------*\
+ typography
+\*------------------------------------*/
 a {
 	color: $link-color;
 	@include vendor(transition, $animSpeed);
@@ -35,12 +37,11 @@ a {
 		text-decoration: none;
 	}
 }
-.img--shadow {
-	@include vendor(box-shadow, 3px 2px 5px 0px rgba(50, 50, 50, 0.75));
+
+p,ul {
+	font-family: $helvetica;
 }
-b,strong {
-	font-family: $nexa-bold;
-}
+
 /*------------------------------------*\
 	$TABLES
 \*------------------------------------*/
@@ -53,4 +54,16 @@ b,strong {
 	td {
 		@include vendor(box-shadow, 0px 1px 2px -1px rgba(50, 50, 50, 0.75));
 	}
+}
+/*------------------------------------*\
+	$stuff
+\*------------------------------------*/
+.island {
+	border: 2px dashed #ccc;
+	box-shadow: 0px 0px 10px #eee;
+}
+
+input,select {
+	max-width: 100%;
+	margin-bottom: 10px;
 }

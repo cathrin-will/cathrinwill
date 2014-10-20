@@ -9,22 +9,26 @@ function go() {
 	/*------------------------------------*\
 	GA event
 	\*------------------------------------*/
-	$('a[data-ga]').on('click', function(e) {
-		console.log('clicked');
-		e.preventDefault();
-		var link = $(this),
-		gaData = link.data('ga');
+	// $('a[data-ga]').on('click', function(e) {
+	// 	console.log('clicked');
+	// 	e.preventDefault();
+	// 	var link = $(this),
+	// 	gaData = link.data('ga');
 
-		ga('send', 'event', {
-			'eventCategory' : 'link',
-			'eventAction' : 'click',
-			'eventLabel' : gaData,
-			'eventValue' : 1,
-			'hitCallback' : function() {
-				window.location.href = link.attr('href');
-			}
-		});
-	});
+	// 	ga('send', 'event', {
+	// 		'eventCategory' : 'link',
+	// 		'eventAction' : 'click',
+	// 		'eventLabel' : gaData,
+	// 		'eventValue' : 1,
+	// 		'hitCallback' : function() {
+	// 			window.location.href = link.attr('href');
+	// 		}
+	// 	});
+	// });
+// var favicon=new Favico({
+//     animation:'slide'
+// });
+// favicon.badge(1);
 }
 
 /*------------------------------------*\
@@ -33,10 +37,10 @@ Cookie Control
 function cookieControl() {
 	var votes = $('#button-green, #button-red');
 	votes.on('click',function () {
-		$.cookie('vote', 'Stop clearing me!', {expires: 365, path: '/' });
+		$.cookie('vote3', 'Stop clearing me!', {expires: 365, path: '/' });
 
 	});
-	var isSetVote  = $.cookie('vote');
+	var isSetVote  = $.cookie('vote3');
 	if ( isSetVote == 'Stop clearing me!' ) {
 		votes.attr('disabled','disabled');
 	}

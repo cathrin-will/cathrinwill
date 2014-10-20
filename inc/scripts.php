@@ -4,25 +4,25 @@
 	<script src="//www.google-analytics.com/cx/api.js?experiment=qgMfbrZGSwSVYHrW3td0zA"></script>
 	<script>
 		  // Ask Google Analytics which variation to show the user.
-		 var chosenVariation = cxApi.chooseVariation();
-		 var exp = $('.ga-exp');
-		// Define JavaScript for each page variation of this experiment.
-		var pageVariations = [
-			function() { // Original: Do nothing. This will render the default HTML.
-				// document.getElementById('ga-exp').className = "";
-				exp.removeClass('visuallyhidden');
-			},
-			function() {    // Variation 1: Home text
-				// document.getElementById('ga-exp').className = "";
-				exp.removeClass('visuallyhidden');
-				document.getElementById('ga-exp').innerHTML = '<a href="/" data-ga="home text"> Home</a>';
-			}
-		];
+		//  var chosenVariation = cxApi.chooseVariation();
+		//  var exp = $('.ga-exp');
+		// // Define JavaScript for each page variation of this experiment.
+		// var pageVariations = [
+		// 	function() { // Original: Do nothing. This will render the default HTML.
+		// 		// document.getElementById('ga-exp').className = "";
+		// 		exp.removeClass('visuallyhidden');
+		// 	},
+		// 	function() {    // Variation 1: Home text
+		// 		// document.getElementById('ga-exp').className = "";
+		// 		exp.removeClass('visuallyhidden');
+		// 		document.getElementById('ga-exp').innerHTML = '<a href="/" data-ga="home text"> Home</a>';
+		// 	}
+		// ];
 
-		// // Wait for the DOM to load, then execute the view for the chosen variation.
-		$(document).ready(
-			pageVariations[chosenVariation]
-		);
+		// // // Wait for the DOM to load, then execute the view for the chosen variation.
+		// $(document).ready(
+		// 	pageVariations[chosenVariation]
+		// );
 	</script>
 
 	<!-- Ga Tracking -->

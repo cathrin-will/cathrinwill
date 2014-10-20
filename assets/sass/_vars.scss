@@ -32,7 +32,7 @@ $use-pagination:    false;
 $use-breadcrumb:    false;
 $use-media:         false;
 $use-marginalia:    false;
-$use-island:        false;
+$use-island:        true;
 $use-block-list:    false;
 $use-matrix:        false;
 $use-split:         false;
@@ -69,6 +69,7 @@ $grid-max:          900px;
 /* Fonts */
 $nexa-light: 		"nexa-light",sans-serif;
 $nexa-bold: 		"nexa-bold",sans-serif;
+$helvetica:	 		"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 /* Colors */
 $text-color:        #303030;
 $link-color:        #0ab8b0;

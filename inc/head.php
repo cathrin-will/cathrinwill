@@ -12,7 +12,7 @@
 	<meta name="description" content="Front-end Web Developer Ann-Cathrin Will HTML CSS Woking" >
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="Ann-Cathrin Will" href="https://plus.google.com/+AnnCathrinWill"/>
+	<link rel="author" href="https://plus.google.com/+AnnCathrinWill"/>
 	<!-- Apple Icons -->
 	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/touch/apple-touch-icon-152x152-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/touch/apple-touch-icon-144x144-precomposed.png">
