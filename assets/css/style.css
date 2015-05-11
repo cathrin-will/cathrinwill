@@ -917,7 +917,7 @@ hgroup .hN {
  * Inline quotes.
  */
 q {
-  quotes: "\2018" "\2019" "\201C " "\201D "; }
+  quotes: "‘" "’" "\\201C " "\\201D "; }
 q:before {
   content: "\2018";
   content: open-quote; }
@@ -932,15 +932,15 @@ q q:after {
   content: close-quote; }
 
 blockquote {
-  quotes: "\201C " "\201D "; }
+  quotes: "\\201C " "\\201D "; }
 blockquote p:before {
-  content: "\201C ";
+  content: "\\201C ";
   content: open-quote; }
 blockquote p:after {
   content: "";
   content: no-close-quote; }
 blockquote p:last-of-type:after {
-  content: "\201D ";
+  content: "\\201D ";
   content: close-quote; }
 blockquote q:before {
   content: "\2018";
@@ -1295,7 +1295,7 @@ th, td {
  * Bordered tables
  */
 .table--bordered th, .table--bordered td {
-  border: 1px solid #cccccc; }
+  border: 1px solid #ccc; }
 .table--bordered th:empty, .table--bordered td:empty {
   border: none; }
 .table--bordered thead tr:last-child th {
@@ -2320,11 +2320,11 @@ label, .label {
  * any element using a handy helper class.
  */
 .brand {
-  font-family: "Helvetica Neue", sans-serif!important;
+  font-family: Helvetica Neue, sans-serif!important;
   color: #4a8ec2!important; }
 
 .brand-face {
-  font-family: "Helvetica Neue", sans-serif!important; }
+  font-family: Helvetica Neue, sans-serif!important; }
 
 .brand-color, .brand-colour {
   color: #4a8ec2!important; }
@@ -2561,7 +2561,7 @@ label, .label {
  *
  */
 .go:after {
-  content: "\00A0" "\00BB" !important; }
+  content: " " "»" !important; }
 
 /**
  * Apply capital case to an element (usually a `strong`).
@@ -2648,14 +2648,18 @@ label, .label {
 GENERAL
 \*------------------------------------*/
 ::-moz-selection {
-  background: #99007b;
+  background: #99007B;
   color: #fff;
   text-shadow: none; }
 
 ::selection {
-  background: #99007b;
+  background: #99007B;
   color: #fff;
   text-shadow: none; }
+
+html, body {
+  height: 100%;
+  min-height: 100%; }
 
 body {
   font-family: "nexa-light", sans-serif;
@@ -2695,8 +2699,8 @@ p, ul {
 \*------------------------------------*/
 .table--std th {
   font-family: "nexa-bold", sans-serif;
-  background: #cff09e;
-  color: #0b486b; }
+  background: #CFF09E;
+  color: #0B486B; }
 .table--std td {
   -webkit-box-shadow: 0px 1px 2px -1px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 1px 2px -1px rgba(50, 50, 50, 0.75);
@@ -2754,14 +2758,14 @@ input, select {
   color: #fff; }
 
 header {
-  background: #79bd9a; }
+  background: #79BD9A; }
 header ul {
   margin-bottom: 0;
   text-align: right; }
-header ul li {
+header li {
   margin-left: 10px; }
-header ul li a {
-  color: #0b486b;
+header a {
+  color: #0B486B;
   text-decoration: none;
   text-transform: uppercase;
   padding: 5	px; }
@@ -2817,7 +2821,7 @@ header ul li a {
   color: #28aae1; }
 
 .icon-github {
-  color: #333333; }
+  color: #333; }
 
 .icon-linkedin {
   color: #007bb6; }
@@ -2825,6 +2829,9 @@ header ul li a {
 .icon-home {
   font-size: 20px;
   font-size: 1.25rem; }
+
+.ac-nav li {
+  display: block; }
 
 /*------------------------------------*\
 	$BUTTONS
@@ -2835,7 +2842,7 @@ header ul li a {
   margin: 0;
   padding: 1em 1.5em;
   border: none;
-  background-color: #cff09e;
+  background-color: #CFF09E;
   white-space: nowrap;
   line-height: 1;
   cursor: pointer;
@@ -3080,7 +3087,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none !important; }
 
 .mfp-preloader {
-  color: #cccccc;
+  color: #CCC;
   position: absolute;
   top: 50%;
   width: auto;
@@ -3090,9 +3097,9 @@ h1, h2, h3, h4, h5, h6 {
   right: 8px;
   z-index: 1044; }
 .mfp-preloader a {
-  color: #cccccc; }
+  color: #CCC; }
 .mfp-preloader a:hover {
-  color: white; }
+  color: #FFF; }
 
 .mfp-s-ready .mfp-preloader {
   display: none; }
@@ -3128,7 +3135,7 @@ button::-moz-focus-inner {
   opacity: 0.65;
   filter: alpha(opacity=65);
   padding: 0 0 18px 10px;
-  color: white;
+  color: #FFF;
   font-style: normal;
   font-size: 28px;
   font-family: Arial, Baskerville, monospace; }
@@ -3139,10 +3146,10 @@ button::-moz-focus-inner {
   top: 1px; }
 
 .mfp-close-btn-in .mfp-close {
-  color: #333333; }
+  color: #333; }
 
 .mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
-  color: white;
+  color: #FFF;
   right: -6px;
   text-align: right;
   padding-right: 6px;
@@ -3152,7 +3159,7 @@ button::-moz-focus-inner {
   position: absolute;
   top: 0;
   right: 0;
-  color: #cccccc;
+  color: #CCC;
   font-size: 12px;
   line-height: 18px; }
 
@@ -3195,19 +3202,19 @@ button::-moz-focus-inner {
 .mfp-arrow-left {
   left: 0; }
 .mfp-arrow-left:after, .mfp-arrow-left .mfp-a {
-  border-right: 17px solid white;
+  border-right: 17px solid #FFF;
   margin-left: 31px; }
 .mfp-arrow-left:before, .mfp-arrow-left .mfp-b {
   margin-left: 25px;
-  border-right: 27px solid #3f3f3f; }
+  border-right: 27px solid #3F3F3F; }
 
 .mfp-arrow-right {
   right: 0; }
 .mfp-arrow-right:after, .mfp-arrow-right .mfp-a {
-  border-left: 17px solid white;
+  border-left: 17px solid #FFF;
   margin-left: 39px; }
 .mfp-arrow-right:before, .mfp-arrow-right .mfp-b {
-  border-left: 27px solid #3f3f3f; }
+  border-left: 27px solid #3F3F3F; }
 
 .mfp-iframe-holder {
   padding-top: 40px;
@@ -3232,7 +3239,7 @@ button::-moz-focus-inner {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  background: black; }
+  background: #000; }
 
 /* Main image in popup */
 img.mfp-img {
@@ -3262,9 +3269,9 @@ img.mfp-img {
   height: auto;
   z-index: -1;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  background: #444444; }
+  background: #444; }
 .mfp-figure small {
-  color: #bdbdbd;
+  color: #BDBDBD;
   display: block;
   font-size: 12px;
   line-height: 14px; }
@@ -3282,7 +3289,7 @@ img.mfp-img {
 .mfp-title {
   text-align: left;
   line-height: 18px;
-  color: #f3f3f3;
+  color: #F3F3F3;
   word-wrap: break-word;
   padding-right: 36px; }
 
@@ -3369,77 +3376,84 @@ img.mfp-img {
 	$FOOTER
 \*------------------------------------*/
 footer {
-  background: #0b486b;
-  color: #3b8686;
-  background: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.26)), -webkit-linear-gradient(108deg, #26d0ce, #1a2980 90%); }
+  background: #0B486B;
+  color: #3B8686;
+  position: relative;
+  border-radius: 50%; }
+footer:after {
+  content: '';
+  background: #0B486B;
+  width: 100%;
+  display: block;
+  height: 100%;
+  bottom: -50%;
+  position: absolute;
+  overflow: none; }
 
-@-webkit-keyframes slideDown {
+@-webkit-keyframes $animation-name {
   0% {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
     -ms-transform: translateY(-200px);
     -o-transform: translateY(-200px);
     transform: translateY(-200px); }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
-@-moz-keyframes slideDown {
+@-moz-keyframes $animation-name {
   0% {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
     -ms-transform: translateY(-200px);
     -o-transform: translateY(-200px);
     transform: translateY(-200px); }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
-@-ms-keyframes slideDown {
+@-ms-keyframes $animation-name {
   0% {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
     -ms-transform: translateY(-200px);
     -o-transform: translateY(-200px);
     transform: translateY(-200px); }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
-@-o-keyframes slideDown {
+@-o-keyframes $animation-name {
   0% {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
     -ms-transform: translateY(-200px);
     -o-transform: translateY(-200px);
     transform: translateY(-200px); }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
-@keyframes slideDown {
+@keyframes $animation-name {
   0% {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
     -ms-transform: translateY(-200px);
     -o-transform: translateY(-200px);
     transform: translateY(-200px); }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
+
+/*# sourceMappingURL=style.css.map */

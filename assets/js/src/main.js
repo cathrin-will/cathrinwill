@@ -5,7 +5,13 @@ var main = (function() {
 	function go - nibble and pieces
 \*------------------------------------*/
 function go() {
-	console.log('hello');
+	$('.ac-nav').greenify({
+		color: 'orange',
+		backgroundColor: 'tomato',
+		anim: 'test'
+	}).addClass('because');
+	greenify.goAnim()
+
 	/*------------------------------------*\
 	GA event
 	\*------------------------------------*/
@@ -35,15 +41,6 @@ function go() {
 Cookie Control
 \*------------------------------------*/
 function cookieControl() {
-	var votes = $('#button-green, #button-red');
-	votes.on('click',function () {
-		$.cookie('vote3', 'Stop clearing me!', {expires: 365, path: '/' });
-
-	});
-	var isSetVote  = $.cookie('vote3');
-	if ( isSetVote == 'Stop clearing me!' ) {
-		votes.attr('disabled','disabled');
-	}
 	//  cookie bar
 	var cookie = $('#cookie');
 
