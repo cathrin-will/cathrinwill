@@ -1,0 +1,86 @@
+/*------------------------------------*\
+	$HEADER
+\*------------------------------------*/
+.wrapper--cookie {
+	padding: .5em;
+	background-color: #333;
+	color: #fff;
+	p {
+		@include font-size(14px, false);
+		a { color: #fff; }
+	}
+	.js & { display: none; }
+	@include media-query(portable) {
+		.btn {
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+	@include media-query(lap-and-up) {
+		.btn { float: right; }
+		p { margin: 0; }
+	}
+}
+.outdated-browser {
+	padding: .5em;
+	background-color: #666;
+	color: #fff;
+	p {
+		@include media-query(lap-and-up) {
+			margin-bottom: 0;
+		}
+		@include font-size(14px, false);
+		a { color: #fff; }
+	}
+}
+header {
+	background: $sea-green;
+	ul {
+		margin-bottom: 0;
+		text-align: right;
+	}
+	li {
+		margin-left: 10px;
+	}
+	a {
+		color: $blue;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 5	px;
+	}
+}
+.social {
+	a {
+		display: inline-block;
+		background: #fff;
+		border-radius: 50%;
+		padding: 10px;
+		text-decoration: none;
+		@include font-size(20px,false);
+		@include vendor(animation, slideDown 1s ease-in);
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				@include vendor(animation-delay, .2s * $i);
+			}
+		}
+		@include hoverActiveFocus {
+			@include vendor(transform, scale(1.3));
+		}
+	}
+}
+.icon-googleplus {
+	color: $social-googleplus;
+}
+.icon-twitter {
+	color: $social-twitter;
+}
+.icon-github {
+	color: $social-github;
+}
+.icon-linkedin {
+	color: $social-linkedin;
+}
+.icon-home {
+	@include font-size(20px,false);
+}
