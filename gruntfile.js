@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 				files: {
 					'src/css/style.css': 'src/sass/style.scss'
 				},
-			},
+			}
 		},
 		tinypng: {
 			options: {
@@ -36,7 +36,18 @@ module.exports = function(grunt) {
 			compress: {
 				expand: true,
 				cwd: 'src/img/',
-				src: ['**/*.jpg','**/*.png'],
+				src: ['**/*.{jpg,png}'],
+				dest: 'dist/img/'
+			}
+		},
+		imagemin: {
+			options: {
+				optimizationLevel: 3,
+			},
+			compress: {
+				expand: true,
+				cwd: 'src/img/',
+				src: ['**/*.{gif,svg}'],
 				dest: 'dist/img/'
 			}
 		},
@@ -68,23 +79,16 @@ module.exports = function(grunt) {
 			dist: {
 				'devFile' : 'src/js/vendor/modernizr-dev-2.8.3.js',
 				'outputFile' : 'dist/js/vendor/modernizr-custom.min.js',
-				'extra' : {
-					'shiv' : true,
-					'printshiv' : false,
-					'load' : true,
-					'mq' : false,
-					'cssclasses' : true
-				},
 				'files' : {
-					'src': ['src/css/**/*.css','src/js/main.js'] // these may have to be changed depending on plugin dependencies
-				},
-				'matchCommunityTests' : false,
+					'src': ['dist/css/**/*.css','dis/js/main.min.js']
+				}
 			}
 		}
 	});
 
-
-	grunt.registerTask('default', ['min','sass','jshint','modernizr']); // Default task(s)
+	grunt.registerTask('default', ['min','sass','autoprefixer','jshint','modernizr']); // Default task(s)
+	grunt.registerTask('images', ['imagemin','tinypng']);
+	grunt.registerTask('sassy', ['sass', 'autoprefixer']);
 
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -93,4 +97,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-modernizr');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-tinypng');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 };

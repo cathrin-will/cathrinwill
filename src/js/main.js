@@ -5,12 +5,12 @@ var main = (function() {
 	function go - nibble and pieces
 \*------------------------------------*/
 function go() {
-	$('.ac-nav').greenify({
-		color: 'orange',
-		backgroundColor: 'tomato',
-		anim: 'test'
-	}).addClass('because');
-	greenify.goAnim();
+	// $('.ac-nav').greenify({
+	// 	color: 'orange',
+	// 	backgroundColor: 'tomato',
+	// 	anim: 'test'
+	// }).addClass('because');
+	// greenify.goAnim();
 
 	/*------------------------------------*\
 	GA event
@@ -36,7 +36,31 @@ function go() {
 // });
 // favicon.badge(1);
 }
+/*------------------------------------*\
+	VideoList
+\*------------------------------------*/
+// function youTubeVideoList() {
+// 	console.log('test')
+// 		var youtubePlaylistItems = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=UUgJ-62H7I30jrvf6rCJ6RuQ&key=AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0";
+// 		var wrapper = $('#youtube-channel');
+// 		var itemArr = [];
+// 		$.getJSON(youtubePlaylistItems, function(data) {
+// 			// video title = item.snippet.title
+// 			$.each(data.items, function(i, item) {
+// 				var listItem = '<li><a href="https://youtu.be/'+item.snippet.resourceId.videoId+'"><img src="'+item.snippet.thumbnails.high.url+'"></li>';
+// 				itemArr.push(listItem);
 
+// 				if ( i === 1 ) {
+// 					wrapper.append(itemArr);
+// 					return false;
+// 				}
+// 			});
+// 		});
+// 	}
+$('#youtube-channel').youtubeList({
+	playlistId: 'UUgJ-62H7I30jrvf6rCJ6RuQ',
+	apiKey: 'AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0'
+});
 /*------------------------------------*\
 Cookie Control
 \*------------------------------------*/
@@ -58,27 +82,13 @@ function cookieControl() {
 	}
 }
 /*------------------------------------*\
-Magnific pop up
-\*------------------------------------*/
-function magPop() {
-	$('.pop--img').magnificPopup({
-		type:'image',
-		zoom: {
-			enabled: true, // By default it's false, so don't forget to enable it
-			duration: 300, // duration of the effect, in milliseconds
-			easing: 'ease-in-out', // CSS transition easing function
-		}
-	});
-}
-
-
-/*------------------------------------*\
 Function control centre
 \*------------------------------------*/
 	var init = function() {
 		cookieControl();
 		go();
-		magPop();
+		youTubeVideoList();
+		// magPop();
 	};
 
 	return { init: init };

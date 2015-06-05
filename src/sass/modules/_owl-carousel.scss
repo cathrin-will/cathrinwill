@@ -18,7 +18,7 @@
 			clear: both;
 			visibility: hidden;
 			line-height: 0;
-			height: 0;			
+			height: 0;
 		}
 	}
 	 .owl-wrapper-outer {
@@ -26,7 +26,7 @@
 		position: relative;
 		width: 100%;
 		&.autoHeight {
-			@include vendor(transition, 500ms ease-in-out);			
+			@include vendor(transition, 500ms ease-in-out);
 		}
 	}
 	.owl-item{
@@ -34,7 +34,7 @@
 		/* preloading images */
 		// &.loading{
 		// 	min-height: 150px;
-		// 	background: url(/assets/img/AjaxLoader.gif) no-repeat center center
+		// 	background: url(/dist/img/AjaxLoader.gif) no-repeat center center
 		// }
 	}
 	.owl-controls .owl-page {
@@ -50,8 +50,8 @@
 }
 
 /* mouse grab icon */
-.grabbing { 
-    cursor:url(/assets/img/grabbing.png) 8 8, move;
+.grabbing {
+    cursor:url(/dist/img/grabbing.png) 8 8, move;
 }
 
 /* fix */
@@ -62,7 +62,7 @@
 }
 
 /* ==========================================================================
-* 	Owl Carousel Owl Demo Theme 
+* 	Owl Carousel Owl Demo Theme
 *	v1.3.2
 ========================================================================== */
 .owl-theme {

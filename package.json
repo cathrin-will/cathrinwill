@@ -8,11 +8,11 @@
   },
   "devDependencies": {
     "grunt-autoprefixer": "^2.2.0",
+    "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-modernizr": "^0.6.0",
-    "grunt-scss-lint": "^0.3.4",
     "grunt-tinypng": "^0.5.3",
     "grunt-yui-compressor": "^0.3.3"
   },

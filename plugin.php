@@ -1,6 +1,6 @@
 <?php include("inc/head.php"); ?>
 	<body>
-		<?php include("inc/cookie.php"); include("inc/header.php"); ?>
+		<?php // include("inc/cookie.php"); include("inc/header.php"); ?>
 
 		<div class="wrapper">
 			<div class="grid-wrapper">
@@ -8,6 +8,7 @@
 					<div class="grid__item one-whole">
 
 						<h1>Heading</h1>
+						<ul id="youtube-channel"></ul>
 						<h2>Lorem ipsum dolor sit amet</h2>
 						<nav class="ac-nav">
 							<ul class="nav">

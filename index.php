@@ -11,7 +11,7 @@
 						<p>Currently this domain is only used for testing and experiments not looking for work, <strong>expect things to break</strong>!</p>
 					</div><!--
 					--><div class="grid__item one-whole  lap-and-up-one-third">
-						<img src="/assets/img/ann-cathrin.jpg" alt="Ann-Cathrin Will" class="img--center img--shadow">
+						<img src="/dist/img/ann-cathrin.jpg" alt="Ann-Cathrin Will" class="img--center img--shadow">
 					</div>
 				</div><!-- /grid -->
 			</div><!-- /wrapper__inner -->

@@ -78,8 +78,8 @@
 						<div class="grid__item one-whole lap-and-up-one-half">
 								<h4>Cat A (Lil bub)</h4>
 								<div class="island">
-									<a href="/assets/img/cats/lil-bub-600x450.jpg" class="pop--img">
-										<img src="/assets/img/cats/lil-bub-600x450.jpg" alt="Lil bub" class="img--left img--shadow" width="200">
+									<a href="/dist/img/cats/lil-bub-600x450.jpg" class="pop--img">
+										<img src="/dist/img/cats/lil-bub-600x450.jpg" alt="Lil bub" class="img--left img--shadow" width="200">
 									</a>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eos dolorem hic quisquam modi.</p>
 								</div>
@@ -87,8 +87,8 @@
 						--><div class="grid__item one-whole lap-and-up-one-half">
 							<h4>Cat B (Tard)</h4>
 							<div class="island">
-								<a href="/assets/img/cats/grumpy-cat-600x450.jpg" class="pop--img">
-									<img src="/assets/img/cats/grumpy-cat-600x450.jpg" alt="Grump Cat" class="img--left img--shadow" width="200">
+								<a href="/dist/img/cats/grumpy-cat-600x450.jpg" class="pop--img">
+									<img src="/dist/img/cats/grumpy-cat-600x450.jpg" alt="Grump Cat" class="img--left img--shadow" width="200">
 								</a>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eos dolorem hic quisquam modi.</p>
 							</div>
@@ -170,20 +170,20 @@
 					<div class="grid">
 						<div class="grid__item one-whole lap-and-up-one-half text--center">
 							<h4>Variation A - Original</h4>
-							<a href="/assets/img/ab-test/example-a.jpg" class="pop--img">
-								<img src="/assets/img/ab-test/example-a.jpg" alt="Example A" class="img--center img--shadow">
+							<a href="/dist/img/ab-test/example-a.jpg" class="pop--img">
+								<img src="/dist/img/ab-test/example-a.jpg" alt="Example A" class="img--center img--shadow">
 							</a>
 						</div><!--
 						--><div class="grid__item one-whole lap-and-up-one-half text--center">
 							<h4>Variation B - Yellow button</h4>
-							<a href="/assets/img/ab-test/example-b.jpg" class="pop--img">
-								<img src="/assets/img/ab-test/example-b.jpg" alt="Example B" class="img--center img--shadow">
+							<a href="/dist/img/ab-test/example-b.jpg" class="pop--img">
+								<img src="/dist/img/ab-test/example-b.jpg" alt="Example B" class="img--center img--shadow">
 							</a>
 						</div>
 					</div>
 					<p>After 2 weeks with the test running, 50% of website traffic seeing the original and 50% seeing the yewllow button, the results were in:</p>
 
-					<img src="/assets/img/ab-test/results.png" alt="Example B" class="img--center img--shadow">
+					<img src="/dist/img/ab-test/results.png" alt="Example B" class="img--center img--shadow">
 
 					<p>After receiving results it was a simple case of making the winning variation in this case the yellow button live on the site.</p>
 
