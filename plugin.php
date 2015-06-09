@@ -37,7 +37,7 @@
 						</nav>
 					</div>
 				</div><!-- /grid -->
-			</div><!-- /wrapper__inner -->
+			</div><!-- /grid-wrapper -->
 		</div><!-- /wrapper -->
 
 		<?php include("inc/footer.php"); include("inc/scripts.php"); ?>

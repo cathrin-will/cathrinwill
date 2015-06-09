@@ -41,25 +41,32 @@ function go() {
 \*------------------------------------*/
 // function youTubeVideoList() {
 // 	console.log('test')
-// 		var youtubePlaylistItems = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=UUgJ-62H7I30jrvf6rCJ6RuQ&key=AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0";
-// 		var wrapper = $('#youtube-channel');
-// 		var itemArr = [];
-// 		$.getJSON(youtubePlaylistItems, function(data) {
-// 			// video title = item.snippet.title
-// 			$.each(data.items, function(i, item) {
-// 				var listItem = '<li><a href="https://youtu.be/'+item.snippet.resourceId.videoId+'"><img src="'+item.snippet.thumbnails.high.url+'"></li>';
-// 				itemArr.push(listItem);
+		// var ytJson = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=UUgJ-62H7I30jrvf6rCJ6RuQ&key=AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0";
+		// var wrapper = $('#youtube-channel');
+		// var itemArr = [];
+		// $.getJSON(ytJson, function(data) {
+		// 	// video title = item.snippet.title
+		// 	$.each(data.items, function(i, item) {
+		// 		var listItem = '<li><a href="https://youtu.be/'+item.snippet.resourceId.videoId+'"><img src="'+item.snippet.thumbnails.high.url+'"></li>';
+		// 		itemArr.push(listItem);
 
-// 				if ( i === 1 ) {
-// 					wrapper.append(itemArr);
-// 					return false;
-// 				}
-// 			});
-// 		});
+		// 		if ( i === 1 ) {
+		// 			wrapper.append(itemArr);
+		// 			return false;
+		// 		}
+		// 	});
+		// });
 // 	}
-$('#youtube-channel').youtubeList({
-	playlistId: 'UUgJ-62H7I30jrvf6rCJ6RuQ',
-	apiKey: 'AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0'
+// $('#youtube-channel').youtubeList({
+// 	playlistId: 'test',
+// 	// playlistId: 'UUgJ-62H7I30jrvf6rCJ6RuQ',
+// 	apiKey: 'AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0'
+// });
+$('#youtube-channel').youtubeList('AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0','UUgJ-62H7I30jrvf6rCJ6RuQ',{
+	itemWrapper: 'ul',
+	showCount: 1,
+	showTitle: true
+
 });
 /*------------------------------------*\
 Cookie Control
@@ -87,7 +94,7 @@ Function control centre
 	var init = function() {
 		cookieControl();
 		go();
-		youTubeVideoList();
+		// youTubeVideoList();
 		// magPop();
 	};
 

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Pixxy</title>
+    <link rel="icon" type="image/ico" href="favicon.ico" /> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/L1.js"></script>
+<script type="text/javascript" src="js/L2.js"></script>
+<script type="text/javascript" src="js/L3.js"></script>
+<script type="text/javascript" src="js/L4.js"></script>
+<script type="text/javascript" src="js/L5.js"></script>
+<script>
+$(document).ready(function(){
+$('#one, #two, #three, #four, #five').hide();
+
+	$("#bzero").click(function(){
+	$('#zero').show();
+	$('#one, #two, #three, #four, #five').hide();
+	});
+
+	$("#bone").click(function(){
+	$('#one').show();
+	$('#zero,#two, #three, #four, #five').hide();
+	});
+
+	$("#btwo").click(function(){
+	$('#two').show();
+	$('#zero, #one, #three, #four, #five').hide();
+	});
+
+	$("#bthree").click(function(){
+	$('#three').show();
+	$('#zero, #one, #two, #four, #five').hide();
+	});
+	
+	$("#bfour").click(function(){
+	$('#four').show();
+	$('#zero, #one, #two, #three, #five').hide();
+	});
+	
+	$("#bfive").click(function(){
+	$('#five').show();
+	$('#zero, #one, #two, #three, #four').hide();
+	});
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38670955-1']);
+  _gaq.push(['_setDomainName', 'cathrinwill.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+  <body>
+  	<!-- <div id="result">test</div> -->
+  <div id="container">
+    <h1 id="header">Pixxy</h1>
+    <div id="nav">
+      <a id="bzero" class="button"><p>Home</p></a> 
+	  <a id="bone" class="button" ><p>Chair</p></a> 
+	  <a id="bthree" class="button"><p>Test</p></a>
+	  <a id="bfour" class="button"><p>Ball</p></a>
+	  <a id="btwo" class="button"><p>Little Alien</p></a>
+	  <a id="bfive" class="button"><p>Mushroom</p></a>
+    </div>
+
+ <div id="main">
+      <div id="zero">
+	  
+        <h2>
+          Pixxy Rules
+        </h2>
+        <p>
+          The aim of the game is to make a picture by clicking the squares in the correct places. The hints are the numbers inline on the right or below.
+        </p>
+
+		<p> If the number says 2 it means there are 2 squares somewhere in that row thta are coloured in.</p>
+
+		<p>If it says for 2.1 for instance, then that means two are coloured in and then there is a space varying in the number of squares before another coloured in square.</p>
+		
+		<p>The Levels get harder as you go down the menu, so good luck.</p>
+
+		<p>Once all the correct sqaures are coloured in it will make a picture related to the name and you'll have Won!</p>
+		
+
+		<h4> A little Hint</h4>
+		<p> On the bigger games it can be useful to try complete the large rows first.</p>
+      </div>  
+      <div id="one">
+	  <button class="reset1" type="button">Reset</button>
+	  <div class="time1"></div>
+        <h2>Chair</h2>
+				<div class="container c1" ></div>
+				
+				<div class="right r1">
+					<p>1</p><p>1</p><p>3</p><p>1.1</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+				</div>
+				<div class="bottom">
+					<p>1</p>
+				</div>
+				<div class="bottom">
+				<p>2</p>
+				</div>
+		<h1 id="1">You've WON!</h1>
+      </div>
+	  <div id="two">
+	  <button class="reset2" type="button">Reset</button>
+	  <div class="time2"></div>
+		  <h2>Little Alien</h2>
+				<div class="container c2"></div>
+				<div class="right r2">
+					<p>4</p><p>6</p><p>1.2.1</p><p>6</p><p>1.1</p><p>6</p><p>4</p><p>1.1</p>
+				</div>
+				<div class="bottom">
+					<p>3</p>
+					<p>1</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+					<p>5</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+					<p>2</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+					<p>2</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+					<p>5</p>
+				</div>
+				<div class="bottom">
+					<p>3</p>
+					<p>1</p>
+				</div>
+			<h1 id="2">You've WON!</h1>
+		</div>
+      <div id="three">
+	  <button class="reset3" type="button">Reset</button>
+	  <div class="time3"></div>
+        <h2>Test</h2>
+				<div class="container c3" ></div>
+				<div class="right r1">
+					<p>3</p><p>1</p><p>1</p><p>1</p>
+				</div>
+				<div class="bottom">
+					<p>1</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+				</div>
+				<div class="bottom">
+					<p>1</p>
+				</div>
+		<h1 id="3">You've WON!</h1>
+      </div>	
+      <div id="four">
+	  <button class="reset4" type="button">Reset</button>
+	  <div class="time4"></div>
+		  <h2>Ball</h2>
+				<div class="container c4"></div>
+				<div class="right r4">
+					<p>2</p><p>4</p><p>2.2</p><p>2.2</p><p>4</p><p>2</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+					<p>2</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+					<p>2</p>
+				</div>
+				<div class="bottom">
+					<p>4</p>
+				</div>
+				<div class="bottom">
+					<p>2</p>
+				</div>
+			<h1 id="4">You've WON!</h1>
+		</div>	  
+      <div id="five">
+	  <button class="reset5" type="button">Reset</button>
+	  <div class="time5"></div>
+		  <h2>Mushroom </h2>
+				<div class="container c5"></div>
+				<div class="right r5">
+					<p>6</p> <p>4.4</p> <p>5.5</p> <p>2.2.2.2</p> <p>2.1</p> <p>4.4.3</p> <p>4.6.4</p> <p>4.6.4</p> <p>2.6.3</p> <p>1.4.1</p> <p>1.10.1</p> <p>4.1.1.4</p> <p>2.1.1.2</p> <p>1.1</p> <p>2.2</p> <p>10</p>
+				</div>
+				<div class="bottom">
+					<p>7</p>
+				</div>
+				<div class="bottom">
+					<p>6</p> <p>2</p>
+				</div>
+				<div class="bottom">
+					<p>6</p> <p>4</p>
+				</div>
+				<div class="bottom">
+					<p>2</p><p>3</p><p>2</p> <p>2</p>
+				</div>
+				<div class="bottom">
+					<p>3</p> <p>1</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>4</p><p>3</p> <p>1</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>3</p><p>8</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>1</p> <p>6</p> <p>1</p> 
+				</div>
+				<div class="bottom">
+					<p>1</p> <p>6</p> <p>1</p> 
+				</div>
+				<div class="bottom">
+					<p>3</p><p>8</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>4</p> <p>3</p> <p>1</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>3</p> <p>1</p> <p>1</p>
+				</div>
+				<div class="bottom">
+					<p>2</p><p>2</p><p>2</p> <p>2</p>
+				</div>
+				<div class="bottom">
+					<p>2</p> <p>4</p> <p>4</p> 
+				</div>
+				<div class="bottom">
+					<p>6</p><p>2</p>
+				</div>
+				<div class="bottom">
+					<p>7</p>
+				</div>
+			<h1 id="5" style="color:red; position:absolute; top:50px; left:50px; font-size:50pt">You've WON!</h1>
+		</div>
+
+    </div>
+    <div id="footer"></div>
+	</div>
+  </body>
+</html>

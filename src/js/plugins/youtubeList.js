@@ -24,9 +24,28 @@
 		// base.functionName = function(paramaters){
 
 		// };
+		console.log(base)
+		var ytJson = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId='+playlistId+'&key='+apiKey;
+		console.log(ytJson);
+		var wrapper = $('#youtube-channel');
+		// var wrapper = base;
+		console.log(wrapper)
+		var itemArr = [];
+		$.getJSON(ytJson, function(data) {
+			// video title = item.snippet.title
+			$.each(data.items, function(i, item) {
+				var listItem = '<li><a href="https://youtu.be/'+item.snippet.resourceId.videoId+'"><img src="'+item.snippet.thumbnails.high.url+'"></li>';
+				itemArr.push(listItem);
 
+				if ( i === showCount ) {
+					wrapper.append(itemArr);
+					return false;
+				}
+			});
+		});
 		// Run initializer
 		base.init();
+
 	};
 
 	$.youtubeList.defaultOptions = {

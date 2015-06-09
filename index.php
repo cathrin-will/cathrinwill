@@ -14,7 +14,7 @@
 						<img src="/dist/img/ann-cathrin.jpg" alt="Ann-Cathrin Will" class="img--center img--shadow">
 					</div>
 				</div><!-- /grid -->
-			</div><!-- /wrapper__inner -->
+			</div><!-- /grid-wrapper -->
 		</div><!-- /wrapper -->
 
 		<?php include("inc/footer.php"); include("inc/scripts.php"); ?>

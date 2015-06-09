@@ -20,6 +20,6 @@
 					</nav>
 				</div>
 			</div><!-- /grid -->
-		</div><!-- /wrapper__inner -->
+		</div><!-- /grid-wrapper -->
 	</div><!-- /wrapper -->
 </header>

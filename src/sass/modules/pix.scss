@@ -1,0 +1,18 @@
+.board {
+	background: #fff;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	font-size: 0;
+	max-width: 300px;
+	margin: 0 auto;
+	>div {
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+		width: 100%;
+		padding-bottom: 100%;
+		display: inline-block;
+	}
+	.on {
+		background: #111;
+	}
+}
