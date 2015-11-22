@@ -14,8 +14,9 @@
 					<nav>
 						<ul class="nav">
 							<li><a href="/" class="icon-home"> <span class="accessibility">Home</span></a></li>
-							<li><a href="plugin.php">Plugin test</a></li>
-							<li><a href="/cookies.php">Cookies</a></li>
+							<li><a href="/dist/cv/AnnWillCV.pdf">Full CV (pdf)</a></li>
+							<!-- <li><a href="plugin.php">Plugin test</a></li> -->
+							<!-- <li><a href="/cookies.php">Cookies</a></li> -->
 						</ul>
 					</nav>
 				</div>

@@ -6,10 +6,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php if($title){echo $title;}else{echo "Ann-Cathrin Will";} ?></title>
+	<title><?php if($title){echo $title;}else{echo "Ann-Cathrin Will | Front-end Developer";} ?> </title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="author" content="Ann-Cathrin Will" >
-	<meta name="description" content="Front-end Web Developer Ann-Cathrin Will HTML CSS Woking" >
+	<meta name="description" content="Ann-Cathrin Will is an experienced Front-end Developer having worked at a variety of digital and marketing agencies. With strong skills in writing HMTL and CSS, utilising Sass and grunt for development." >
+	<meta name="keywords" content="Front-end,Web Developer, Ann-Cathrin Will, HTML, CSS, Woking," >
 	<link rel="stylesheet" href="/dist/css/style.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="author" href="https://plus.google.com/+AnnCathrinWill"/>

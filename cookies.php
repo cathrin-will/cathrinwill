@@ -1,6 +1,6 @@
 <?php include("inc/head.php"); ?>
 	<body>
-		<?php include("inc/cookie.php"); include("inc/header.php"); ?>
+		<?php include("inc/header.php"); ?>
 
 		<div class="wrapper">
 			<div class="grid-wrapper">
@@ -34,6 +34,6 @@
 			</div><!-- /grid-wrapper -->
 		</div><!-- /wrapper -->
 
-		<?php include("inc/footer.php"); include("inc/scripts.php"); ?>
+		<?php include("inc/footer.php"); include("inc/cookie.php");  include("inc/scripts.php"); ?>
 	</body>
 </html>

@@ -15,7 +15,6 @@
 	color: $text-color;
 	width: 100%;
 	text-align: center;
-	margin-bottom: $base-spacing-unit;
 	@include vendor(transition, $animSpeed);
 	&:hover, &:active, &:focus{
 		background-color: darken($lime-green, 10%);

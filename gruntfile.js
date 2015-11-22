@@ -5,8 +5,11 @@ module.exports = function(grunt) {
 			beforeconcat: ['src/js/main.js'] // all we really want is for jshints to be turned on not to actually fail the file !
 		},
 		min: {
+			options: {
+				'report': 'min'
+			},
 			files: {
-				src: [ 'src/js/plugins/*.js','src/js/main.js' ],
+				src: [ 'src/js/base/*.js','src/js/main.js' ],
 				dest: 'dist/js/main.min.js',
 				flatten: true,
 				ext: '.min.js'
@@ -20,7 +23,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'src/css/style.css': 'src/sass/style.scss'
+					'dist/css/style.css': 'src/sass/style.scss'
 				},
 			}
 		},
@@ -51,10 +54,17 @@ module.exports = function(grunt) {
 				dest: 'dist/img/'
 			}
 		},
-		autoprefixer: {
-			multiple_files: {
+		postcss: {
+			options: {
+				map: true,
+				processors: [
+					require('autoprefixer-core')({browsers: 'last 1 version'}),
+					require('csswring')
+				]
+			},
+			files: {
 				expand: true,
-				cwd: 'src/css/',
+				cwd: 'dist/css/',
 				src: ['**/*.css'],
 				dest: 'dist/css/'
 			}
@@ -72,7 +82,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['src/sass/**/*.scss'],
-				tasks: ['sass', 'autoprefixer']
+				tasks: ['sass', 'postcss']
 			}
 		},
 		modernizr: {
@@ -83,19 +93,44 @@ module.exports = function(grunt) {
 					'src': ['dist/css/**/*.css','dis/js/main.min.js']
 				}
 			}
+		},
+		copy: {
+			fonts: {
+				nonull: true,
+				expand: true,
+				cwd: 'src/fonts/',
+				src: ['**'],
+				dest: 'dist/fonts/'
+			},
+			docs: {
+				nonull: true,
+				expand: true,
+				cwd: 'src/cv/',
+				src: ['**'],
+				dest: 'dist/cv/'
+			},
+			js: {
+				nonull: true,
+				expand: true,
+				cwd: 'src/js/vendor/',
+				src: ['jquery**'],
+				dest: 'dist/js/vendor/'
+			},
+
 		}
 	});
 
-	grunt.registerTask('default', ['min','sass','autoprefixer','jshint','modernizr']); // Default task(s)
+	grunt.registerTask('default', ['sass','postcss','modernizr', 'copy','jshint','min']); // Default task(s)
 	grunt.registerTask('images', ['imagemin','tinypng']);
-	grunt.registerTask('sassy', ['sass', 'autoprefixer']);
+	grunt.registerTask('sassy', ['sass', 'postcss']);
 
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-modernizr');
-	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-tinypng');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 };

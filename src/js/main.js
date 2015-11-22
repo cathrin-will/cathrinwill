@@ -5,6 +5,7 @@ var main = (function() {
 	function go - nibble and pieces
 \*------------------------------------*/
 function go() {
+	console.log('yay');
 	// $('.ac-nav').greenify({
 	// 	color: 'orange',
 	// 	backgroundColor: 'tomato',
@@ -62,12 +63,12 @@ function go() {
 // 	// playlistId: 'UUgJ-62H7I30jrvf6rCJ6RuQ',
 // 	apiKey: 'AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0'
 // });
-$('#youtube-channel').youtubeList('AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0','UUgJ-62H7I30jrvf6rCJ6RuQ',{
-	itemWrapper: 'ul',
-	showCount: 1,
-	showTitle: true
+// $('#youtube-channel').youtubeList('AIzaSyBctW6Qeg_xWBvYRSwT_Uj5ON12PRkDTm0','UUgJ-62H7I30jrvf6rCJ6RuQ',{
+// 	itemWrapper: 'ul',
+// 	showCount: 1,
+// 	showTitle: true
 
-});
+// });
 /*------------------------------------*\
 Cookie Control
 \*------------------------------------*/
