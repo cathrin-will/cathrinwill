@@ -13,7 +13,7 @@
 
 						<p>I enjoy new challenges and am currently working for <a href="http://purple-agency.com">The Purple Agency</a> since April 2013</p>
 						<p>I graduated with a <strong>Web Development with Business Bsc</strong> degree from Kingston University.</p>
-						<p>Currently this domain is only used for testing and experiments, <strong>expect things to break</strong>!</p>
+						<p>Currently this domain gets used a lot for testing and experiments, <strong>expect things to break</strong>!</p>
 					</div><!--
 					--><div class="grid__item one-whole  lap-and-up-one-third  text--right">
 						<img src="/dist/img/ann-cathrin.jpg" alt="Ann-Cathrin Will" class="img--center img--shadow">
