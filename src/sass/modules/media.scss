@@ -1,0 +1,37 @@
+/*------------------------------------*\
+	$MEDIA
+\*------------------------------------*/
+
+.media {
+	display: block;
+	background: #fff;
+	box-shadow: 1px 1px 7px rgba(0,0,0,.5);
+	border-radius: 0 0 6px 6px;
+	text-decoration: none;
+	img {
+		display: block;
+	}
+}
+a.media {
+	img {
+		transition: $anim-speed;
+	}
+	@include hoverActiveFocus {
+		img {
+			filter: saturate(30%);
+			filter: contrast(200%);
+		}
+	}
+}
+
+.media__heading {
+	color: $greenish;
+	@include font-size(18px);
+	text-decoration: uppercase;
+	font-weight: normal;
+
+}
+.media__body {
+	border-top: 1px solid #ddd;
+	color: $text-color;
+}

@@ -1,7 +1,6 @@
 <?php include("inc/head.php"); ?>
 	<body>
 		<?php  include("inc/header.php"); ?>
-
 		<div class="wrapper">
 			<div class="grid-wrapper">
 				<div class="grid">

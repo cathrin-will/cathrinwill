@@ -14,34 +14,87 @@
 		a { color: #fff; }
 	}
 }
+
 header {
+	background: $lime-green;
+	background: $light-green;
 	background: $sea-green;
-	ul {
-		margin-bottom: 0;
-		text-align: right;
-	}
-	li {
-		margin-left: 10px;
-	}
+	background: $greenish;
+	background: $blue;
+	background: $sea-green;
 	a {
 		color: $blue;
 		text-decoration: none;
-		text-transform: uppercase;
-		padding: 5	px;
+		padding: 5px;
 	}
 }
+
+.nav--main {
+	ul {
+		list-style: none;
+	}
+	li {
+		@include media-query(lap-and-up) {
+			border-left: 1px solid darken($sea-green,10%);
+			display: inline-block;
+			&:first-child {
+				border-left: 0;
+			}
+		}
+		@include media-query(desk) {
+			@include font-size(20px,false);
+		}
+	}
+	a {
+		text-align: center;
+		@include media-query(lap-and-up) {
+			text-align: right;
+			text-transform: uppercase;
+			padding: $half-spacing-unit/2 $half-spacing-unit;
+		}
+		display: block;
+		padding: 5px;
+		// text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+		.icon-home {
+			transition: $anim-speed;
+			display: inline-block;
+		}
+		&.active {
+			background: lighten($sea-green,5%);
+		}
+		@include hoverActiveFocus {
+			background: lighten($sea-green,10%);
+			.icon-home {
+				transform: rotateY(180deg);
+			}
+		}
+
+	}
+}
+
 .social {
+	@include media-query(palm) {
+		text-align: center;
+		margin-bottom: $half-spacing-unit;
+	}
 	a {
 		display: inline-block;
 		background: #fff;
 		border-radius: 50%;
-		padding: 10px;
+		margin-right: $half-spacing-unit/2;
 		text-decoration: none;
+		padding: $half-spacing-unit/2;
+		@include media-query(palm) {
+			margin-bottom: $half-spacing-unit;
+		}
+		@include media-query(lap-and-up) {
+			padding: 10px;
+		}
 		@include font-size(20px,false);
-		@include vendor(animation, slideDown 1s ease-in);
+		animation: slideDown 1s ease-in;
 		@for $i from 1 through 4 {
 			&:nth-child(#{$i}) {
-				@include vendor(animation-delay, .2s * $i);
+				animation-delay: .2s * $i;
 			}
 		}
 		@include hoverActiveFocus {
@@ -49,6 +102,7 @@ header {
 		}
 	}
 }
+
 .icon-googleplus {
 	color: $social-googleplus;
 }
@@ -60,7 +114,4 @@ header {
 }
 .icon-linkedin {
 	color: $social-linkedin;
-}
-.icon-home {
-	@include font-size(20px,false);
 }

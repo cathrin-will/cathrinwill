@@ -1,0 +1,29 @@
+/*------------------------------------*\
+TYPOGRAPHY
+\*------------------------------------*/
+
+body {
+	font-family: $nexa-light;
+	color: $text-color;
+	// background: linear-gradient(to bottom,  #fff 50%,$blue 50%); /* W3C */
+}
+
+a {
+	transition: $anim-speed;
+}
+
+p {
+	&:last-child {
+		margin-bottom: 0;
+	}
+	a {
+		color: $link-color;
+		@include hoverActiveFocus {
+			text-decoration: none;
+		}
+	}
+}
+
+p,ul {
+	font-family: $helvetica;
+}

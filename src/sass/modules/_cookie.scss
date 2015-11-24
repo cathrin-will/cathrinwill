@@ -13,7 +13,6 @@
 	.js & { display: none; }
 	@include media-query(portable) {
 		.btn {
-			display: block;
 			text-align: center;
 			text-transform: uppercase;
 		}

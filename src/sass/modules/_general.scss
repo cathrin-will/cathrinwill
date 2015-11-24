@@ -17,12 +17,7 @@ html, body {
 	height: 100%;
 	min-height: 100%;
 }
-body {
-	font-family: $nexa-light;
-	color: $text-color;
-	// background: linear-gradient(to bottom,  #fff 50%,$blue 50%); /* W3C */
 
-}
 .wrapper {
 	padding: 1em;
 	@include media-query(lap-and-up) { padding: 2em; }
@@ -32,20 +27,6 @@ body {
 .grid-wrapper {
 	max-width: $grid-max;
 	margin: 0 auto;
-}
-/*------------------------------------*\
- typography
-\*------------------------------------*/
-a {
-	color: $link-color;
-	@include vendor(transition, $animSpeed);
-	@include hoverActiveFocus {
-		text-decoration: none;
-	}
-}
-
-p,ul {
-	font-family: $helvetica;
 }
 
 /*------------------------------------*\
