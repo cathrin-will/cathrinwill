@@ -10,4 +10,13 @@ footer {
 	a {
 		color: #fff;
 	}
+	@include media-query(palm) {
+		text-align: center;
+	}
+	@include media-query(lap-and-up) {
+		.footer__contact {
+			text-align: right;
+		}
+	}
+
 }
