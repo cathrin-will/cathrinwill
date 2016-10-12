@@ -30,6 +30,9 @@ header {
 }
 
 .nav--main {
+	@include media-query(palm) {
+		margin-bottom: $base-spacing-unit;
+	}
 	ul {
 		list-style: none;
 	}
@@ -75,7 +78,6 @@ header {
 .social {
 	@include media-query(palm) {
 		text-align: center;
-		margin-bottom: $half-spacing-unit;
 	}
 	a {
 		display: inline-block;
@@ -91,13 +93,14 @@ header {
 			padding: 10px;
 		}
 		@include font-size(20px,false);
-		transform: translateY(-200px);
-
-		animation: slideDown 1s ease-in;
-		animation-fill-mode: forwards;
-		@for $i from 1 through 4 {
-			&:nth-child(#{$i}) {
-				animation-delay: .2s * $i;
+		@include media-query(lap-and-up) {
+			transform: translateY(-200px);
+			animation: slideDown 1s ease-in;
+			animation-fill-mode: forwards;
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}) {
+					animation-delay: .2s * $i;
+				}
 			}
 		}
 		@include hoverActiveFocus {

@@ -8,8 +8,6 @@
 							<li><a href="/" class="<?php echo ($_SERVER['PHP_SELF'] == '/index.php' ? ' active' : '');?>"><span class="icon-home"></span> Home</a></li><!--
 							--><li><a href="/work.php" class="<?php echo ($_SERVER['PHP_SELF'] == '/work.php' ? ' active' : '');?>">Latest work</a></li><!--
 							--><li><a href="/dist/cv/AnnWillCV.pdf" title="open in new tab" target="_blank">Full C.V. (pdf)</a></li>
-							<!-- <li><a href="plugin.php">Plugin test</a></li> -->
-							<!-- <li><a href="/cookies.php">Cookies</a></li> -->
 						</ul>
 					</nav>
 				</div><!--
