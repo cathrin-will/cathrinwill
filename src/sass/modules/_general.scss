@@ -55,3 +55,26 @@ input,select {
 	max-width: 100%;
 	margin-bottom: 10px;
 }
+.special {
+	background: #000;
+	overflow: hidden;
+}
+.pusher {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	border-radius: 50%;
+	transition: 3s;
+	&.go {
+		background: yellow;
+	}
+	&.pushed {
+		background: red;
+		transform: scale(50);
+	}
+}
