@@ -18,8 +18,7 @@ a.media {
 	}
 	@include hoverActiveFocus {
 		img {
-			filter: saturate(30%);
-			filter: contrast(200%);
+			filter: contrast(110%);
 		}
 	}
 }

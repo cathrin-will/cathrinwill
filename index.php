@@ -8,7 +8,7 @@
 						<h1>Ann-Cathrin Will - Front-end Developer</h1>
 					</div>
 					<div class="grid__item one-whole  lap-and-up-two-thirds">
-						<p>I'm an experienced front-end developer having worked at a variety of digital and marketing agencies for over 3 years. With strong skills in writing <strong>HMTL</strong> and <strong>CSS</strong>, utilising <strong>Sass</strong> and <strong>Grunt</strong> for development.</p>
+						<p>I'm an experienced front-end developer having worked at a variety of digital and marketing agencies for over 3 years. With strong skills in writing <strong>HTML</strong> and <strong>CSS</strong>, utilising <strong>Sass</strong> and <strong>Grunt</strong> for development.</p>
 						<p>As a front-end developer I’m always trying to improve on workflow by utilising task runners, making code more modular, maintainable and semantic as web standards progress and keeping load times to a minimum.</p>
 						<p>I enjoy new challenges and am currently working for <a href="http://purple-agency.com">The Purple Agency</a> since April 2013</p>
 						<!-- <p>I graduated with a <strong>Web Development with Business Bsc</strong> degree from Kingston University.</p> -->

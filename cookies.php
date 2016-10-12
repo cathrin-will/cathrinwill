@@ -1,4 +1,7 @@
-<?php include("inc/head.php"); ?>
+<?php
+	$title = 'Ann-Cathrin Will | Cookies';
+	include("inc/head.php");
+?>
 	<body>
 		<?php include("inc/header.php"); ?>
 

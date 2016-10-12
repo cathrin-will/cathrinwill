@@ -1,14 +1,4 @@
-<!--[if lte IE 8]>
-	<div id="outdated-browser" class="wrapper outdated-browser">
-		<div class="grid-wrapper">
-			<div class="grid">
-				<div class="grid__item one-whole  lap-and-up-seven-eighths">
-					<p>You are using an <strong>outdated</strong> browser. I recommend <a href="https://www.google.com/chrome/browser/">Google Chrome</a>, or chose from this list of <a href="http://outdatedbrowser.com/"> latest browsers.</a> </p>
-				</div>
-			</div>
-		</div>
-	</div>
-<![endif]-->
+
 <div id="cookie" class="wrapper  wrapper--cookie">
 	<div class="grid-wrapper">
 		<div class="grid">

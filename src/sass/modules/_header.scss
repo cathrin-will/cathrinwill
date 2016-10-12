@@ -49,7 +49,7 @@ header {
 		text-align: center;
 		@include media-query(lap-and-up) {
 			text-align: right;
-			text-transform: uppercase;
+			// text-transform: uppercase;
 			padding: $half-spacing-unit/2 $half-spacing-unit;
 		}
 		display: block;

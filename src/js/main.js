@@ -5,27 +5,28 @@ var main = (function() {
 	function go - nibble and pieces
 \*------------------------------------*/
 function go() {
-	$('.simu').on('mousedown', function(){
-		$('.pusher').addClass('pushed')
-		$('.pusher').addClass('go')
-		console.log('pushed')
-	})
-	$('.simu').on('mouseup', function(){
-		$('.pusher').removeClass('pushed')
-		console.log('release')
-	});
-	var pusher = new Pusher('087e104eb546157304a9', {cluster:'eu'})
-	var button = pusher.subscribe('button')
+	console.log('%c Hello :)', 'color: #0b486b; font-weight: bold;');
+	// $('.simu').on('mousedown', function(){
+	// 	$('.pusher').addClass('pushed')
+	// 	$('.pusher').addClass('go')
+	// 	console.log('pushed')
+	// })
+	// $('.simu').on('mouseup', function(){
+	// 	$('.pusher').removeClass('pushed')
+	// 	console.log('release')
+	// });
+	// var pusher = new Pusher('087e104eb546157304a9', {cluster:'eu'})
+	// var button = pusher.subscribe('button')
 
-	button.bind('press', function(data) {
-		$('.pusher').addClass('pushed')
-		$('.pusher').addClass('go')
-		console.log('pushed')
-	});
-	button.bind('release', function(data) {
-		$('.pusher').removeClass('pushed')
-		console.log('release')
-	});
+	// button.bind('press', function(data) {
+	// 	$('.pusher').addClass('pushed')
+	// 	$('.pusher').addClass('go')
+	// 	console.log('pushed')
+	// });
+	// button.bind('release', function(data) {
+	// 	$('.pusher').removeClass('pushed')
+	// 	console.log('release')
+	// });
 	// $('.ac-nav').greenify({
 	// 	color: 'orange',
 	// 	backgroundColor: 'tomato',
