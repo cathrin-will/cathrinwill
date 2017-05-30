@@ -1,0 +1,52 @@
+/*------------------------------------*\
+	#Lists
+\*------------------------------------*/
+
+.list {
+	&--bare {
+		margin:  0;
+		padding: 0;
+		list-style: none;
+	}
+	&--inline {
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+// .list--piped {
+// 	li {
+// 		&:first-child {
+// 			&:before {
+// 				content: none;
+// 			}
+// 		}
+// 		&:before {
+// 			content: '\007C'; // piple line such as this one, | , between links
+// 			padding: 0 $inuit-base-spacing-unit/4;
+
+// 		}
+// 	}
+// }
+
+// .list--breadcrumb {
+// 	font-size: .7rem;
+// 	li {
+// 		&:first-child {
+// 			&:before {
+// 				content: none;
+// 			}
+// 		}
+// 		&:before {
+// 			content: '>';
+// 			padding: 0 $inuit-base-spacing-unit/4;
+
+// 		}
+// 	}
+// 	a {
+// 		&:hover, &:active, &:focus {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }

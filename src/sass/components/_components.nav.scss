@@ -1,0 +1,49 @@
+/*------------------------------------*\
+	#Nav
+\*------------------------------------*/
+
+.nav--main {
+	@include mq($until: tablet) {
+		margin-bottom: $global-spacing-unit;
+	}
+	ul {
+		list-style: none;
+	}
+	li {
+		@include mq($from: tablet) {
+			border-left: 1px solid darken($sea-green,10%);
+			display: inline-block;
+			&:first-child {
+				border-left: 0;
+			}
+		}
+		@include mq($from: tablet) {
+			font-size: (20/16)+rem
+		}
+	}
+	a {
+		text-align: center;
+		@include mq($from: tablet) {
+			text-align: right;
+			// text-transform: uppercase;
+			padding: $global-spacing-unit/4 $global-spacing-unit;
+		}
+		display: block;
+		padding: 5px;
+		// text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+		.icon-home {
+			transition: $anim-speed;
+			display: inline-block;
+		}
+		&.active {
+			background: lighten($sea-green,5%);
+		}
+		&:hover, &:active, &:focus {
+			background: lighten($sea-green,10%);
+			.icon-home {
+				transform: rotateY(180deg);
+			}
+		}
+
+	}
+}

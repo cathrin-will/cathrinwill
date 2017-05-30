@@ -1,0 +1,28 @@
+/*------------------------------------*\
+	#Form
+\*------------------------------------*/
+
+input,
+button,
+textarea,
+select {
+	width: 100%;
+
+	&:focus {
+		outline: 0; // outline will have no border-radius
+		border-color: #4d90fe !important; // these look like chromes default focus styles
+		box-shadow: 0 0 10px #4d90fe;
+	}
+}
+
+select {
+	border: 1px solid $ash;
+	border-radius: $global-radius;
+}
+
+input,
+textarea {
+	border: 1px solid $ash;
+	padding: $global-spacing-unit/2 5px;
+	border-radius: $global-radius;
+}

@@ -1,33 +1,38 @@
 {
-  "name": "cathrin",
-  "version": "0.0.0",
-  "description": "cathrinwill website",
+  "name": "cathrinwill",
+  "version": "2.0.0",
+  "description": "portfolio site",
   "main": "gruntfile.js",
-  "devDependencies": {
-    "autoprefixer-core": "^5.2.1",
-    "csswring": "^3.0.7",
-    "grunt": "^0.4.5",
-    "grunt-contrib-copy": "^0.8.0",
-    "grunt-contrib-imagemin": "^0.9.4",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-modernizr": "0.6.1",
-    "grunt-postcss": "^0.6.0",
-    "grunt-tinypng": "^0.5.3",
-    "grunt-yui-compressor": "^0.3.3"
-  },
-  "scripts": {
-    "test": "grunt"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cathrin-will/"
+    "url": "git+https://github.com/cathrin-will/cathrinwill.git"
   },
   "keywords": [
-    "cathrinwill",
-    "profile"
+    "skeleton"
   ],
-  "author": "Ann-Cathrin Will",
-  "license": "ISC"
+  "author": "AC Will",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cathrin-will/cathrin-will/issues"
+  },
+  "homepage": "https://github.com/cathrin-will/cathrin-will#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-insert-timestamp": "^0.1.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-postcss": "^0.8.0",
+    "grunt-tinypng": "^0.7.0",
+    "pixrem": "^3.0.2"
+  },
+  "dependencies": {
+    "inuitcss": "^6.0.0-beta.4"
+  }
 }

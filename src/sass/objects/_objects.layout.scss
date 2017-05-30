@@ -1,0 +1,16 @@
+/*------------------------------------*\
+	#Layout
+\*------------------------------------*/
+
+.o-wrapper {
+	padding: $global-spacing-unit;
+	// @include media-query(lap) { padding: $inuit-base-spacing-unit; }
+	// @include media-query(desk) { padding: $inuit-base-spacing-unit*2  $inuit-base-spacing-unit; }
+}
+
+// this seems complicated but it's pretty simple wrapper next wrapper has just one lot padding distance..
+// a wrapper next to different coloured wrapper has the two paddings
+// and of course footer/header don't count
+.o-wrapper:not([class*=" bg--"])+.wrapper:not([class*=" bg--"]):not(footer):not(header) {
+	padding-top: 0;
+}
