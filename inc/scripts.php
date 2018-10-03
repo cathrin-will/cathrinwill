@@ -1,17 +1,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/dist/js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="/dist/js/main.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-38670955-1"></script>
 	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-		ga('create', 'UA-38670955-1', 'cathrinwill.com');
-		ga('require', 'displayfeatures');
-		ga('send', 'pageview');
+		gtag('config', 'UA-38670955-1');
 	</script>
-
 
 
 

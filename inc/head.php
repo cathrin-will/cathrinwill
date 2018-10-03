@@ -39,4 +39,11 @@
 	<!-- Touch/favicons -->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<script src="/dist/js/vendor/modernizr-custom.min.js"></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-2704249744671315",
+			enable_page_level_ads: true
+		});
+	</script>
 </head>
