@@ -43,7 +43,11 @@ a {
 }
 
 p a {
-	border-bottom: 1px dotted $link-color;
+	transition: none;
+	text-decoration: $link-color underline wavy;
+	&:hover, &:active, &:focus {
+		text-decoration: #000 underline wavy;
+	}
 }
 
 strong {

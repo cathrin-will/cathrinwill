@@ -12,14 +12,14 @@
 					<p>Some of the websites I have worked on the last 5 years, most of which but not all are pure frontend. All but the infographics and wonderland game are responsive to varying degrees depending on requirements of the project.</p>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://huaweicreators.co.uk/" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0"><img src="/dist/img/work/preview-huawei.png" alt="website screenshot"></figure>
 						<div class="media__body u-p-">
 							<h2 class="media__heading u-mb-">HuaweiCreators</h2>
 							<p>A student competition to work with Huawei.</p>
 							<strong>Technologies: </strong><em>Grunt, SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
 					<a href="http://wonderland.purple.agency/" class="media u-mb" target="_blank">
@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://connected-car.purple-agency.net/" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0">
 							<img src="/dist/img/work/preview-connected.png" alt="website screenshot">
 						</figure>
@@ -56,10 +56,10 @@
 							<p>One page web app to be used on a big screen at an event.</p>
 							<strong>Technologies: </strong><em>grunt, SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://www-935.ibm.com/industries/uk/en/government/publicservices/index.html" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0">
 							<img src="/dist/img/work/preview-street.png" alt="website screenshot">
 						</figure>
@@ -68,10 +68,10 @@
 							<p>Horizontal scrolling responsive website.</p>
 							<strong>Technologies: </strong><em>waypoint.js, grunt, SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://littlebeelibrary.com/" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0">
 							<img src="/dist/img/work/preview-littlebee.png" alt="website screenshot">
 						</figure>
@@ -80,7 +80,7 @@
 							<p>Static responsive microsite using the IBM northstar framework.</p>
 							<strong>Technologies: </strong><em>grunt, SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
 					<a href="https://www.ibm.com/thought-leadership/technology-market-research/personalised-education-quiz/" class="media u-mb" target="_blank">
@@ -167,7 +167,7 @@
 					</a>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://wileydigitalsolutions.com/" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0">
 							<img src="/dist/img/work/preview-wiley.png" alt="website screenshot">
 						</figure>
@@ -176,7 +176,7 @@
 							<p>Simple responsive website using Expression Engine CMS </p>
 							<strong>Technologies: </strong><em>SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
 					<a href="http://connectedproducts.honeywelluk.com/" class="media u-mb" target="_blank">
@@ -191,7 +191,7 @@
 					</a>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
-					<a href="http://fitathermostat.com/" class="media u-mb" target="_blank">
+					<div class="media u-mb">
 						<figure class="u-m0">
 							<img src="/dist/img/work/preview-fitathermostat.png" alt="website screenshot">
 						</figure>
@@ -200,7 +200,7 @@
 							<p>Static responsive website</p>
 							<strong>Technologies: </strong><em>SCSS, HTML, javaScript/jQuery</em>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="o-layout__item u-1/3@lap u-1/2@tablet">
 					<a href="http://www.adareinternational.net/" class="media u-mb" target="_blank">

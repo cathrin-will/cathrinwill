@@ -12,7 +12,7 @@
 					<br>
 					<p>I'm passionate about continually improving the workflow using task runners such as <strong>grunt</strong>, <strong>gulp</strong> and <strong>npm scripts</strong>.</p>
 					<p>I'm especially eager to make code more modular, maintainable and semantic as web standards progress, paying extra attention to decreasing load times and making sites more accessible and user friendly.</p>
-					<p>I enjoy new challenges and I'm currently working for <a href="http://purple.agency"> Purple Agency</a> since April 2013</p>
+					<p>I enjoy new challenges and I'm currently working for <a href="http://rawnet.com"> Rawnet</a> since September 2017.</p>
 				</div>
 				<div class="o-layout__item u-1/4@tablet  text--right">
 					<img src="/dist/img/ann-cathrin.jpg" alt="Ann-Cathrin Will" class="img--center img--shadow u-p0">
