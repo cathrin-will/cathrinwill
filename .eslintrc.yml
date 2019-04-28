@@ -8,6 +8,8 @@ parserOptions:
 env:
   browser: true
   jquery: true
+  es6: true
+  node: true
 
 rules:
   indent: [2, 4]

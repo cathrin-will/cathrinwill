@@ -10,12 +10,12 @@ const bundler = webpack(webpackConfig)
 
 export function server() {
 
-    let config = {
+    const config = {
         server: 'site',
         open: false,
         middleware: [
             webpackDevMiddleware(bundler, { /* options */ })
-        ],
+        ]
     }
 
     browser.init(config)

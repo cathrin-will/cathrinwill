@@ -9,7 +9,7 @@ import sourcemaps from 'gulp-sourcemaps'
 
 function styles() {
     return gulp
-        .src(`./site/ui/styles/application.sass`)
+        .src('./site/ui/styles/application.sass')
         .pipe(sassglob())
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))

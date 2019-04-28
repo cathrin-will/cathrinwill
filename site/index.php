@@ -2,7 +2,6 @@
 	<body>
 		<?php  include("inc/header.php"); ?>
 		<div class="o-wrapper">
-
 			<div class="o-layout">
 				<div class="o-layout__item u-3/4@tablet u-mb">
 					<h1 class="u-mt0">Front-end Developer: <span class="u-h4 nowrap">Ann-Cathrin Will</span></h1>
