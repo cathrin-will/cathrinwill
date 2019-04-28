@@ -1,38 +1,39 @@
 {
   "name": "cathrinwill",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "portfolio site",
-  "main": "gruntfile.js",
+  "scripts": {
+    "dev": "gulp --require @babel/register --gulpfile tasks",
+    "build": "gulp build --require @babel/register --gulpfile tasks"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cathrin-will/cathrinwill.git"
+    "url": "https://github.com/cathrin-will/cathrinwill"
   },
   "keywords": [
-    "skeleton"
+    "protfolio"
   ],
-  "author": "AC Will",
+  "author": "Ann-Cathrin Will",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cathrin-will/cathrin-will/issues"
   },
   "homepage": "https://github.com/cathrin-will/cathrin-will#readme",
-  "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "cssnano": "^3.10.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-imagemin": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-insert-timestamp": "^0.1.0",
-    "grunt-modernizr": "^1.0.2",
-    "grunt-postcss": "^0.8.0",
-    "grunt-tinypng": "^0.7.0",
-    "pixrem": "^3.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "inuitcss": "^6.0.0-beta.4"
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.5",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-sourcemaps": "^2.6.5",
+    "webpack": "^4.30.0",
+    "webpack-dev-middleware": "^3.6.2"
   }
 }

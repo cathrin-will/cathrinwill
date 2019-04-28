@@ -1,4 +1,5 @@
 node_modules/*
 .sass-cache/*
 dist/*
+site/dist/*
 .DS_Store

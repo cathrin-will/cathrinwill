@@ -1,0 +1,43 @@
+// Grid
+//
+// `+grid` Generates a simple grid system
+//
+// Styleguide Utilities.Mixins.Grid
+
+$alignments: (start: flex-start, end: flex-end, center: center, stretch: stretch)
+
+=grid
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: -$grid-gutter
+    margin-right: -$grid-gutter
+
+    @each $modifier, $alignment in $alignments
+        &--align-#{$modifier}
+            align-items: $alignment
+
+        &--justify-#{$modifier}
+            justify-content: $alignment
+
+    &__item
+        flex: none
+        margin-bottom: $grid-gutter
+        margin-right: $grid-gutter
+
+        @each $modifier, $alignment in $alignments
+            &--align-#{$modifier}
+                align-self: $alignment
+
+    +breakpoint(small, min)
+
+        @for $i from 1 through 6
+            &--#{$i}-col &
+                &__item
+                    width: calc(#{100%/$i} - #{$grid-gutter})
+
+    +breakpoint(small)
+
+        @for $i from 1 through 6
+            &--#{$i}-col &
+                &__item
+                    width: calc(100% - #{$grid-gutter})

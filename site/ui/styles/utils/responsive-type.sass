@@ -1,0 +1,29 @@
+// Responsive Type
+//
+// `+responsive-type($responsive, $min, $max, $fallback)` Responsive typgoraphy with min/max sizes
+//
+// $resonsive - A viewport unit
+// $min - Minimum font size
+// $max - Maximum font size `(optional)`
+// $fallback - Fallback fontsize `(optional)`
+//
+// Styleguide Utilities.Mixins.Responsive Type
+
+@mixin responsive-type($responsive, $min, $max: false, $fallback: false)
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1)
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width')
+  $min-breakpoint: $min / $responsive-unitless * 100
+
+  @media (max-#{$dimension}: #{$min-breakpoint})
+    font-size: $min
+
+  @if $max
+    $max-breakpoint: $max / $responsive-unitless * 100
+
+    @media (min-#{$dimension}: #{$max-breakpoint})
+      font-size: $max
+
+  @if $fallback
+    font-size: $fallback
+
+  font-size: $responsive

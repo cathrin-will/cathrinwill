@@ -1,0 +1,19 @@
+// Hover
+//
+// `+hover` Adds no-touch / touch specific hover, active and focus styles
+//
+// @content - Nested selectors for hover state
+//
+// Styleguide Utilities.Mixins.Hover
+
+=hover($class: false)
+    .no-touch &:hover,
+    .touch &:active,
+    &:focus
+        @content
+        outline: none
+
+    @if $class
+        &--#{$class}
+            @content
+            outline: none
