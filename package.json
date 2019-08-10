@@ -1,40 +1,46 @@
 {
-  "name": "cathrinwill",
-  "version": "1.0.0",
-  "description": "portfolio site",
+  "name": "gatsby-starter-hello-world",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "gulp --require @babel/register --gulpfile tasks",
-    "build": "gulp build --require @babel/register --gulpfile tasks"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.1.0",
+    "eslint-config-react-app": "^5.0.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "gatsby": "^2.13.57",
+    "gatsby-plugin-postcss": "^2.1.2",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cathrin-will/cathrinwill"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
-  "keywords": [
-    "protfolio"
-  ],
-  "author": "Ann-Cathrin Will",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cathrin-will/cathrin-will/issues"
-  },
-  "homepage": "https://github.com/cathrin-will/cathrin-will#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/register": "^7.4.4",
-    "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.5",
-    "copy-webpack-plugin": "^5.0.3",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-sourcemaps": "^2.6.5",
-    "webpack": "^4.30.0",
-    "webpack-dev-middleware": "^3.6.2"
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
