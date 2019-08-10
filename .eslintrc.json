@@ -23,6 +23,7 @@
         "no-return-assign": ["off"],
         "quotes": [1, "single", "avoid-escape"],
         "indent": ["error", 4],
-        "react/jsx-indent": ["error", 4]
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-one-expression-per-line": ["off"]
     }
 }

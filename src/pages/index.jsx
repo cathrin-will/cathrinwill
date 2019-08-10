@@ -1,15 +1,18 @@
 import React from 'react'
-import { Link } from 'gatsby'
 // import styled from 'styled-components'
-import Header from '../components/header'
-import Footer from '../components/footer'
+
+import Layout from '../components/layout'
 
 const IndexPage = () => (
-    <>
-        <Header siteTitle="Front-end Developer: Ann-Cathrin Will" />
-        <Link to="/contact/">Contact</Link>
-        <Footer />
-    </>
+    <Layout>
+        <div>
+            <h1>Front-end Developer: Ann-Cathrin Will</h1>
+            <p>
+                I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 7 years. With strong skills in writing <strong>HTML</strong>,&nbsp;
+                <strong>CSS</strong> using <strong>Sass</strong> and <strong>javaScript</strong>.
+            </p>
+        </div>
+    </Layout>
 )
 
 export default IndexPage

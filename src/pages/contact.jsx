@@ -1,18 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Header from '../components/header'
-import SEO from '../components/seo'
+import Layout from '../components/layout'
 
 const IndexPage = () => (
-    <>
-        <SEO title="Home" />
-        <Header siteTitle="Contact" />
+    <Layout>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia deserunt, quos numquam cumque nostrum aperiam eaque minus. Exercitationem, optio dolorem porro quisquam temporibus
             placeat. Unde quos consequatur enim autem quae.
         </p>
-        <Link to="/contact/">Contact</Link>
-    </>
+    </Layout>
 )
 
 export default IndexPage
