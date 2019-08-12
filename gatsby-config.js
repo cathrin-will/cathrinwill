@@ -15,9 +15,18 @@ module.exports = {
         twitterUsername: '@cathrinwill'
     },
     plugins: [
+        'gatsby-transformer-remark',
+        'gatsby-plugin-emotion',
         {
             resolve: 'gatsby-plugin-styled-components',
             options: {}
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'src',
+                path: `${__dirname}/src/`
+            }
         },
         {
             resolve: 'gatsby-plugin-typography',

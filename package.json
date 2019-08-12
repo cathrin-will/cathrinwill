@@ -12,10 +12,11 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
-    "browserslist": [
-        "last 2 versions and > .2%"
-    ],
+  "browserslist": [
+    "last 2 versions and > .2%"
+  ],
   "dependencies": {
+    "@emotion/core": "^10.0.15",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.0",
@@ -23,9 +24,12 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "gatsby": "^2.13.57",
+    "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-plugin-typography": "^2.3.2",
+    "gatsby-source-filesystem": "^2.1.9",
+    "gatsby-transformer-remark": "^2.6.12",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
