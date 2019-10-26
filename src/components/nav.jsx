@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import cvPDF from '../files/AnnWillCV.pdf'
 
 const NavMain = styled.nav`
     display: flex;
@@ -21,26 +22,39 @@ const NavLink = styled(Link)`
     font-weight: bold;
 `
 
+const ExternalLink = styled.a`
+    color: #fff;
+    font-weight: bold;
+`
+
 const ListLink = (props) => {
     const { to, children } = props
     return (
         <NavItem>
-            <NavLink to={to}>{children}</NavLink>
+            <NavLink to={to} activeStyle={{ textDecoration: 'underline' }}>
+                {children}
+            </NavLink>
         </NavItem>
     )
 }
 
-const Nav = ({ activeLink }) => (
-    <NavMain>
-        <NavList>
-            <ListLink className={activeLink} to="/">
-                Home
-            </ListLink>
-            <ListLink to="/about/">About</ListLink>
-            <ListLink to="/contact/">Contact</ListLink>
-        </NavList>
-    </NavMain>
-)
+const Nav = ({ activeLink }) => {
+    return (
+        <NavMain>
+            <NavList>
+                <ListLink className={activeLink} to="/">
+                    Home
+                </ListLink>
+                <NavItem>
+                    <ExternalLink rel="noopener noreferrer" href={cvPDF} target="_blank">
+                        Full C.V. (pdf)
+                    </ExternalLink>
+                </NavItem>
+                <ListLink to="/past-work/">Past work</ListLink>
+            </NavList>
+        </NavMain>
+    )
+}
 
 Nav.propTypes = {
     activeLink: PropTypes.string
