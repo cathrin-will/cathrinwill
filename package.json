@@ -37,6 +37,7 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.3.2",
     "typography": "^0.16.19",
+    "typography-theme-github": "^0.16.19",
     "typography-theme-ocean-beach": "^0.16.19"
   },
   "devDependencies": {

@@ -3,34 +3,43 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const ListLink = (props) => {
-    const { to, children } = props
-    return (
-        <li style={{ display: 'inline-block', marginRight: '1rem' }}>
-            <Link to={to}>{children}</Link>
-        </li>
-    )
-}
-
-const MainNav = styled.nav`
+const NavMain = styled.nav`
     display: flex;
     justify-content: flex-end;
 `
-const UlNav = styled.ul`
+const NavList = styled.ul`
     list-style: none;
     margin: 0;
+    display: flex;
+`
+const NavItem = styled.li`
+    margin-right: 1rem;
 `
 
+const NavLink = styled(Link)`
+    color: #fff;
+    font-weight: bold;
+`
+
+const ListLink = (props) => {
+    const { to, children } = props
+    return (
+        <NavItem>
+            <NavLink to={to}>{children}</NavLink>
+        </NavItem>
+    )
+}
+
 const Nav = ({ activeLink }) => (
-    <MainNav>
-        <UlNav>
+    <NavMain>
+        <NavList>
             <ListLink className={activeLink} to="/">
                 Home
             </ListLink>
             <ListLink to="/about/">About</ListLink>
             <ListLink to="/contact/">Contact</ListLink>
-        </UlNav>
-    </MainNav>
+        </NavList>
+    </NavMain>
 )
 
 Nav.propTypes = {
