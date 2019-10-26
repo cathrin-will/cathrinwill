@@ -1,43 +1,27 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { css } from '@emotion/core'
-import { rhythm } from '../utils/typography'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+`
 export default ({ data }) => {
-    console.log(data)
     return (
         <Layout>
-            <div>
-                <h1
-                    css={css`
-                        display: inline-block;
-                        border-bottom: 1px solid;
-                    `}
-                >
-                    Amazing Pandas Eating Things
-                </h1>
-                <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+            <h1>Past work</h1>
+            <Grid>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     <div key={node.id}>
-                        <h3
-                            css={css`
-                                margin-bottom: ${rhythm(1 / 4)};
-                            `}
-                        >
-                            {node.frontmatter.title}{' '}
-                            <span
-                                css={css`
-                                    color: #bbb;
-                                `}
-                            >
-                                — {node.frontmatter.date}
-                            </span>
-                        </h3>
+                        <p>{node.frontmatter.link ? 'yes' : 'nah'}</p>
+                        <h2>{node.frontmatter.title}</h2>
+                        <span>{node.frontmatter.date}</span>
                         <p>{node.excerpt}</p>
                     </div>
                 ))}
-            </div>
+            </Grid>
         </Layout>
     )
 }
@@ -51,7 +35,8 @@ export const query = graphql`
                     id
                     frontmatter {
                         title
-                        date(formatString: "DD MMMM, YYYY")
+
+                        date(formatString: "YYYY")
                     }
                     excerpt
                 }

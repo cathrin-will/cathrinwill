@@ -50,7 +50,7 @@ const Nav = ({ activeLink }) => {
                         Full C.V. (pdf)
                     </ExternalLink>
                 </NavItem>
-                <ListLink to="/past-work/">Past work</ListLink>
+                <ListLink to="/work/">Past work</ListLink>
             </NavList>
         </NavMain>
     )
