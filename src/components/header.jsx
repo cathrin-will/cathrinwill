@@ -8,6 +8,9 @@ const MainHeader = styled.header`
     color: #fff;
     border-radius: 0 0 0 60px;
     box-shadow: 21px 21px 21px rgba(203, 78, 100, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 `
 const HeaderContainer = styled.div`
     max-width: ${theme.container.width};

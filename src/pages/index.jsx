@@ -10,6 +10,15 @@ const Grid = styled.div`
     grid-template-columns: 70% 25%;
     grid-gap: 5%;
 `
+const StyledImg = styled(Img)`
+    border-radius: 50%;
+    shape-outside: circle(50%);
+    float: right;
+    width: 300px;
+    height: 300px;
+    border: 10px solid #fff;
+    padding: 10px;
+`
 
 const IndexPage = () => {
     const data = useStaticQuery(
@@ -22,7 +31,7 @@ const IndexPage = () => {
                 }
                 file(relativePath: { eq: "images/ann-cathrin.jpg" }) {
                     childImageSharp {
-                        fluid(maxWidth: 540, maxHeight: 720, quality: 100) {
+                        fluid(maxWidth: 540, maxHeight: 540, cropFocus: NORTH) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -36,6 +45,7 @@ const IndexPage = () => {
             <Grid>
                 <div>
                     <h1>{data.site.siteMetadata.title}</h1>
+                    <StyledImg fluid={data.file.childImageSharp.fluid} />
                     <p className="u-size-large">
                         I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 7 years. With strong skills in writing <strong>HTML</strong>
                         ,&nbsp;
@@ -43,7 +53,7 @@ const IndexPage = () => {
                     </p>
                     <p>I&#39;m passionate about continually improving the workflow using task runners such as grunt, gulp and npm scripts.</p>
                     <p>
-                        I&#39;m especially eager to make code more modular, maintainable and semantic as web standards progress, paying extra attention to decreasing load times and making sites more
+                        I&#39;m especially eager to make code modular, maintainable and semantic as web standards progress, paying extra attention to decreasing load times and making sites more
                         accessible and user friendly.
                     </p>
                     <p>
@@ -53,7 +63,9 @@ const IndexPage = () => {
                         </a>{' '}
                         since September 2017.
                     </p>
-                    <h2>Skills Summary</h2>
+                </div>
+                <div>
+                    <h2>Some things I do...</h2>
                     <ul>
                         <li>HTML</li>
                         <li>CSS ( Sass / SCSS / LESS )</li>
@@ -68,9 +80,6 @@ const IndexPage = () => {
                         <li>Version control ( Git / BitBucket )</li>
                         <li>Adobe Suite ( Illustrator &amp; Photoshop )</li>
                     </ul>
-                </div>
-                <div>
-                    <Img fluid={data.file.childImageSharp.fluid} />
                 </div>
             </Grid>
         </Layout>

@@ -8,6 +8,8 @@ const MainFooter = styled.footer`
     background: #010f17;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    bottom: 0;
 `
 const FooterText = styled.p`
     margin: 0;
@@ -16,7 +18,9 @@ const Footer = () => (
     <MainFooter>
         <FooterText>&copy; cathrinwill 2019</FooterText>
         <Social />
-        <FooterText>ann@cathrinwill.com</FooterText>
+        <FooterText>
+            <a href="mailto:ann@cathrinwill.com">ann@cathrinwill.com</a>
+        </FooterText>
     </MainFooter>
 )
 

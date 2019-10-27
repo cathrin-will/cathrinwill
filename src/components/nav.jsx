@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import cvPDF from '../files/AnnWillCV.pdf'
+// import cvPDF from '../files/AnnWillCV.pdf'
 
 const NavMain = styled.nav`
     display: flex;
@@ -22,10 +22,10 @@ const NavLink = styled(Link)`
     font-weight: bold;
 `
 
-const ExternalLink = styled.a`
-    color: #fff;
-    font-weight: bold;
-`
+// const ExternalLink = styled.a`
+//     color: #fff;
+//     font-weight: bold;
+// `
 
 const ListLink = (props) => {
     const { to, children } = props
@@ -43,12 +43,12 @@ const Nav = () => {
         <NavMain>
             <NavList>
                 <ListLink to="/">Home</ListLink>
-                <NavItem>
+                {/* <NavItem>
                     <ExternalLink rel="noopener noreferrer" href={cvPDF} target="_blank">
                         Full C.V. (pdf)
                     </ExternalLink>
-                </NavItem>
-                <ListLink to="/work/">Past work</ListLink>
+                </NavItem> */}
+                {/* <ListLink to="/work/">Past work</ListLink> */}
             </NavList>
         </NavMain>
     )
