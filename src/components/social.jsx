@@ -6,28 +6,31 @@ import GithubIcon from '../images/svg/github.svg'
 import LinkedinIcon from '../images/svg/linkedin.svg'
 
 const SocialList = styled.ul`
+    align-items: center;
+    display: flex;
+    justify-content: center;
     list-style: none;
     margin: 0;
-    display: flex;
-    align-items: center;
 `
 const SocialItem = styled.li`
-    margin-right: 1rem;
     margin-bottom: 0;
+    &:not(:last-child) {
+        margin-right: 1rem;
+    }
 `
 
 const ExternalLink = styled.a`
-    display: block;
-    width: 30px;
     border: 1px solid #fff;
+    display: block;
     padding: 5px;
+    width: 30px;
 
     svg {
-        max-width: 100%;
+        display: block;
         fill: #fff;
         height: auto;
+        max-width: 100%;
         transition: fill 0.3s;
-        display: block;
     }
 
     &:hover {

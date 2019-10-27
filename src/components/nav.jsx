@@ -31,7 +31,7 @@ const ListLink = (props) => {
     const { to, children } = props
     return (
         <NavItem>
-            <NavLink to={to} activeStyle={{ textDecoration: 'underline' }}>
+            <NavLink to={to} activeStyle={{ textDecoration: 'underline', textDecorationColor: '#f7ab7f' }}>
                 {children}
             </NavLink>
         </NavItem>

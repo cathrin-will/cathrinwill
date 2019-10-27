@@ -32,6 +32,15 @@ body {
 
 }
 
+h1 {
+    margin-top: 0;
+}
+
+p a {
+    color: #862434 ;
+    text-decoration: underline;
+    text-decoration-color: #f5847a;
+}
 img {
     max-width: 100%;
 }

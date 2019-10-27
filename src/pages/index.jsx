@@ -7,17 +7,26 @@ import Layout from '../components/layout'
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 70% 25%;
-    grid-gap: 5%;
+    grid-template-columns: 100%;
+    grid-gap: 1%;
+    padding-bottom: 40px;
+
+    @media (min-width: 1024px) {
+        grid-gap: 5%;
+        grid-template-columns: 70% 25%;
+    }
 `
 const StyledImg = styled(Img)`
     border-radius: 50%;
     shape-outside: circle(50%);
-    float: right;
-    width: 300px;
-    height: 300px;
+    float: none;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border: 10px solid #fff;
-    padding: 10px;
+    @media (min-width: 600px) {
+        float: right;
+    }
 `
 
 const IndexPage = () => {

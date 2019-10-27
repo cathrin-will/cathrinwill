@@ -14,8 +14,11 @@ const MainHeader = styled.header`
 `
 const HeaderContainer = styled.div`
     max-width: ${theme.container.width};
-    padding: 20px 40px;
+    padding: 10px 20px;
     width: 100%;
+    @media (min-width: 600px) {
+        padding: 20px 40px;
+    }
 `
 
 const Header = () => (
