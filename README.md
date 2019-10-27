@@ -4,6 +4,10 @@
 
 Porftolio site built with gatsby.
 
+## 🚀 Deployment status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/126edcda-d2c5-46ca-aea4-6600a5c47536/deploy-status)](https://app.netlify.com/sites/cathrinwill/deploys)
+
 ## 💫 Quick start
 
 1.  **Start developing.**
@@ -61,7 +65,3 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🚀 Deployment status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/126edcda-d2c5-46ca-aea4-6600a5c47536/deploy-status)](https://app.netlify.com/sites/cathrinwill/deploys)
