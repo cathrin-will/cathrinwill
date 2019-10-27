@@ -28,13 +28,14 @@ module.exports = {
                 path: `${__dirname}/src/`
             }
         },
-        // {
-        //     resolve: 'gatsby-source-filesystem',
-        //     options: {
-        //         path: `${__dirname}/src/images`,
-        //         name: 'images'
-        //     }
-        // },
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: `${__dirname}/src/images/svg/`
+                }
+            }
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {

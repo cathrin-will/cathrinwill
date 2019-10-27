@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Social from './social'
 
 const MainFooter = styled.footer`
     padding: 20px 40px;
@@ -14,6 +15,7 @@ const FooterText = styled.p`
 const Footer = () => (
     <MainFooter>
         <FooterText>&copy; cathrinwill 2019</FooterText>
+        <Social />
         <FooterText>ann@cathrinwill.com</FooterText>
     </MainFooter>
 )

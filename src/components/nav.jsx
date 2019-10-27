@@ -38,13 +38,11 @@ const ListLink = (props) => {
     )
 }
 
-const Nav = ({ activeLink }) => {
+const Nav = () => {
     return (
         <NavMain>
             <NavList>
-                <ListLink className={activeLink} to="/">
-                    Home
-                </ListLink>
+                <ListLink to="/">Home</ListLink>
                 <NavItem>
                     <ExternalLink rel="noopener noreferrer" href={cvPDF} target="_blank">
                         Full C.V. (pdf)
@@ -54,14 +52,6 @@ const Nav = ({ activeLink }) => {
             </NavList>
         </NavMain>
     )
-}
-
-Nav.propTypes = {
-    activeLink: PropTypes.string
-}
-
-Nav.defaultProps = {
-    activeLink: 'yooo'
 }
 
 ListLink.propTypes = {
