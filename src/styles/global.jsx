@@ -32,8 +32,11 @@ body {
 
 }
 
-h1 {
+h1, h2 {
     margin-top: 0;
+}
+h2 {
+    border-bottom: 0
 }
 
 p a {
