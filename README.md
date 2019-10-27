@@ -4,11 +4,11 @@
 
 Porftolio site built with gatsby.
 
-## 🚀 Quick start
+## 💫 Quick start
 
 1.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into site’s directory and start it up.
 
     ```sh
     gatsby develop
