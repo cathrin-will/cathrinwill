@@ -56,7 +56,7 @@ const IndexPage = () => {
                     <h1>{data.site.siteMetadata.title}</h1>
                     <StyledImg fluid={data.file.childImageSharp.fluid} />
                     <p className="u-size-large">
-                        I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 7 years. With strong skills in writing <strong>HTML</strong>
+                        I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 8 years. With strong skills in writing <strong>HTML</strong>
                         ,&nbsp;
                         <strong>CSS</strong> using <strong>Sass</strong> and <strong>JavaScript</strong>.
                     </p>
