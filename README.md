@@ -7,6 +7,12 @@
 
 Portfolio site built with Next.js and Tailwind CSS.
 
+## Commands
+
+`yarn dev` – Start the development server
+`yarn build` – Build the app for production
+`yarn storybook` – Start Storybook
+
 ### Frameworks
 
 - [Next.js](https://nextjs.org/) – React framework for building performant apps with the best developer experience
