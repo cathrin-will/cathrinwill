@@ -1,13 +1,13 @@
-import { Meta, Typeset } from "@storybook/addon-docs";
+import { Meta, Typeset } from '@storybook/addon-docs'
 
 <Meta title="Design System/Typography" />
 
-export const typographyArialRoundedBold = {
+export const mainFont = {
     type: {
-        primary: '"Arial Rounded Bold", sans-serif',
+        primary: 'Montserrat, sans-serif',
     },
     weight: {
-        regular: "400",
+        regular: '400',
     },
     size: {
         s1: 11,
@@ -20,72 +20,29 @@ export const typographyArialRoundedBold = {
         l2: 55,
         l3: 66,
     },
-};
+}
 
-export const typographyArial = {
-    type: {
-        primary: "Arial, sans-serif",
-    },
-    weight: {
-        regular: "400",
-        bold: "700",
-    },
-    size: {
-        s1: 11,
-        s2: 14,
-        s3: 18,
-        m1: 22,
-        m2: 28,
-        m3: 35,
-        l1: 44,
-        l2: 55,
-        l3: 66,
-    },
-};
-
-export const SampleText =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 
 # Typography
 
-**Font:** Arial Rounded Bold
+**Font:** Montserrat
 
 **Weights:** 400(regular)
 
 <Typeset
     fontSizes={[
-        Number(typographyArialRoundedBold.size.s1),
-        Number(typographyArialRoundedBold.size.s2),
-        Number(typographyArialRoundedBold.size.s3),
-        Number(typographyArialRoundedBold.size.m1),
-        Number(typographyArialRoundedBold.size.m2),
-        Number(typographyArialRoundedBold.size.m3),
-        Number(typographyArialRoundedBold.size.l1),
-        Number(typographyArialRoundedBold.size.l2),
-        Number(typographyArialRoundedBold.size.l3),
+        Number(mainFont.size.s1),
+        Number(mainFont.size.s2),
+        Number(mainFont.size.s3),
+        Number(mainFont.size.m1),
+        Number(mainFont.size.m2),
+        Number(mainFont.size.m3),
+        Number(mainFont.size.l1),
+        Number(mainFont.size.l2),
+        Number(mainFont.size.l3),
     ]}
-    fontWeight={typographyArialRoundedBold.weight.black}
+    fontWeight={mainFont.weight.black}
     sampleText={SampleText}
-    fontFamily={typographyArialRoundedBold.type.primary}
-/>
-
-**Font:** Arial
-
-**Weights:** 400(regular), 700(bold)
-
-<Typeset
-    fontSizes={[
-        Number(typographyArial.size.s1),
-        Number(typographyArial.size.s2),
-        Number(typographyArial.size.s3),
-        Number(typographyArial.size.m1),
-        Number(typographyArial.size.m2),
-        Number(typographyArial.size.m3),
-        Number(typographyArial.size.l1),
-        Number(typographyArial.size.l2),
-        Number(typographyArial.size.l3),
-    ]}
-    fontWeight={typographyArial.weight.black}
-    sampleText={SampleText}
-    fontFamily={typographyArial.type.primary}
+    fontFamily={mainFont.type.primary}
 />

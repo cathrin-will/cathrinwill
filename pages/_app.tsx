@@ -10,7 +10,7 @@ import { Inter } from '@next/font/google'
 
 const sfPro = localFont({
     src: '../public/assets/fonts/Montserrat-VariableFont_wght.ttf',
-    variable: '--font-sf',
+    variable: '--font-main',
 })
 
 const inter = Inter({

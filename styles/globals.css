@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../public/assets/fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+html,
+body {
+    font-family: 'Arial Rounded Bold', serif;
+    font-family: Montserrat, serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    margin: 0;
+    font-variation-settings: 'wght' 420;
+    padding: 0;
+}

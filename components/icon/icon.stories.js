@@ -1,19 +1,19 @@
-import Icon from "./index";
+import Icon from './index'
 
 export default {
-    title: "WIP/Components/Icon",
+    title: 'Components/Icon',
     component: Icon,
     parameters: {
         status: {
-            type: "beta",
+            type: 'alpha',
         },
     },
-};
+}
 
-const Template = (args) => <Icon {...args} />;
+const Template = (args) => <Icon {...args} />
 
-export const icon = Template.bind({});
+export const icon = Template.bind({})
 icon.args = {
-    name: "menu",
-    color: "internationalOrange",
-};
+    name: 'close',
+    color: 'black',
+}
