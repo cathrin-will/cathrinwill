@@ -1,0 +1,17 @@
+<Meta title="Developers/Scripts/Generate Icons" />
+
+# Generate Icons
+
+Add your SVG icons to `/assets/icons` and run the script:
+
+`node ./generate-icons.js`
+
+An `index.js` file will be created which exports all Icons for use in the icons component.
+
+Then using an icon anywhere is as simple as:
+
+```
+import Icon from '@components/icon'
+
+<Icon icon="search" />
+```

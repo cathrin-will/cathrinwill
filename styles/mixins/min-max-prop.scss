@@ -1,0 +1,26 @@
+@use 'sass:math';
+// @import './breakpoint.scss';
+// @import './../settings.scss';
+// min max prop
+//
+// `@include min-max-prop($prop, $min-size, $max-size)` Outputs responsive sizes from min to max
+//
+// styleguide Utilities.Mixins.min max property
+
+@mixin min-max-prop($prop, $min-size, $max-size) {
+    $max-screen-width: $site-width;
+    $min-screen-width: 320;
+    #{$prop}: calc(
+        #{$min-size}px + (#{$max-size} - #{$min-size}) *
+            (100vw - #{$min-screen-width}px) /
+            (#{$max-screen-width - $min-screen-width})
+    );
+
+    @include breakpoint(320px) {
+        #{$prop}: calc($min-size/ 16) + rem;
+    }
+
+    @include breakpoint(1440px, min) {
+        #{$prop}: calc($max-size/ 16) + rem;
+    }
+}

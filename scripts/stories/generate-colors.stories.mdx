@@ -1,0 +1,13 @@
+<Meta title="Developers/Scripts/Generate Colours" />
+
+# Generate Colours
+
+Generate the Storybook CSS colours page from settings.json colour variables, as well as add them to `colors.scss` which gets imported to `settings.scss`.
+
+`node --experimental-json-modules ./scripts/generate-colors.js`
+
+or `yarn gen-colors`
+
+## Notes
+
+If two colours in a group have the same hex values, only one will be output.

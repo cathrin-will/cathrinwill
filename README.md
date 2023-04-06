@@ -12,6 +12,9 @@ Portfolio site built with Next.js and Tailwind CSS.
 `yarn dev` – Start the development server
 `yarn build` – Build the app for production
 `yarn storybook` – Start Storybook
+`yarn gen-colors` – Generate Tailwind CSS color palette from `tailwind.config.js`
+`yarn gen-icons`
+`yarn gen-typography`
 
 ### Frameworks
 

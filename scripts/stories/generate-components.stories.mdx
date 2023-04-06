@@ -1,0 +1,36 @@
+<Meta title="Developers/Scripts/Generate Components" />
+
+# Generate Components
+
+Generate components with Jest, Storybook and Notes files instantly.
+
+`yarn new ComponentName`
+
+If the component already exisits a warning will be displayed and you will not proceed.
+
+After generating the component the terminal will display a success message to say the component has been built, and that the import line has been copied to your clipboard (With folder alias):
+
+```
+% yarn new Button
+yarn run v1.22.18
+$ node ./scripts/generate-components.js Button
+button Component created
+button import copied to clipboard!
+
+import Button from "@components/button"
+```
+
+When defining a component name it must start with a capital letter:
+
+`yarn new Component`
+
+Components with multiple words should be capitalised for the script to add a dash between each word:
+
+`yarn new MyNewComponent`
+
+## Generating a page
+
+There is also a shortcut to generate a page.
+The command is exactly the same, with the `--page` argument
+
+`yarn new Page --page`

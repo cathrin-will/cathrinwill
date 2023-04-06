@@ -1,0 +1,50 @@
+<Meta title="Developers/Scripts/Generate Files" />
+
+# Generate Files
+
+Generate components with Jest, Storybook and Notes files instantly.
+
+`yarn new ComponentName`
+
+If the component already exists a warning will be displayed and you will not proceed.
+
+After generating the component the terminal will display a success message to say the component has been built, and that the import line has been copied to your clipboard (With folder alias):
+
+```
+% yarn new Button
+yarn run v1.22.18
+$ node ./scripts/generate-components.js Button
+button Component created
+button import copied to clipboard!
+
+import Button from "@components/button"
+```
+
+When defining a component name it must start with a capital letter:
+
+`yarn new Component`
+
+Components with multiple words should be capitalised for the script to add a dash between each word:
+
+`yarn new MyNewComponent`
+
+## Generating a hook
+
+There is also a shortcut to generate a hook.
+The command is exactly the same, with the `--hook` argument
+
+`yarn new Hook --hook`
+
+## Generating a page
+
+There is also a shortcut to generate a page.
+The command is exactly the same, with the `--page` argument
+
+`yarn new Page --page`
+
+## Overwriting a component/hook/page
+
+If the file you're trying to create already exists, the command will stop and show a warning that the files you're trying to generate already exists.
+As per the warning, you're able to overwrite all files by using the `--force` argument.
+
+`yarn new ComponentName --force`

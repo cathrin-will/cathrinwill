@@ -1,0 +1,9 @@
+// Line Height
+//
+// px to unitless
+
+@use 'sass:math';
+
+@function line-height($line-height , $font-size) {
+    @return math.div($line-height, $font-size);
+}

@@ -1,0 +1,66 @@
+@import './colors';
+@import './mixins/breakpoint';
+@import './mixins/rem';
+// @import './mixins/hover.scss';
+// @import './mixins/min-max-prop.scss';
+// @import './mixins/line-height.scss';
+
+$site-width: 1440;
+
+$font-arial: 'Montserrat', sans-serif;
+
+$breakpoints: (
+    chungus: 1440px,
+    xlarge: 1280px,
+    large: 1024px,
+    medium: 768px,
+    small: 568px,
+);
+
+$giga: (
+    'base': 66,
+    'small': 50,
+);
+$mega: (
+    'base': 55,
+    'small': 40,
+);
+$h1: (
+    'base': 44,
+    'small': 30,
+);
+$h2: (
+    'base': 35,
+    'small': 25,
+);
+$h3: (
+    'base': 28,
+    'small': 20,
+);
+$h4: (
+    'base': 22,
+    'small': 22,
+);
+$default: (
+    'base': 18,
+    'small': 15,
+);
+$small: (
+    'base': 14,
+    'small': 13,
+);
+$tiny: (
+    'base': 11,
+    'small': 11,
+);
+
+$font-sizes: (
+    1: (
+        'base': 50,
+        'small': 30,
+    ),
+    2: (
+        'base': 50,
+        'small': 30,
+    ),
+);

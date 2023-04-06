@@ -7,7 +7,7 @@ import { Github, Twitter } from '@/components/shared/icons'
 import WebVitals from '@/components/home/web-vitals'
 import ComponentGrid from '@/components/home/component-grid'
 import Image from 'next/image'
-
+import Button from '@/components/button'
 export default function Home() {
     return (
         <Layout>
@@ -36,6 +36,7 @@ export default function Home() {
                     <Twitter className="h-5 w-5 text-[#1d9bf0]" />
                     <p className="text-sm font-semibold text-[#1d9bf0]">Introducing Precedent</p>
                 </motion.a>
+                <Button>test</Button>
                 <motion.h1
                     className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem]"
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
