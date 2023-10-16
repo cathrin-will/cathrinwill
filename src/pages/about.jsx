@@ -19,8 +19,10 @@ const IndexPage = () => {
         <Layout>
             <h1>{data.site.siteMetadata.title}</h1>
             <p>
-                I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 8 years. With strong skills in writing <strong>HTML</strong>,&nbsp;
-                <strong>CSS</strong> using <strong>Sass</strong> and <strong>javaScript</strong>.
+                I'm an experienced and passionate Front-end Developer, I've worked at a variety of digital and marketing agencies for over 11~ years. I started my career in 2007, and I spent 4 years getting a Computer Maths Foundation degree and a Web development with Business BSc (Hons) degree.
+            </p>
+            <p>
+                I have strong core skills in writing semantic, accessibility friendly <strong>HTML</strong>. Modular and modern<strong>CSS</strong> using <strong>SCSS</strong>. And I have experience in using few flavours of <strong>javascript</strong> over the years, my favourite being vanilla and react.
             </p>
         </Layout>
     )
