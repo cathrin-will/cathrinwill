@@ -56,11 +56,12 @@ const IndexPage = () => {
                     <h1>{data.site.siteMetadata.title}</h1>
                     <StyledImg fluid={data.file.childImageSharp.fluid} />
                     <p className="u-size-large">
-                        I&#39;m an experienced Front-end Developer having worked at a variety of digital and marketing agencies for over 8 years. With strong skills in writing <strong>HTML</strong>
-                        ,&nbsp;
-                        <strong>CSS</strong> using <strong>Sass</strong> and <strong>JavaScript</strong>.
-                    </p>
-                    <p>I&#39;m passionate about continually improving the workflow using task runners such as grunt, gulp and npm scripts.</p>
+                    I'm an experienced Front-end Developer, I've worked at a variety of digital and marketing agencies for over 11~ years, and I started my career in 2007. I spent 4 years getting a Computer Maths Foundation degree and a Web development with Business BSc (Hons) degree.
+                </p>
+                <p>
+                    I have strong core skills in writing semantic, accessibility friendly <strong>HTML</strong>. Modular and modern<strong>CSS</strong> using <strong>SCSS</strong>. And I have experience in using few flavours of <strong>JavaScript</strong> over the years, my favourite being vanilla and react.
+                </p>
+                    <p>I'm passionate about continually improving the workflow using task runners such as grunt, gulp, vite and npm scripts.</p>
                     <p>
                         I&#39;m especially eager to make code modular, maintainable and semantic as web standards progress, paying extra attention to decreasing load times and making sites more
                         accessible and user friendly.
@@ -74,20 +75,19 @@ const IndexPage = () => {
                     </p>
                 </div>
                 <div>
-                    <h2>Some things I do...</h2>
+                    <h2>Some skills I have experience with..</h2>
                     <ul>
                         <li>HTML</li>
-                        <li>CSS ( Sass / SCSS / LESS )</li>
-                        <li>JavaScript / jQuery</li>
-                        <li>Grunt / Gulp / npm scripts</li>
-                        <li>Responsive web development</li>
+                        <li>CSS ( Sass / SCSS / Grid Layout )</li>
+                        <li>JavaScript ( Vanilla / React.js / TypeScript)</li>
+                        <li> Gulp / vite / npm scripts</li>
+                        <li>Responsive web development (♥ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/container" target="_blank" rel="noopener noreferrer">@containers</a>) </li>
                         <li>Responsive HTML emails</li>
                         <li>Progressive enhancement</li>
-                        <li>W3C Standards &amp; Accessibility</li>
+                        <li>W3C Standards &amp; Accessibility (a11y)</li>
                         <li>Usability &amp; UX considerations</li>
                         <li>Cross browser compatibility</li>
-                        <li>Version control ( Git / BitBucket )</li>
-                        <li>Adobe Suite ( Illustrator &amp; Photoshop )</li>
+                        <li>Version control ( Git )</li>
                     </ul>
                 </div>
             </Grid>
