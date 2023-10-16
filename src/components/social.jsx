@@ -58,9 +58,6 @@ const Social = () => (
         <ListLink href="https://www.linkedin.com/in/cathrinwill/">
             <LinkedinIcon />
         </ListLink>
-        <ListLink href="https://twitter.com/cathrinwill">
-            <TwitterIcon />
-        </ListLink>
     </SocialList>
 )
 

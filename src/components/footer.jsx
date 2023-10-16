@@ -32,7 +32,7 @@ const StyledLink = styled.a`
 `
 const Footer = () => (
     <MainFooter>
-        <FooterText>&copy; cathrinwill 2019</FooterText>
+        <FooterText>&copy; cathrinwill 2023</FooterText>
         <Social />
         <StyledLink href="mailto:ann@cathrinwill.com">ann@cathrinwill.com</StyledLink>
     </MainFooter>
