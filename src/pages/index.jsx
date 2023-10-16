@@ -64,6 +64,7 @@ const IndexPage = () => {
                     <p>I'm as passionate about continually improving the Developer Experience (DX) using task runners such as gulp, vite and npm scripts, as I am improving the User Experience (UX) of the sites we build. </p>
                     <p> Of course I'm always hoping to build the fastest sites I can and getting 4 of those 100% scores on Lighthouse ( <a href="https://pagespeed.web.dev/analysis/https-cathrinwill-com/9z1lszznyi" target="_blank" rel="noopener noreferrer">Google PageSpeed Insights</a>) is what truly brings me joy. Unfortunately I have a day job so I can't say that about this portfolio site currently 🙈, please look away thanks.
                     </p>
+                    <p>I've been a manager since June 2020, and have seen enough CVs to know never to claim <q>I have great attention to detail</q>. That's not to say I don't enjoy trying to beat the QA team and get the much sought after all clear. </p>
                     <p>
                         Finally, I love a good challenge or tackling a strange bug and I&#39;m currently working for{' '}
                         <a href="http://rawnet.com" target="_blank" rel="noopener noreferrer">
@@ -71,7 +72,7 @@ const IndexPage = () => {
                         </a>{' '}
                         since September 2017.
                     </p>
-                    <p>I've been a manager since June 2020, and have seen enough CVs to know never to claim <em>I have great attention to detail</em>. That's not to say I don't enjoy trying to beat the QA team and get the much sought after all clear. </p>
+
                 </div>
                 <div>
                     <h2>Some skills I have experience with..</h2>
