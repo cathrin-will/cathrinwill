@@ -26,6 +26,7 @@ const FooterText = styled.p`
     }
 `
 const StyledLink = styled.a`
+    color: #fff;
     @media (max-width: 600px) {
         margin-top: 10px;
     }

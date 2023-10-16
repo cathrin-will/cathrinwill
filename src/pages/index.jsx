@@ -59,27 +59,26 @@ const IndexPage = () => {
                     I'm an experienced Front-end Developer, I've worked at a variety of digital and marketing agencies for over 11~ years, and I started my career in 2007. I spent 4 years getting a Computer Maths Foundation degree and a Web development with Business BSc (Hons) degree.
                 </p>
                 <p>
-                    I have strong core skills in writing semantic, accessibility friendly <strong>HTML</strong>. Modular and modern<strong>CSS</strong> using <strong>SCSS</strong>. And I have experience in using few flavours of <strong>JavaScript</strong> over the years, my favourite being vanilla and react.
+                    I have strong core skills in writing semantic, accessibility friendly <strong>HTML</strong>. Modular and modern <strong>CSS</strong> using <strong>SCSS</strong>. Over the years I have experienced a few flavours of <strong>JavaScript</strong>, my favourite being vanilla and react.
                 </p>
-                    <p>I'm passionate about continually improving the workflow using task runners such as grunt, gulp, vite and npm scripts.</p>
-                    <p>
-                        I&#39;m especially eager to make code modular, maintainable and semantic as web standards progress, paying extra attention to decreasing load times and making sites more
-                        accessible and user friendly.
+                    <p>I'm as passionate about continually improving the Developer Experience using task runners such as gulp, vite and npm scripts, as I am improving the user experience of the sites we build. </p>
+                    <p> Of course I'm always hoping to build the fastest sites I can and getting 4 of those 100% scores on Lighthouse ( <a href="https://pagespeed.web.dev/analysis/http-cathrinwill-com" target="_blank" rel="noopener noreferrer">Google PageSpeed Insights</a>)  is what truly brings me joy. Unfortunately I have a day job so I can't say that about this portfolio site currently 🙈, please look away thanks.
                     </p>
                     <p>
-                        I love a good challenge or tackling a strange bug and I&#39;m currently working for{' '}
+                        Finally, I love a good challenge or tackling a strange bug and I&#39;m currently working for{' '}
                         <a href="http://rawnet.com" target="_blank" rel="noopener noreferrer">
                             Rawnet
                         </a>{' '}
                         since September 2017.
                     </p>
+                    <p>I've been a manager since June 2020, and have seen enough CVs to know never to claim <em>I have great attention to detail</em>. That's not to say I don't enjoy trying to beat the QA team and get the much sought after all clear. </p>
                 </div>
                 <div>
                     <h2>Some skills I have experience with..</h2>
                     <ul>
                         <li>HTML</li>
                         <li>CSS ( Sass / SCSS / Grid Layout )</li>
-                        <li>JavaScript ( Vanilla / React.js / TypeScript)</li>
+                        <li>JavaScript ( Vanilla / React.js / Next.js / TypeScript)</li>
                         <li> Gulp / vite / npm scripts</li>
                         <li>Responsive web development (♥ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/container" target="_blank" rel="noopener noreferrer">@containers</a>) </li>
                         <li>Responsive HTML emails</li>

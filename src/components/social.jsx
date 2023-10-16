@@ -19,6 +19,18 @@ const SocialItem = styled.li`
     }
 `
 
+const ReadOnly = styled.span`
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+`
+
 const ExternalLink = styled.a`
     border: 1px solid #fff;
     display: block;
@@ -53,10 +65,12 @@ const ListLink = (props) => {
 const Social = () => (
     <SocialList>
         <ListLink href="https://github.com/cathrin-will">
+            <ReadOnly>cathrinwill's github</ReadOnly>
             <GithubIcon />
         </ListLink>
         <ListLink href="https://www.linkedin.com/in/cathrinwill/">
             <LinkedinIcon />
+            <ReadOnly>cathrinwill's LinkedIn</ReadOnly>
         </ListLink>
     </SocialList>
 )
