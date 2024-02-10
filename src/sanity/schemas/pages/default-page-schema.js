@@ -11,9 +11,19 @@ const page = {
         {
             name: 'meta',
             title: 'Metadata',
-        }
+        },
+        {
+            name: 'settings',
+            title: 'Settings',
+        },
     ],
     fields: [
+        {
+            name: 'showInTopNav',
+            title: 'Show in Top Nav',
+            type: 'boolean',
+            group: ['settings'],
+        },
         {
             name: 'title',
             title: 'Title',
@@ -34,7 +44,12 @@ const page = {
             name: 'components',
             title: 'Components',
             type: 'array',
-            of: [{ type: 'accordion' }, { type: 'hero' }],
+            of: [
+                { type: 'accordion' },
+                { type: 'hero' },
+                { type: 'richText' },
+                { type: 'imageComponent' },
+            ],
             group: ['page'],
         },
         {

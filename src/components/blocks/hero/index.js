@@ -6,7 +6,7 @@ const Hero = ({ headline, image, alt, description }) => {
             {headline && (
                 <h2 className='text-4xl font-extrabold mb-4'> {headline}</h2>
             )}
-            {console.log(image)}
+
             {image && (
                 <Image
                     src={image}

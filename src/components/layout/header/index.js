@@ -1,6 +1,28 @@
+import { getPages } from '@/sanity/sanity-utils'
+import Link from 'next/link'
 import styles from './header.module.scss'
-const Header = () => {
-    return <header className={styles.header}>header</header>
+const Header = async () => {
+    const pages = await getPages()
+    console.log(pages)
+    return (
+        <header className={styles.header}>
+            <Link href='/' className='hover:underline'>
+                Home
+            </Link>
+            {pages.map(
+                (page) =>
+                    page.showInTopNav && (
+                        <Link
+                            key={page._id}
+                            href={`/${page.slug}`}
+                            className='hover:underline'
+                        >
+                            {page.title}
+                        </Link>
+                    ),
+            )}
+        </header>
+    )
 }
 
 export default Header

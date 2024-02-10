@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Page from '@/components/layout/page'
+import Meta from '@/components/layout/meta'
+
+export const generateMetadata = Meta
 
 export default function Home() {
-  return (
-    <div >
-      hello
-    </div>
-  );
+    return <Page />
 }

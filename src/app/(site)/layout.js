@@ -15,7 +15,10 @@ export default function RootLayout({ children }) {
             <body className={inter.className}>
                 {/*  add skip link */}
                 <Header />
-                <main id='main'>{children}</main>
+
+                <main id='main'>
+                    <>{children}</>
+                </main>
                 <Footer />
             </body>
         </html>

@@ -7,6 +7,7 @@ export async function getPages() {
       _id,
       _createdAt,
       title,
+      showInTopNav,
       "slug": slug.current
     }`,
     )
@@ -26,8 +27,33 @@ export async function getPage(slug) {
                 _type == "hero" => {
                     "image": image.asset->url,
                 },
+                _type == "imageComponent" => {
+                    "image": image.asset->url,
+                },
             }
         }`,
         { slug },
+    )
+}
+
+export async function getPageByID(id) {
+    return client.fetch(
+        groq`*[_type == "page" && _id == $id][0]{
+            _id,
+            _createdAt,
+            title,
+            ogTitle,
+            description,
+            components[]{
+                ...,
+                _type == "hero" => {
+                    "image": image.asset->url,
+                },
+                _type == "imageComponent" => {
+                    "image": image.asset->url,
+                },
+            }
+        }`,
+        { id },
     )
 }

@@ -8,4 +8,8 @@
         rgb(247, 171, 127) 100%
     );
     color: var(--text-color);
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
 }
