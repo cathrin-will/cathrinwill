@@ -1,0 +1,47 @@
+----------------------------------
+Util Inclusions and SASS Modules
+----------------------------------
+
+Utils are not included in the compilation by default, you'll need to include them as required.
+
+Files should be included using the SASS Module system, using the @use rule.
+
+See: https://sass-lang.com/documentation/at-rules/use
+
+
+Example Usage for Utils
+----------------------------------
+
+----------------------------------
+AUTOMATIC NAMESPACING
+
+@use 'utils/grid-flex';
+
+.foobar {
+    @include grid-flex.flex;
+}
+----------------------------------
+
+** OR **
+
+----------------------------------
+MANUAL NAMESPACING
+
+@use 'utils/grid-flex' as myflex;
+
+.foobar {
+    @include myflex.flex;
+}
+----------------------------------
+
+** OR **
+
+----------------------------------
+GLOBAL NAMESPACING
+
+@use 'utils/grid-flex' as *;
+
+.foobar {
+    @include flex;
+}
+----------------------------------

@@ -1,0 +1,39 @@
+// -------------------------------
+// CSS Grid Mixin
+// -------------------------------
+//
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use 'breakpoint' as *;
+@use '../settings' as *;
+// -------------------------------
+
+// 1. Uses CSS Grid, with automatic responsive behaviour as per https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/.
+// 2. The min() function inside minmax() ensures we get no horizontal overflow on very narrow screens.
+$grid-item-min-width: 200px;
+@mixin responsive-grid-auto-columns(
+    $auto-layout: auto-fit,
+    $min-width: $grid-item-min-width,
+    $max-width: 1fr
+) {
+    grid-template-columns: repeat(
+        #{$auto-layout},
+        minmax(min(#{$min-width}, 100%), #{$max-width})
+    );
+}
+
+@mixin responsive-grid-asymmetric(
+    $col1: 66.66%,
+    $col2: 33.33%,
+    $min-width: $grid-item-min-width
+) {
+    grid-template-columns:
+        minmax($min-width, $col1)
+        minmax($min-width, $col2);
+}

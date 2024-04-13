@@ -5,27 +5,29 @@
 :root {
     --main-bg-color: rgba(255, 255, 255);
     --text-color: rgba(0, 0, 0, 0.8);
+    --spacing: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-bg-color: rgba(0, 0, 0);
-        --text-color: rgba(255, 255, 255, 0.8);
+        --main-bg-color: rgb(49, 52, 60);
+        --text-color: rgba(255, 255, 255, 0.9);
     }
-}
-
-body {
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
-    color: rgb(var(--foreground-rgb));
 }
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
+}
+
+
+h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
+p {
+  font-size: 2vmin;
 }

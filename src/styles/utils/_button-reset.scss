@@ -1,0 +1,29 @@
+//
+// Button Reset
+//
+//
+// Resets border, background, padding and font styles
+//
+// button-reset();
+//
+// Styleguide Utilities.Mixins.ButtonReset
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@mixin button-reset {
+    background: transparent;
+    border: none;
+    color: $base-color;
+    cursor: pointer;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    margin: 0;
+    padding: 0;
+}

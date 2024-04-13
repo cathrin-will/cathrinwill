@@ -1,0 +1,40 @@
+//
+// Responsive Modifiers
+//
+//
+// responsive-modifiers($modifier) { ...styles }
+//
+// $modifier - optional string, the modifier which is added to the parent selector in generated media queries
+//
+// .foobar {
+//     @include responsive-modifiers() { ...styles }          Produces classes such as '.foobar@medium-min'
+//     @include responsive-modifiers(--red) { ...styles }     Produces classes such as '.foobar--red@medium-min'
+// }
+//
+// Styleguide Utilities.Mixins.ResponsiveModifiers
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use 'breakpoint' as *;
+@use '../settings/' as *;
+
+@mixin responsive-modifiers($modifier: null) {
+    @each $breakpoint-name, $breakpoint-size in $breakpoints {
+        @include breakpoint($breakpoint-name, min) {
+            &#{$modifier}\@min-#{$breakpoint-name} {
+                @content;
+            }
+        }
+
+        @include breakpoint($breakpoint-name) {
+            &#{$modifier}\@#{$breakpoint-name} {
+                @content;
+            }
+        }
+    }
+}

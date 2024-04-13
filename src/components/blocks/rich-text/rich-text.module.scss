@@ -1,2 +1,22 @@
-// .rich-text {
-// }
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.rich-text {
+    @each $name, $map in $heading-sizes {
+        h#{$name} {
+            margin-bottom: var(--spacing);
+            // @extend %heading;
+            @include get-text-size($name);
+
+            &:not(:first-child) {
+                margin-top: var(--spacing);
+            }
+        }
+    }
+    p {
+        &:not(:last-child) {
+
+            margin-bottom: var(--spacing);
+        }
+    }
+}

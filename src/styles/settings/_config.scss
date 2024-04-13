@@ -1,0 +1,30 @@
+//
+// Config
+//
+//
+// Styleguide Settings.Config
+//
+
+// Environment Settings
+// -------------------------------
+
+$animations: false !default;
+$spinner: false !default;
+
+// Animation Selectors
+// -------------------------------
+
+$animate-class: '.page:not(.page-edit-mode) .animate' !default;
+$page-edit: '.page:not(.page-edit-mode)' !default;
+
+// Base Styles
+// -------------------------------
+
+$base-border-radius: 0;
+$base-element-padding: 10px;
+$speed: 0.3s;
+
+// Misc
+// -------------------------------
+
+$base-image-path: '../images/interface' !default;

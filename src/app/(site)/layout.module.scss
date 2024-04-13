@@ -1,3 +1,16 @@
-.main {
+.body {
     background: var(--main-bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    font-kerning: normal;
+    font-size: rems(16);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.2;
+    min-height: 100vh;
+    text-size-adjust: 100%;
+}
+.main {
+    flex-grow: 1;
 }

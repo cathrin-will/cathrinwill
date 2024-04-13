@@ -1,0 +1,97 @@
+//
+// Typography
+//
+//
+// Styleguide Settings.Fonts
+//
+
+@use 'colors' as *;
+@use 'sass:math';
+
+// Font Weights
+// -------------------------------
+
+$weight-light: 300 !default;
+$weight-regular: 400 !default;
+$weight-semi: 600 !default;
+$weight-bold: 700 !default;
+
+// Base Font Settings
+// -------------------------------
+
+$base-color: $text-color !default;
+$base-font-family: arial, sans-serif !default;
+$base-font-size: 16px !default;
+$base-font-weight: $weight-regular !default;
+$base-letter-spacing: 0 !default;
+$base-line-height: math.div(24, 16) !default;
+
+// Heading Settings
+// -------------------------------
+
+$heading-color: $brand !default;
+$heading-font-family: $base-font-family !default;
+$heading-font-weight: $base-font-weight !default;
+$heading-letter-spacing: $base-letter-spacing !default;
+$heading-line-height: $base-line-height !default;
+
+// Font Sizes
+// -------------------------------
+$heading-sizes: (
+    giga: (
+        'base': 70,
+        'small': 50,
+    ),
+    mega: (
+        'base': 60,
+        'small': 40,
+    ),
+    1: (
+        'base': 50,
+        'small': 30,
+    ),
+    2: (
+        'base': 40,
+        'small': 25,
+    ),
+    3: (
+        'base': 30,
+        'small': 20,
+    ),
+    4: (
+        'base': 25,
+        'small': 22,
+    ),
+    5: (
+        'base': 20,
+        'small': 20,
+    ),
+    6: (
+        'base': 18,
+        'small': 18,
+    ),
+) !default;
+
+// Line Heights
+// -------------------------------
+
+$line-height-sizes: (
+    'giga': 70,
+    'mega': 60,
+    1: 50,
+    2: 46,
+    3: 38,
+    4: 28,
+    5: 24,
+    6: 24,
+) !default;
+$line-height-sizes-small: (
+    'giga': 50,
+    'mega': 50,
+    1: 46,
+    2: 38,
+    3: 28,
+    4: 24,
+    5: 24,
+    6: 24,
+) !default;

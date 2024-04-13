@@ -1,0 +1,24 @@
+//
+// List Reset
+//
+//
+// Resets margin, padding, and list style
+//
+// list-reset();
+//
+// Styleguide Utilities.Mixins.ListReset
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@mixin list-reset() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

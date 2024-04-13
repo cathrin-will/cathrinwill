@@ -1,0 +1,25 @@
+//
+// Relative Type Function
+//
+//
+// Relative typgoraphy for browser resizing
+//
+// type($font-size)
+//
+// $responsive - A pixel font size
+//
+// Styleguide Utilities.Mixins.ResponsiveType
+//
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+@use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@function rems($font-size) {
+    @return math.div($font-size, 16) + rem;
+}

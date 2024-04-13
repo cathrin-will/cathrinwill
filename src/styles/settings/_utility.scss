@@ -1,0 +1,56 @@
+//
+// Utility
+//
+//
+// Styleguide Settings.Utility
+//
+
+// Spacing
+// -------------------------------
+
+$site-width: 1440px !default;
+$container-width: 1024px !default;
+$container-padding: 20px !default;
+
+// Breakpoints
+// -------------------------------
+
+// if you change these, you must also change the breakpoints in tailwind.config.js
+$breakpoints: (
+    x-large: 1280px,
+    large: 1024px,
+    nav: 800px,
+    medium: 768px,
+    small: 568px,
+);
+
+// Layers
+// -------------------------------
+
+$layers: (
+    background: (),
+    foreground: (),
+    page: (),
+    block: (
+        background,
+        foreground,
+        content,
+        top,
+    ),
+    navbar: (),
+    alert: (),
+    overlay: (
+        background,
+        foreground,
+        content,
+        top,
+    ),
+    tooltip: (),
+    modal: (
+        background,
+        foreground,
+        content,
+        top,
+    ),
+    top: (),
+);

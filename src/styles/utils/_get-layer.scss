@@ -1,0 +1,40 @@
+//
+// Layer
+//
+//
+// Returns integer representing z-index position
+//
+// get-layer($layer-name) || get-layer($layer-name, $sub-layer-name)
+//
+// $layer-name - string, must match a value from the $layers map defined in 'settings/utility'
+// $sub-layer-name - optional string, must match a valid sub-layer of another layer or sublayer from the $layers map
+//
+// Styleguide Utilities.Mixins.Layer
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@function get-layer($keys...) {
+    $map: $layers;
+    $found-index: null;
+
+    @each $key in $keys {
+        @if (type-of($map) == 'map') {
+            $found-index: index(map-keys($map), $key);
+            $map: map-get($map, $key);
+        } @else {
+            $found-index: index($map, $key);
+        }
+        @if ($found-index == null) {
+            @error "`#{$key}` is not part of the layer map";
+        }
+    }
+
+    @return $found-index;
+}

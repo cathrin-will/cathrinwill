@@ -1,0 +1,22 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+
+.footer {
+    align-items: center;
+    background: rgb(1, 15, 23);
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: sticky;
+    font-size: math.div(14,16)+rem;
+    a {
+        text-decoration: underline;
+        @include hover {
+            text-decoration: none;
+        }
+    }
+}

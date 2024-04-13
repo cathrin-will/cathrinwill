@@ -1,0 +1,37 @@
+//
+// Hover
+//
+//
+// Adds hover, active and focus styles
+// Use '@media all and (hover: hover)' to stop hovers on mobile
+//
+// hover('active')
+//
+// $class - optional active class
+// @content - Nested selectors for hover state
+//
+// Styleguide Utilities.Mixins.Hover
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@mixin hover($class: false) {
+    @if $class {
+        &--#{$class} {
+            outline: none;
+            @content;
+        }
+    }
+    &:hover,
+    &:active,
+    &:focus-visible {
+        outline: none;
+        @content;
+    }
+}

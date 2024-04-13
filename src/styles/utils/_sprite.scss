@@ -1,0 +1,26 @@
+//
+// Sprite
+//
+//
+// sprite($position, $file)
+//
+// $position - Position of for the sprite
+// $file - Sprite image to use `(optional)`
+//
+// Styleguide Utilities.Mixins.Sprite
+//
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use '../settings/' as *;
+
+@mixin sprite($position, $file: 'sprite.svg') {
+    background-image: url('#{$base-image-path}/#{$file}');
+    background-position: $position;
+    background-repeat: no-repeat;
+}

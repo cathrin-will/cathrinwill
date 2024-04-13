@@ -1,0 +1,37 @@
+//
+// Get Text Size
+//
+//
+// Outputs different heading sizes + any media queries
+//
+// get-text-size($size)
+//
+// $size - a name from the map in settings/typography
+//
+// styleguide Utilities.Mixins.GetTextSize
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+@use 'sass:math';
+@use 'sass:map';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use 'min-max-font' as *;
+@use '../settings/' as *;
+
+@mixin get-text-size($name) {
+    $base: if(
+        map.has-key(map.get($heading-sizes, $name), base),
+        map.get(map.get($heading-sizes, $name), base),
+        16
+    );
+    $small: if(
+        map.has-key(map.get($heading-sizes, $name), small),
+        map.get(map.get($heading-sizes, $name), small),
+        16
+    );
+
+    @include min-max-font($name, $small, $base);
+}

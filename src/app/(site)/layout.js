@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
-const inter = Inter({ subsets: ['latin'] })
+import styles from './layout.module.scss'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
-
+import { Montserrat } from 'next/font/google'
+const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 export const metadata = {
     title: 'Ann-Cathrin Will | Front-end Developer ',
     description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
@@ -11,12 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang='en'>
-            <body className={inter.className}>
+        <html lang='en' className={font.className}>
+            <body className={styles.body}>
                 {/*  add skip link */}
                 <Header />
 
-                <main id='main'>
+                <main id='main' className={styles.main}>
                     <>{children}</>
                 </main>
                 <Footer />

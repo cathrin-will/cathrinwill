@@ -1,0 +1,33 @@
+//
+// Min Max Prop
+//
+//
+// Outputs responsive sizes from min to max
+//
+// min-max-prop($prop, $min-size, $max-size)
+//
+// Styleguide Utilities.Mixins.MinMaxProperty
+
+// SASS Core + 3rd Party Libs
+// -------------------------------
+// @use 'sass:math';
+// -------------------------------
+
+// Dependencies
+// -------------------------------
+@use 'breakpoint' as *;
+@use '../settings/' as *;
+
+@mixin min-max-prop($prop, $min-size, $max-size) {
+    $max-screen-width: 1400;
+    $min-screen-width: 320;
+    #{$prop}: calc(#{$min-size}px + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-screen-width}px) / #{$max-screen-width - $min-screen-width}));
+
+    @include breakpoint(320px) {
+        #{$prop}: #{$min-size}px;
+    }
+
+    @include breakpoint(1400px, min) {
+        #{$prop}: #{$max-size}px;
+    }
+}
