@@ -8,15 +8,37 @@
     bottom: 0;
     color: rgb(255, 255, 255);
     display: flex;
+    flex-direction: column;
     font-size: math.div(14, 16) + rem;
-    justify-content: space-between;
+    gap: 20px;
     padding: 20px 40px;
     position: sticky;
+    @include breakpoint(small, min) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
     a {
         text-decoration: underline;
+        transition: color 0.2s;
         @include hover {
+            color: var(--chestnut-rose);
             text-decoration: none;
+        }
+    }
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    a {
+        display: block;
+        fill: var(--white);
+        transition: fill 0.2s;
+
+        @include hover {
+            fill: var(--chestnut-rose);
         }
     }
 }

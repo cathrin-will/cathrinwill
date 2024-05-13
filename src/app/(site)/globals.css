@@ -6,8 +6,11 @@
     --main-bg-color: rgba(255, 255, 255);
     --text-color: rgba(0, 0, 0, 0.8);
     --spacing: 16px;
-    --rajah: #f7ab7f;
+
+    /* colors */
     --chestnut-rose: #cb4e64;
+    --rajah: #f7ab7f;
+    --white: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
