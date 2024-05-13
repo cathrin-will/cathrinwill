@@ -15,8 +15,25 @@
     }
     p {
         &:not(:last-child) {
-
             margin-bottom: var(--spacing);
+        }
+    }
+    ul {
+        list-style-position: inside;
+        list-style-type: disc;
+        li {
+            margin-bottom: 10px;
+            &::marker {
+                color: var(--rajah);
+            }
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        text-decoration-color: var(--chestnut-rose);
+        @media (prefers-color-scheme: dark) {
+            text-decoration-color: var(--rajah);
         }
     }
 }

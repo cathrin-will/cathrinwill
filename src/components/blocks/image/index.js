@@ -2,6 +2,7 @@ import styles from './image.module.scss'
 import Image from 'next/image'
 
 const imageComponent = ({ image, alt }) => {
+    console.log(image)
     return (
         <Image
             src={image}

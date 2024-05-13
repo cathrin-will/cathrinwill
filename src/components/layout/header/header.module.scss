@@ -9,7 +9,15 @@
     );
     color: var(--text-color);
     display: flex;
+    font-weight: bold;
     gap: 20px;
     padding: 20px;
     text-align: center;
+    a {
+        text-decoration: underline;
+        text-decoration-color: var(--chestnut-rose);
+        @media (prefers-color-scheme: dark) {
+            text-decoration-color: var(--rajah);
+        }
+    }
 }
