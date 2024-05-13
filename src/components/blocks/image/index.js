@@ -1,16 +1,21 @@
 import styles from './image.module.scss'
 import Image from 'next/image'
+import Section from '@/components/layout/section'
+import Container from '@/components/layout/container'
 
 const imageComponent = ({ image, alt }) => {
-    console.log(image)
     return (
-        <Image
-            src={image}
-            alt={alt ?? 'placeholder'}
-            className={styles.image}
-            width={1000}
-            height={250}
-        />
+        <Section>
+            <Container>
+                <Image
+                    src={image}
+                    alt={alt ?? 'placeholder'}
+                    className={styles.image}
+                    width={1000}
+                    height={250}
+                />
+            </Container>
+        </Section>
     )
 }
 

@@ -49,6 +49,7 @@ const page = {
                 { type: 'hero' },
                 { type: 'richText' },
                 { type: 'imageComponent' },
+                { type: 'textMedia' },
             ],
             group: ['page'],
         },

@@ -12,6 +12,13 @@
                 margin-top: var(--spacing);
             }
         }
+        h1 {
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 0, 0, 0.2);
+            @media (prefers-color-scheme: dark) {
+                text-decoration-color: rgba(255, 255, 255, 0.2);
+            }
+        }
     }
     p {
         &:not(:last-child) {

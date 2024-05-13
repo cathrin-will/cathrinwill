@@ -4,12 +4,14 @@ import Accordion from '@/components/blocks/accordion'
 import Hero from '@/components/blocks/hero'
 import richText from '@/components/blocks/rich-text'
 import imageComponent from '@/components/blocks/image'
+import textMedia from '@/components/blocks/text-media'
 
 const componentMap = {
     accordion: Accordion,
     hero: Hero,
     richText: richText,
     imageComponent: imageComponent,
+    textMedia: textMedia,
 }
 
 const Page = async ({ params }) => {

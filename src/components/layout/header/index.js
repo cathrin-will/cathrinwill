@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './header.module.scss'
 const Header = async () => {
     const pages = await getPages()
-    console.log(pages)
+
     return (
         <header className={styles.header}>
             <Link href='/' className='hover:underline'>

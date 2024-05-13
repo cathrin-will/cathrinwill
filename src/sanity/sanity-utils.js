@@ -30,6 +30,9 @@ export async function getPage(slug) {
                 _type == "imageComponent" => {
                     "image": image.asset->url,
                 },
+                _type == "textMedia" => {
+                    "image": image.asset->url,
+                },
             }
         }`,
         { slug },
@@ -50,6 +53,9 @@ export async function getPageByID(id) {
                     "image": image.asset->url,
                 },
                 _type == "imageComponent" => {
+                    "image": image.asset->url,
+                },
+                _type == "textMedia" => {
                     "image": image.asset->url,
                 },
             }
