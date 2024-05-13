@@ -15,6 +15,7 @@
         "@sanity/overlays": "^2.3.7",
         "@sanity/react-loader": "^1.7.6",
         "@sanity/vision": "^3.28.0",
+        "@vercel/analytics": "^1.2.2",
         "next": "^14.2.3",
         "next-sanity": "^7.1.4",
         "next-sanity-image": "^6.1.1",

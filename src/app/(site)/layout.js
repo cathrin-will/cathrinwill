@@ -3,6 +3,7 @@ import styles from './layout.module.scss'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { Montserrat } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 export const metadata = {
     title: 'Ann-Cathrin Will | Front-end Developer ',
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
                     <>{children}</>
                 </main>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     )
