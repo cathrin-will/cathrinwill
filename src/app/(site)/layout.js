@@ -1,11 +1,11 @@
 import './globals.css'
-import { VisualEditing } from 'next-sanity'
 import { draftMode } from 'next/headers'
 import styles from './layout.module.scss'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { Montserrat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import LiveVisualEditing from '@/components/sanity/live-visual-editing'
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 export const metadata = {
     title: 'Ann-Cathrin Will | Front-end Developer ',
@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
             <body className={styles.body} suppressHydrationWarning={true}>
                 {/*  add skip link */}
                 {draftMode().isEnabled && (
-                    <div>
+                    <div className='p-4 bg-black block'>
                         <a
-                            className='p-4 bg-black block'
+                            className='p-1 bg-blue-900 rounded'
                             href='/api/disable-draft'
                         >
                             Disable preview mode
@@ -32,8 +32,9 @@ export default function RootLayout({ children }) {
 
                 <main id='main' className={styles.main}>
                     <>{children}</>
+                    {draftMode().isEnabled && <LiveVisualEditing />}
                 </main>
-                {draftMode().isEnabled && <VisualEditing />}
+
                 <Footer />
                 <Analytics />
             </body>

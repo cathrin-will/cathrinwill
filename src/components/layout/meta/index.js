@@ -1,4 +1,4 @@
-import { getPage } from '@/sanity/queries'
+import { getPage } from '@/sanity/lib/queries'
 
 const Meta = async ({ params }) => {
     try {

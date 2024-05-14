@@ -1,4 +1,4 @@
-import { getPages } from '@/sanity/queries'
+import { getPages } from '@/sanity/lib/queries'
 import Link from 'next/link'
 import styles from './header.module.scss'
 const Header = async () => {

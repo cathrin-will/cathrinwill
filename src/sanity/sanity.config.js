@@ -8,12 +8,11 @@
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
-import { presentationTool } from 'sanity/presentation'
+import { defineDocuments, presentationTool } from 'sanity/presentation'
 import { media } from 'sanity-plugin-media'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { apiVersion, dataset, projectId } from '@/sanity/env'
 import schemas from '@/sanity/schemas'
-import { locate } from '@/sanity/presentation/locate'
 
 const isDev = process.env.NEXT_PUBLIC_SANITY_DATASET !== 'production'
 const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
@@ -24,15 +23,22 @@ export default defineConfig({
     schema: { types: schemas }, // Add and edit the content schema in the './sanity/schema' folder
     plugins: [
         ...devPlugins,
-        structureTool({}),
+        structureTool(),
         vercelDeployTool(),
         media(),
         presentationTool({
-            locate,
             previewUrl: {
                 draftMode: {
                     enable: '/api/draft',
                 },
+            },
+            resolve: {
+                mainDocuments: defineDocuments([
+                    {
+                        route: '/:slug',
+                        filter: `_type == "page" && slug.current == $slug`,
+                    },
+                ]),
             },
         }),
     ],
