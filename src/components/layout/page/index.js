@@ -1,4 +1,4 @@
-import { getPageByID, getPage } from '@/sanity/sanity-utils'
+import { getPage } from '@/sanity/queries'
 
 import Accordion from '@/components/blocks/accordion'
 import Hero from '@/components/blocks/hero'
@@ -15,9 +15,7 @@ const componentMap = {
 }
 
 const Page = async ({ params }) => {
-    const page = params?.slug
-        ? await getPage(params.slug)
-        : await getPageByID('homepage')
+    const page = await getPage(params?.slug ?? '/')
     return (
         <>
             {page && (
