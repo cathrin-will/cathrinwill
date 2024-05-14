@@ -26,21 +26,21 @@ export default defineConfig({
         structureTool(),
         vercelDeployTool(),
         media(),
-        presentationTool({
-            previewUrl: {
-                draftMode: {
-                    enable: '/api/draft',
-                },
-            },
-            resolve: {
-                mainDocuments: defineDocuments([
-                    {
-                        route: '/:slug',
-                        filter: `_type == "page" && slug.current == $slug`,
-                    },
-                ]),
-            },
-        }),
+        // presentationTool({
+        //     previewUrl: {
+        //         draftMode: {
+        //             enable: '/api/draft',
+        //         },
+        //     },
+        //     resolve: {
+        //         mainDocuments: defineDocuments([
+        //             {
+        //                 route: '/:slug',
+        //                 filter: `_type == "page" && slug.current == $slug`,
+        //             },
+        //         ]),
+        //     },
+        // }),
     ],
     experimental: {
         taint: true,

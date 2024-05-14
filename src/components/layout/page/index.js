@@ -21,7 +21,6 @@ const componentMap = {
 const Page = async ({ params }) => {
     params ??= { slug: '/' }
 
-    // const pagex = await getPage(params.slug)
     const page = await loadQuery(PAGE_QUERY, params, {
         perspective: draftMode().isEnabled ? 'previewDrafts' : 'published',
     })
@@ -30,11 +29,6 @@ const Page = async ({ params }) => {
 
     return (
         <>
-            {draftMode().isEnabled ? (
-                <h1 className='text-5xl font-extrabold'>{page.title}</h1>
-            ) : (
-                <h1 className='text-5xl font-extrabold'>{page.data?.title}</h1>
-            )}
             {page && (
                 <div className='flex flex-col gap-4'>
                     {page.data?.components?.map((component, index) => {
