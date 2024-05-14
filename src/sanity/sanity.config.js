@@ -1,27 +1,42 @@
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/admin/[[...index]]/page.jsx` route
+ Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
+ // Vision is a tool that lets you query your content with GROQ in the studio
+ // https://www.sanity.io/docs/the-vision-plugin
  */
 
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { presentationTool } from 'sanity/presentation'
+import { media } from 'sanity-plugin-media'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
-
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from '@/sanity/env'
 import schemas from '@/sanity/schemas'
+import { locate } from '@/sanity/presentation/locate'
 
+const isDev = process.env.NEXT_PUBLIC_SANITY_DATASET !== 'production'
+const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
 export default defineConfig({
     basePath: '/admin',
     projectId,
     dataset,
-    // Add and edit the content schema in the './sanity/schema' folder
-    schema: { types: schemas },
+    schema: { types: schemas }, // Add and edit the content schema in the './sanity/schema' folder
     plugins: [
-        structureTool(),
-        // Vision is a tool that lets you query your content with GROQ in the studio
-        // https://www.sanity.io/docs/the-vision-plugin
-        visionTool({ defaultApiVersion: apiVersion }),
+        ...devPlugins,
+        structureTool({}),
         vercelDeployTool(),
+        media(),
+        presentationTool({
+            locate,
+            previewUrl: {
+                draftMode: {
+                    enable: '/api/draft',
+                },
+            },
+        }),
     ],
+    experimental: {
+        taint: true,
+    },
 })

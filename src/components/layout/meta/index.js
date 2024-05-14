@@ -1,12 +1,11 @@
-import { getPageByID, getPage } from '@/sanity/sanity-utils'
+import { getPage } from '@/sanity/queries'
 
 const Meta = async ({ params }) => {
     try {
-        const page = params?.slug
-            ? await getPage(params.slug)
-            : await getPageByID('homepage')
+        const page = await getPage(params.slug ?? '/')
+
         return {
-            title: page.ogTitle,
+            title: page.ogTitle ?? 'Ann-Cathrin Will | Frontend Developer',
             description: page.description,
         }
     } catch (error) {
