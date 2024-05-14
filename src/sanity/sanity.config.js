@@ -13,7 +13,7 @@ import { media } from 'sanity-plugin-media'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { apiVersion, dataset, projectId } from '@/sanity/env'
 import schemas from '@/sanity/schemas'
-import { locate } from '@/sanity/presentation/locate'
+// import { locate } from '@/sanity/presentation/locate'
 
 const isDev = process.env.NEXT_PUBLIC_SANITY_DATASET !== 'production'
 const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
@@ -28,7 +28,7 @@ export default defineConfig({
         vercelDeployTool(),
         media(),
         presentationTool({
-            locate,
+            // locate,
             previewUrl: {
                 draftMode: {
                     enable: '/api/draft',
