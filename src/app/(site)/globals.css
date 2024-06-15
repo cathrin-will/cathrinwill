@@ -49,6 +49,20 @@
     }
 }
 
+@media (prefers-color-scheme: light) {
+
+    /* todo make DRY */
+    [data-theme='dark'] {
+
+        --bg-image: url('/images/love-city.svg');
+        --main-bg-color: #424266;
+        --text-color: rgba(255, 255, 255, 0.9);
+        --accent: var(--rajah);
+        --heading-underline: rgba(255, 255, 255, 0.2);
+        --footer-bg-color: rgb(1, 15, 23);
+    }
+}
+
 
 @layer utilities {
     .text-balance {
