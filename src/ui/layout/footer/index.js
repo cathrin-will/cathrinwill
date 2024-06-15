@@ -6,6 +6,7 @@ const Footer = () => {
             <ul className={styles.social}>
                 <li>
                     <a href='https://github.com/cathrin-will' target='_blank'>
+                        <span className='sr-only'>cathrin-will's Github</span>
                         <svg
                             version='1.1'
                             width='18'
@@ -21,6 +22,9 @@ const Footer = () => {
                         href='https://www.linkedin.com/in/cathrinwill/'
                         target='_blank'
                     >
+                        <span className='sr-only'>
+                            Ann-Cathrin Will's LinkedIn
+                        </span>
                         <svg
                             version='1.1'
                             width='18'

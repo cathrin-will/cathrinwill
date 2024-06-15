@@ -6,6 +6,8 @@ import Header from '@/ui/layout/header'
 import Footer from '@/ui/layout/footer'
 import { Montserrat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GoogleTagManager } from '@next/third-parties/google'
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 export const metadata = {
     title: 'Ann-Cathrin Will | Front-end Developer ',
@@ -15,6 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en' className={font.className}>
+            <GoogleTagManager gtmId='UA-38670955-1' />
             <body className={styles.body} suppressHydrationWarning={true}>
                 {/*  add skip link */}
                 {draftMode().isEnabled && (
@@ -37,6 +40,7 @@ export default function RootLayout({ children }) {
                 {draftMode().isEnabled && <VisualEditing />}
                 <Footer />
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     )
