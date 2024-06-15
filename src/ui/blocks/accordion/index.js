@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react'
-import Section from '@/components/layout/section'
-import Container from '@/components/layout/container'
+import Section from '@/ui/layout/section'
+import Container from '@/ui/layout/container'
 const Accordion = ({
     summary = 'Accordion Summary',
     detail = '',

@@ -3,25 +3,56 @@
 @tailwind utilities;
 
 :root {
-    --main-bg-color: rgba(255, 255, 255);
-    --text-color: rgba(0, 0, 0, 0.8);
     --spacing: 16px;
 
     /* colors */
     --chestnut-rose: #cb4e64;
     --rajah: #f7ab7f;
     --white: #fff;
+
+    /* specifics for dark/light mode */
+    --main-bg-color: radial-gradient(
+        circle,
+        rgba(244, 222, 232, 0.3660057773109243) 0%,
+        rgba(148, 187, 233, 0.53687412464986) 100%
+    );
+    --bg-image: url('/images/love-city-light.svg');
+    --text-color: rgba(0, 0, 0, 0.8);
+    --body-bg-color: var(--white);
+    --heading-underline: rgba(0, 0, 0, 0.2);
+    --accent: var(--chestnut-rose);
+    --footer-bg-color: rgba(41, 51, 106, 1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-bg-color: rgb(49, 52, 60);
+        --bg-image: url('/images/love-city.svg');
+        --main-bg-color: #424266;
         --text-color: rgba(255, 255, 255, 0.9);
+        --accent: var(--rajah);
+        --heading-underline: rgba(255, 255, 255, 0.2);
+        --footer-bg-color: rgb(1, 15, 23);
+    }
+    /* todo make DRY */
+    [data-theme='light'] {
+        --main-bg-color: radial-gradient(
+        circle,
+            rgba(244, 222, 232, 0.3660057773109243) 0%,
+            rgba(148, 187, 233, 0.53687412464986) 100%
+        );
+        --bg-image: url('/images/love-city-light.svg');
+        --text-color: rgba(0, 0, 0, 0.8);
+        --body-bg-color: var(--white);
+        --heading-underline: rgba(0, 0, 0, 0.2);
+        --accent: var(--chestnut-rose);
+        --footer-bg-color: rgba(41, 51, 106, 1);
     }
 }
+
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
 }
+

@@ -14,10 +14,7 @@
         }
         h1 {
             text-decoration: underline;
-            text-decoration-color: rgba(0, 0, 0, 0.2);
-            @media (prefers-color-scheme: dark) {
-                text-decoration-color: rgba(255, 255, 255, 0.2);
-            }
+            text-decoration-color: var(--heading-underline);
         }
     }
     p {
@@ -31,19 +28,13 @@
         li {
             margin-bottom: 10px;
             &::marker {
-                color: var(--chestnut-rose);
-                @media (prefers-color-scheme: dark) {
-                    color: var(--rajah);
-                }
+                color: var(--accent);
             }
         }
     }
 
     a {
         text-decoration: underline;
-        text-decoration-color: var(--chestnut-rose);
-        @media (prefers-color-scheme: dark) {
-            text-decoration-color: var(--rajah);
-        }
+        text-decoration-color: var(--accent);
     }
 }

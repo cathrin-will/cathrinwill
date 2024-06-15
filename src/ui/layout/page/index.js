@@ -1,10 +1,10 @@
 import { getPage } from '@/sanity/queries'
 
-import Accordion from '@/components/blocks/accordion'
-import Hero from '@/components/blocks/hero'
-import richText from '@/components/blocks/rich-text'
-import imageComponent from '@/components/blocks/image'
-import textMedia from '@/components/blocks/text-media'
+import Accordion from '@/ui/blocks/accordion'
+import Hero from '@/ui/blocks/hero'
+import richText from '@/ui/blocks/rich-text'
+import imageComponent from '@/ui/blocks/image'
+import textMedia from '@/ui/blocks/text-media'
 
 const componentMap = {
     accordion: Accordion,

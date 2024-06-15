@@ -1,5 +1,5 @@
-import Page from '@/components/layout/page'
-import Meta from '@/components/layout/meta'
+import Page from '@/ui/layout/page'
+import Meta from '@/ui/layout/meta'
 
 export const generateMetadata = Meta
 

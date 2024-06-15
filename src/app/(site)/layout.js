@@ -2,8 +2,8 @@ import './globals.css'
 import { VisualEditing } from 'next-sanity'
 import { draftMode } from 'next/headers'
 import styles from './layout.module.scss'
-import Header from '@/components/layout/header'
-import Footer from '@/components/layout/footer'
+import Header from '@/ui/layout/header'
+import Footer from '@/ui/layout/footer'
 import { Montserrat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
 
                 <main id='main' className={styles.main}>
                     <>{children}</>
+                    {/* <img src='images/love-city.svg' alt=' cityscape ' /> */}
                 </main>
                 {draftMode().isEnabled && <VisualEditing />}
                 <Footer />
