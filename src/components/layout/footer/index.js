@@ -2,7 +2,7 @@ import styles from './footer.module.scss'
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <a href='mailto:ann@cathrinwill.com'>ann@cathrinwill.com</a>
+            <a href='mailto:ac.will.dev@gmail.com'>ac.will.dev@gmail.com</a>
             <ul className={styles.social}>
                 <li>
                     <a href='https://github.com/cathrin-will' target='_blank'>
