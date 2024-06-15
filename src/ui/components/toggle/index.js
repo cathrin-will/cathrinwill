@@ -6,12 +6,15 @@ export default function Toggle({}) {
     const [theme, setTheme] = useState('system')
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'system'
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+            .matches
+            ? 'dark'
+            : 'light'
+        const savedTheme = localStorage.getItem('theme') || systemTheme
         setTheme(savedTheme)
         applyTheme(savedTheme)
     }, [])
     const applyTheme = (theme) => {
-        console.log(theme)
         if (theme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light')
         } else if (theme === 'dark') {
