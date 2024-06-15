@@ -1,0 +1,187 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+$base-width: 100px;
+$base-height: 40px;
+$toggle-border-radius: 9999px;
+$toggle-shadow: 0.03 * $base-width;
+$mountain-background: #1d7371;
+$star-size: 2px;
+
+.checkbox {
+    display: none;
+}
+
+.toggle {
+    background: linear-gradient(to bottom, #6ec8ff, #1f73a7);
+    border-radius: $toggle-border-radius;
+    box-shadow: $toggle-shadow $toggle-shadow 10px #0000003d;
+    cursor: pointer;
+    height: $base-height;
+    overflow: hidden;
+    position: relative;
+    width: $base-width;
+}
+
+.mountains {
+    background-color: $mountain-background;
+    clip-path: polygon(
+        0% 80%,
+        25% 50%,
+        40% 70%,
+        60% 35%,
+        65% 45%,
+        80% 20%,
+        100% 80%,
+        100% 100%,
+        0% 100%
+    );
+    height: 100%;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    z-index: 3;
+}
+
+.cloud {
+    background-color: rgb(255, 255, 255);
+    border-radius: 9999px;
+    filter: opacity(0.5);
+    height: 0.1 * $base-height;
+    left: 10%;
+    position: absolute;
+    top: 20%;
+    width: 0.09 * $base-width;
+}
+
+.sea {
+    background: linear-gradient(
+        to bottom,
+        #3f75cc,
+        #06063b,
+        #06063b,
+        #06063b,
+        #06063b
+    );
+    border-radius: 50%;
+    bottom: -500%;
+    height: 2.5 * $base-height;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    transition: all 0.5s ease-in-out;
+    width: 3 * $base-width;
+}
+
+.sea::before {
+    background-color: rgba(254, 254, 254, 0.34);
+    content: '';
+    filter: blur(5px);
+    height: 0.31 * $base-height;
+    left: 43%;
+    position: absolute;
+    top: 2%;
+    width: 0.075 * $base-width;
+}
+
+.star {
+    background-color: #fff;
+    border-radius: 50%;
+    filter: blur(0.8px);
+    height: $star-size;
+    position: absolute;
+    right: 15%;
+    top: -50%;
+    transition: all 0.5s ease-in-out;
+    width: $star-size;
+}
+
+.star::before {
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 20px;
+    top: -50%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.star::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.cloud::before {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    content: '';
+    height: 0.125 * $base-height;
+    position: absolute;
+    right: 50%;
+    top: -50%;
+    transform: translateX(50%);
+    width: 0.05 * $base-width;
+}
+
+.checkbox:checked + .toggle {
+    background: linear-gradient(to bottom, #036daf, #003d63);
+}
+
+.toggle::before {
+    background-color: #ffd34d;
+    border-radius: 50%;
+    box-shadow: 0 0 0.075 * $base-width #fef95fc3;
+    content: '';
+    height: 0.5 * $base-height;
+    position: absolute;
+    right: 15%;
+    top: 12.5%;
+    transition: all 0.5s ease-in-out;
+    width: 0.2 * $base-width;
+}
+
+.toggle::after {
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0.05 * $base-width #ffffff88;
+    content: '';
+    height: 0.4375 * $base-height;
+    left: -60%;
+    position: absolute;
+    top: 12.5%;
+    transition: all 0.5s ease-in-out;
+    width: 0.175 * $base-width;
+}
+
+.checkbox:checked + .toggle::before {
+    transform: translateX(280%);
+}
+
+.checkbox:checked + .toggle::after {
+    transform: translateX(480%);
+}
+
+.checkbox:checked + .toggle .mountains {
+    background-color: #05021a;
+    transform: translateY(100%);
+}
+
+.checkbox:checked + .toggle .sea {
+    background-color: #05021a;
+    bottom: -210%;
+}
+
+.checkbox:checked + .toggle .star {
+    top: 20%;
+    transform: rotate(10deg);
+}

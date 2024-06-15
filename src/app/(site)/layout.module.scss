@@ -1,5 +1,5 @@
 .body {
-    background: var(--main-bg-color);
+    background-color: var(--main-bg-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -10,7 +10,18 @@
     line-height: 1.2;
     min-height: 100vh;
     text-size-adjust: 100%;
+    transition:
+        background-color 0.5s,
+        color 0.1s;
 }
 .main {
+    background-image: var(--bg-image);
+    background-position: center calc(100% + 1px);
+    background-repeat: no-repeat;
+    background-size: contain;
     flex-grow: 1;
+    padding-bottom: 60px;
+    transition:
+        background-color 0.5s,
+        color 0.1s;
 }

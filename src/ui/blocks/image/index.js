@@ -1,7 +1,7 @@
 import styles from './image.module.scss'
 import Image from 'next/image'
-import Section from '@/components/layout/section'
-import Container from '@/components/layout/container'
+import Section from '@/ui/layout/section'
+import Container from '@/ui/layout/container'
 
 const imageComponent = ({ image, alt }) => {
     return (

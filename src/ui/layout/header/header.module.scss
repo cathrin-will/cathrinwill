@@ -1,25 +1,26 @@
 .header {
+    align-items: end;
     background: linear-gradient(
         -90deg,
-        rgb(247, 171, 127) 0%,
-        rgb(245, 132, 122) 8%,
-        rgb(203, 78, 100) 23%,
-        rgb(134, 36, 52) 49%,
-        rgb(99, 29, 33) 100%
+        rgb(252, 195, 153) 0%,
+        rgb(249, 159, 122) 15%,
+        rgb(244, 102, 99) 30%,
+        rgb(214, 72, 98) 50%,
+        rgb(167, 45, 77) 70%,
+        rgb(120, 30, 58) 85%,
+        rgb(84, 24, 43) 100%
     );
     border-radius: 0px 0px 40px 0px;
     color: var(--text-color);
     display: flex;
     font-weight: 500;
     gap: 20px;
+    justify-content: space-between;
     padding: 20px;
     text-align: center;
     a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: underline;
-        text-decoration-color: var(--chestnut-rose);
-        @media (prefers-color-scheme: dark) {
-            text-decoration-color: var(--rajah);
-        }
+        text-decoration-color: var(--accent);
     }
 }
