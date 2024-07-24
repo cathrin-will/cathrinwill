@@ -1,0 +1,89 @@
+.toggleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(61px, 1fr));
+    place-items: center;
+}
+
+.toggle {
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+}
+
+.input {
+    opacity: 0;
+    position: absolute;
+}
+
+.input:checked + .label::before {
+    background: var(--chestnut-rose);
+    opacity: 1;
+}
+
+.input:checked + .label::after {
+    background: #fff;
+    transform: translateX(0);
+}
+
+.label {
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    font-size: 0;
+    height: 32px;
+    padding-right: 51px;
+    position: relative;
+    &:before {
+        background: #fff;
+        border-radius: 23px;
+        content: '';
+        height: 32px;
+        opacity: 0.2;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity 0.2s;
+        width: 51px;
+    }
+    &:after {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        content: '';
+        height: 26px;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        transform: translateX(-51px + 26px + 6px);
+        transition:
+            box-shadow 0.2s,
+            transform 0.2s;
+        width: 26px;
+    }
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 100%;
+    width: 100%;
+}
+
+.box.filled {
+    background-color: #333;
+}
+
+.spell404 {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

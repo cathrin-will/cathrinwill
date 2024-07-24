@@ -9,7 +9,6 @@
     -webkit-font-smoothing: antialiased;
     line-height: 1.2;
     min-height: 100vh;
-    text-size-adjust: 100%;
     transition:
         background-color 0.5s,
         color 0.1s;
@@ -20,7 +19,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     flex-grow: 1;
-    padding-bottom: 60px;
     transition:
         background-color 0.5s,
         color 0.1s;
