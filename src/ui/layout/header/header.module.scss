@@ -10,6 +10,7 @@
         rgb(120, 30, 58) 85%,
         rgb(84, 24, 43) 100%
     );
+
     border-radius: 0px 0px 40px 0px;
     color: var(--text-color);
     display: flex;
@@ -22,5 +23,24 @@
         color: rgba(255, 255, 255, 0.9);
         text-decoration: underline;
         text-decoration-color: var(--accent);
+    }
+}
+
+[data-theme='dark'] {
+    .header {
+        background: linear-gradient(
+            -90deg,
+            #424266 0%,
+            #4b4971 10%,
+            #5a4e7a 20%,
+            #8a5b6e 30%,
+            #d64862 40%,
+            #c04a5d 50%,
+            #a72d4d 60%,
+            #8f233f 70%,
+            #781e3a 80%,
+            #661a32 90%,
+            #54182b 100%
+        );
     }
 }

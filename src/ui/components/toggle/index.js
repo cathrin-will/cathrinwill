@@ -28,10 +28,11 @@ export default function Toggle({}) {
             theme === 'system' || theme === 'light' ? 'dark' : 'light'
         setTheme(newTheme)
         localStorage.setItem('theme', newTheme)
+
         applyTheme(newTheme)
     }
     return (
-        <div className={styles.daynight}>
+        <div className={styles['day-night']}>
             <label htmlFor='checkbox'>
                 <input
                     type='checkbox'
@@ -41,10 +42,7 @@ export default function Toggle({}) {
                     checked={theme === 'dark'}
                 />
                 <div className={styles.toggle}>
-                    <div className={styles.cloud}></div>
-                    <div className={styles.star}></div>
-                    <div className={styles.sea}></div>
-                    <div className={styles.mountains}></div>
+                    <div className={styles['sun-or-moon']}></div>
                 </div>
             </label>
         </div>
