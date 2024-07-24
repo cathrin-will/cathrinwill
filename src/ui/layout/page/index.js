@@ -1,10 +1,12 @@
 import { getPage } from '@/sanity/queries'
-
+import Section from '@/ui/layout/section'
+import Container from '@/ui/layout/container'
 import Accordion from '@/ui/blocks/accordion'
 import Hero from '@/ui/blocks/hero'
 import richText from '@/ui/blocks/rich-text'
 import imageComponent from '@/ui/blocks/image'
 import textMedia from '@/ui/blocks/text-media'
+import Custom404 from '@/ui/layout/404'
 
 const componentMap = {
     accordion: Accordion,
@@ -26,12 +28,7 @@ const Page = async ({ params }) => {
                     })}
                 </div>
             )}
-            {!page && (
-                <div>
-                    <h1 className='text-5xl font-extrabold'>404</h1>
-                    <p>Page not found</p>
-                </div>
-            )}
+            {!page && <Custom404 />}
         </>
     )
 }
