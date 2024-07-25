@@ -1,0 +1,38 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.button {
+    align-items: center;
+    border: 2px solid var(--brand-color);
+    border-radius: 4px;
+    color: var(--black);
+    display: inline-flex;
+    font-family: var(--heading-font);
+    font-size: rems(16);
+    font-weight: 700;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease-out;
+    @include hover {
+        background: var(--brand-color);
+        svg {
+            color: var(--black);
+            transform: translateX(5px);
+        }
+    }
+    svg {
+        color: var(--brand-color);
+        transition: transform 0.2s ease-out;
+    }
+}
+
+.text {
+    color: var(--brand-color);
+    font-weight: 700;
+    text-decoration: underline;
+    @include hover {
+        color: var(--black);
+    }
+}

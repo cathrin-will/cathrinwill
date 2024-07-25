@@ -1,0 +1,19 @@
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.image {
+    margin-inline: auto;
+}
+
+.rounded {
+    border-radius: 50%;
+    height: auto;
+    max-width: 300px;
+    padding: 10px;
+    shape-outside: circle(50%);
+    text-align: center;
+    width: 100%;
+    @include breakpoint(small, min) {
+        float: right;
+    }
+}

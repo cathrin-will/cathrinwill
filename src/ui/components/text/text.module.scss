@@ -1,0 +1,71 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.text {
+    color: var(--daintree);
+    line-height: math.div(26, 16);
+    --spacing: 16px;
+    @each $name, $map in $heading-sizes {
+        h#{$name} {
+            font-family: var(--heading-font);
+            font-weight: $heading-font-weight;
+            margin-bottom: var(--spacing);
+            @include get-text-size($name);
+
+            &:not(:first-child) {
+                margin-top: var(--spacing);
+            }
+        }
+    }
+    @each $name, $map in $heading-sizes {
+        .heading--#{$name} {
+            font-family: var(--heading-font);
+            font-weight: $heading-font-weight;
+            margin-bottom: var(--spacing);
+            @include get-text-size($name);
+
+            &:not(:first-child) {
+                margin-top: var(--spacing);
+            }
+        }
+    }
+    p {
+        &:not(:last-child) {
+            margin-bottom: var(--spacing);
+        }
+    }
+    ul,
+    ol {
+        list-style-position: inside;
+        list-style-type: disc;
+        margin-bottom: var(--spacing);
+        li {
+            margin-bottom: 5px;
+            &::marker {
+                color: var(--accent);
+                font-size: 1.2rem;
+            }
+        }
+    }
+    ol {
+        list-style-type: decimal;
+    }
+
+    a:not([class]) {
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        @include hover() {
+            text-decoration: none;
+        }
+    }
+}
+.highlight {
+    color: var(--brand-color);
+}
+
+.customBlock {
+    border: 1px solid var(--black);
+    border-radius: 4px;
+    padding: 5px;
+}

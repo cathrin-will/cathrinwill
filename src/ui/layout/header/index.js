@@ -1,36 +1,48 @@
-import { getPages } from '@/sanity/queries'
+import { getSite } from '@/lib/sanity/queries'
 import Link from 'next/link'
-import Toggle from '@/ui/components/toggle'
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
+
+// ui
+import CTAList from '@/ui/components/ctaList'
+import Container from '@/ui/layout/container'
+import DayNight from '@/ui/components/dayNight'
+import SkipToContent from '@/ui/components/skipToContent'
+import Navigation from './Navigation'
+
+// styles
 import styles from './header.module.scss'
-const Header = async () => {
-    const pages = await getPages()
+
+export default async function Header() {
+    const { title, ctas } = await getSite()
 
     return (
-        <header className={styles.header}>
-            <div className='flex gap-4 '>
-                {pages.length > 1 && (
-                    <>
-                        <Link href='/' className='hover:underline'>
-                            Home
+        <>
+            <SkipToContent />
+
+            <header className={cn(styles.header)}>
+                <Container className={styles.container}>
+                    {/* <div>
+                        <Link href='/'>
+                            <Image
+                                src='/images/logo.svg'
+                                alt={`${title} Logo`}
+                                width={175}
+                                height={28}
+                                className={styles.logo}
+                            />
                         </Link>
-                        {pages.map(
-                            (page) =>
-                                page.showInTopNav && (
-                                    <Link
-                                        key={page._id}
-                                        href={`/${page.slug}`}
-                                        className='hover:underline'
-                                    >
-                                        {page.title}
-                                    </Link>
-                                ),
-                        )}
-                    </>
-                )}
-            </div>
-            <Toggle />
-        </header>
+                    </div> */}
+
+                    <Navigation />
+
+                    <CTAList
+                        ctas={ctas}
+                        className={cn(styles.ctas, 'justify-center')}
+                    />
+                </Container>
+                <DayNight />
+            </header>
+        </>
     )
 }
-
-export default Header
