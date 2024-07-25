@@ -1,0 +1,31 @@
+.accordion {
+    summary {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: 16px;
+    }
+    summary:before {
+        align-items: center;
+        background: var(--white);
+        border-radius: 50%;
+        color: var(--brand);
+        content: '+';
+        display: flex;
+        flex-shrink: 0;
+        font-size: 1em;
+        font-weight: bold;
+        height: 30px;
+        justify-content: center;
+        text-align: center;
+        width: 30px;
+    }
+
+    &[open] > summary:before {
+        content: '-';
+    }
+    summary::-webkit-details-marker,
+    summary::marker {
+        display: none;
+    }
+}

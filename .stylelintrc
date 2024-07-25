@@ -7,6 +7,7 @@
     "plugins": ["stylelint-prettier", "stylelint-order"],
     "rules": {
         "color-named": "never",
+        "color-no-hex": true,
         "declaration-no-important": true,
         "max-nesting-depth": [
             5,

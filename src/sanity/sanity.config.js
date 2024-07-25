@@ -6,35 +6,41 @@
  */
 
 import { visionTool } from '@sanity/vision'
+import { media } from 'sanity-plugin-media'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
-import { media } from 'sanity-plugin-media'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
+import { structure } from '@/sanity/structure/'
+import { defaultDocumentNode } from '@/sanity/structure/defaultDocumentNode'
 import { apiVersion, dataset, projectId } from '@/sanity/env'
-import schemas from '@/sanity/schemas'
-// import { locate } from '@/sanity/presentation/locate'
+import { schemaTypes } from '@/sanity/schemas'
 
 const isDev = process.env.NEXT_PUBLIC_SANITY_DATASET !== 'production'
 const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
+
 export default defineConfig({
+    name: 'default',
+    title: 'portfolio',
     basePath: '/admin',
     projectId,
     dataset,
-    schema: { types: schemas }, // Add and edit the content schema in the './sanity/schema' folder
+    schema: { types: schemaTypes },
     plugins: [
-        ...devPlugins,
-        structureTool({}),
-        vercelDeployTool(),
-        media(),
+        structureTool({ title: 'Content', structure, defaultDocumentNode }),
         presentationTool({
-            // locate,
+            title: 'Editor',
             previewUrl: {
                 draftMode: {
-                    enable: '/api/draft',
+                    enable: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/draft`,
                 },
             },
         }),
+        vercelDeployTool(),
+        media(),
+        visionTool(),
+
+        ...devPlugins,
     ],
     experimental: {
         taint: true,
