@@ -3,8 +3,6 @@ import Image from './Image'
 import styles from './text.module.scss'
 import Button from '@/ui/components/button'
 export default function Text({ content }) {
-    console.log(content)
-
     return (
         <div className={styles['text']}>
             <PortableText
