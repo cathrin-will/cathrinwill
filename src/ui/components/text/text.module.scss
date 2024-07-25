@@ -43,7 +43,7 @@
         li {
             margin-bottom: 5px;
             &::marker {
-                color: var(--eastern-blue);
+                color: var(--accent);
                 font-size: 1.2rem;
             }
         }
@@ -53,8 +53,8 @@
     }
 
     a:not([class]) {
-        color: var(--cerulean-blue);
         text-decoration: underline;
+        text-decoration-color: var(--accent);
         @include hover() {
             text-decoration: none;
         }
