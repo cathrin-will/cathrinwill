@@ -38,8 +38,6 @@ export default defineConfig({
         }),
         vercelDeployTool(),
         media(),
-        visionTool(),
-
         ...devPlugins,
     ],
     experimental: {
