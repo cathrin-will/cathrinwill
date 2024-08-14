@@ -2,7 +2,8 @@ import { PortableText } from '@portabletext/react'
 import Image from './Image'
 import styles from './text.module.scss'
 import Button from '@/ui/components/button'
-export default function Text({ content }) {
+export default function Text({ content, children }: any) {
+    if (children) return <div className={styles['text']}>{children}</div>
     return (
         <div className={styles['text']}>
             <PortableText
