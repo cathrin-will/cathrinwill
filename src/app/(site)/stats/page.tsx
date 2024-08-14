@@ -85,11 +85,12 @@ export default function Stats() {
                 <Text>
                     <h1>Data is fun</h1>
                     <p>
-                        Unfortunately I didn't actually have the forethought to
-                        keep track from when I first started coding back in 2007
-                        so these stats are more fun than accuracy. They're here
-                        to be enjoyed and as a rough representation of my
-                        career, and so I could play with them.
+                        Unfortunately I didn&lsquo;t actually have the
+                        forethought to keep track from when I first started
+                        coding back in 2007 so these stats are more fun than
+                        accuracy. They&lsquo;re here to be enjoyed and as a
+                        rough representation of my career, and so I could play
+                        with them.
                     </p>
                     <h2>Career Stats</h2>
                     <ul>
