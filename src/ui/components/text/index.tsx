@@ -1,6 +1,5 @@
 import { PortableText } from '@portabletext/react'
 import Image from './Image'
-import { ImgSrc } from '@/ui/components/img'
 import styles from './text.module.scss'
 import Button from '@/ui/components/button'
 export default function Text({ content, children }: any) {
@@ -13,7 +12,6 @@ export default function Text({ content, children }: any) {
                 components={{
                     types: {
                         image: Image,
-                        // imageUrl: ImgSrc,
                     },
 
                     marks: {
