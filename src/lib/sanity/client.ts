@@ -9,6 +9,6 @@ export default createClient({
     token: process.env.SANITY_API_TOKEN,
     stega: {
         enabled: false,
-        studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
+        studioUrl: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/admin`,
     },
 })

@@ -70,6 +70,28 @@ declare global {
             _type: T
             _key: string
         } & T
+
+        type StatsData = {
+            viewer: {
+                contributionsCollection: {
+                    totalPullRequestReviewContributions: number
+                }
+                pullRequests: {
+                    totalCount: number
+                }
+                repositoriesContributedTo: {
+                    totalCount: number
+                }
+            }
+            rateLimit: {
+                remaining: number
+            }
+        }
+        type TotalStatsData = {
+            prs: 0
+            reviews: 0
+            repos: 0
+        }
     }
 }
 

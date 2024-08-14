@@ -1,24 +1,13 @@
-//
-// Typography
-//
-//
-// Styleguide Settings.Fonts
-//
-
 @use 'colors' as *;
 @use 'sass:math';
 
-// Font Weights
-// -------------------------------
-
+/* Weights */
 $weight-light: 300 !default;
 $weight-regular: 400 !default;
 $weight-semi: 600 !default;
 $weight-bold: 700 !default;
 
-// Base Font Settings
-// -------------------------------
-
+/* Base Settings */
 $base-color: $text-color !default;
 $base-font-family: arial, sans-serif !default;
 $base-font-size: 16px !default;
@@ -26,17 +15,14 @@ $base-font-weight: $weight-regular !default;
 $base-letter-spacing: 0 !default;
 $base-line-height: math.div(24, 16) !default;
 
-// Heading Settings
-// -------------------------------
-
+/* Heading Settings */
 $heading-color: $brand !default;
 $heading-font-family: $base-font-family !default;
 $heading-font-weight: $base-font-weight !default;
 $heading-letter-spacing: $base-letter-spacing !default;
 $heading-line-height: $base-line-height !default;
 
-// Font Sizes
-// -------------------------------
+/* Sizes */
 $heading-sizes: (
     giga: (
         'base': 70,
@@ -51,7 +37,7 @@ $heading-sizes: (
         'small': 30,
     ),
     2: (
-        'base': 40,
+        'base': 34,
         'small': 25,
     ),
     3: (
@@ -72,9 +58,7 @@ $heading-sizes: (
     ),
 ) !default;
 
-// Line Heights
-// -------------------------------
-
+/* Line Height */
 $line-height-sizes: (
     'giga': 70,
     'mega': 60,

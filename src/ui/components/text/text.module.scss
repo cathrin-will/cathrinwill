@@ -3,7 +3,6 @@
 @use '../../../styles/utils/' as *;
 
 .text {
-    color: var(--daintree);
     line-height: math.div(26, 16);
     --spacing: 16px;
     @each $name, $map in $heading-sizes {
@@ -23,8 +22,8 @@
             font-family: var(--heading-font);
             font-weight: $heading-font-weight;
             margin-bottom: var(--spacing);
-            @include get-text-size($name);
 
+            @include get-text-size($name);
             &:not(:first-child) {
                 margin-top: var(--spacing);
             }

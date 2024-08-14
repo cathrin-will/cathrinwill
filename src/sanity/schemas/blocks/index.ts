@@ -6,4 +6,5 @@ export const blocks = [
     { type: 'sliderBlock' },
     { type: 'textBlock' },
     { type: 'formBlock' },
+    { type: 'statsBlock' },
 ]

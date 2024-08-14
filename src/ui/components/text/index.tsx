@@ -2,7 +2,9 @@ import { PortableText } from '@portabletext/react'
 import Image from './Image'
 import styles from './text.module.scss'
 import Button from '@/ui/components/button'
-export default function Text({ content }) {
+export default function Text({ content, children }: any) {
+    if (children) return <div className={styles['text']}>{children}</div>
+
     return (
         <div className={styles['text']}>
             <PortableText
@@ -27,13 +29,6 @@ export default function Text({ content }) {
                     },
 
                     block: {
-                        customBlock: ({ value }) => {
-                            return (
-                                <div className={styles.customBlock}>
-                                    {value.children[0].text}
-                                </div>
-                            )
-                        },
                         leftAlign: ({ children }) => {
                             return <div className='text-left'>{children}</div>
                         },
