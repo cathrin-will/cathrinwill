@@ -42,7 +42,7 @@ export default function Stats() {
     }
 
     const octokit = new Octokit({
-        auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN, // https://github.com/settings/tokens
+        auth: process.env.GITHUB_TOKEN, // https://github.com/settings/tokens
     })
 
     useEffect(() => {
