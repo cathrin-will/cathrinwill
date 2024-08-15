@@ -107,7 +107,10 @@ export default function StatsBlock({
                 <Text>
                     <ul>
                         <li>
-                            <a href='https://wakatime.com/@acwilldev'>
+                            <a
+                                href='https://wakatime.com/@acwilldev'
+                                target='_blank'
+                                rel='noreferrer noopener'>
                                 WakaTime
                             </a>{' '}
                             hours logged: 4,725 hrs 24 mins
