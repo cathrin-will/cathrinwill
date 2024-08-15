@@ -31,6 +31,7 @@ export const linkSchema = defineType({
             type: 'string',
             options: {
                 layout: 'radio',
+                direction: 'horizontal',
                 list: [
                     { title: 'text', value: 'text' },
                     { title: 'button', value: 'button' },

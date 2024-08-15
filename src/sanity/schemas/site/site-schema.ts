@@ -13,13 +13,13 @@ export const siteSchema = defineType({
             type: 'string',
         }),
         defineField({
-            name: 'ctas',
-            title: 'Call-to-actions',
-            type: 'array',
-            of: [{ type: 'cta' }],
+            name: 'headerMenu',
+            type: 'reference',
+            to: [{ type: 'navigation' }],
+            fieldset: 'navigation',
         }),
         defineField({
-            name: 'headerMenu',
+            name: 'ctaMenu',
             type: 'reference',
             to: [{ type: 'navigation' }],
             fieldset: 'navigation',

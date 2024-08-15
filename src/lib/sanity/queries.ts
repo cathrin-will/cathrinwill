@@ -48,7 +48,7 @@ export const metaQuery = groq`
 export async function getSite() {
     return await fetchSanity(
         groq`
-            *[_type == 'siteDetail'][0]{
+            *[_type == 'siteDetail'] | order(_createdAt desc)[0]{
                 ...,
                 ctas[]{
                     ...,
@@ -57,8 +57,9 @@ export async function getSite() {
                         internal->{ _type, title, metadata }
                     }
                 },
-                footerMenu->{ ${navigationQuery} },
                 headerMenu->{ ${navigationQuery} },
+                ctaMenu->{ ${navigationQuery} },
+                footerMenu->{ ${navigationQuery} },
                 'ogimage': ogimage.asset->url
             }
         `,
