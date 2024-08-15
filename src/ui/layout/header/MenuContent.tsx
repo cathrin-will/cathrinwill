@@ -7,13 +7,18 @@ import { useStore, useAtom } from 'jotai'
 
 import styles from './header.module.scss'
 
-export default function MenuContent({ headerMenu, navOpen }) {
+export default function MenuContent({ headerMenu, navOpen, className }) {
     const pathname = usePathname()
     const [, setNavOpen] = useAtom(navOpenAtom, {
         store: useStore(),
     })
     return (
-        <nav className={cn(navOpen ? styles['nav--open'] : '', styles.nav)}>
+        <nav
+            className={cn(
+                className,
+                navOpen ? styles['nav--open'] : '',
+                styles.nav,
+            )}>
             {headerMenu?.items?.map((item, key) => {
                 switch (item._type) {
                     case 'link':

@@ -57,8 +57,9 @@ export async function getSite() {
                         internal->{ _type, title, metadata }
                     }
                 },
-                footerMenu->{ ${navigationQuery} },
                 headerMenu->{ ${navigationQuery} },
+                ctaMenu->{ ${navigationQuery} },
+                footerMenu->{ ${navigationQuery} },
                 'ogimage': ogimage.asset->url
             }
         `,

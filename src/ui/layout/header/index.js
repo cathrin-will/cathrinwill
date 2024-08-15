@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 // ui
-import CTAList from '@/ui/components/ctaList'
 import Container from '@/ui/layout/container'
 import DayNight from '@/ui/components/dayNight'
 import SkipToContent from '@/ui/components/skipToContent'
@@ -15,7 +14,7 @@ import Toggle from './Toggle'
 import styles from './header.module.scss'
 
 export default async function Header() {
-    const { headerMenu, ctas } = await getSite()
+    const { headerMenu, ctaMenu } = await getSite()
 
     return (
         <>
@@ -23,14 +22,22 @@ export default async function Header() {
 
             <header className={cn(styles.header)}>
                 <Container className={styles.container}>
-                    <Navigation headerMenu={headerMenu} />
-                    <CTAList
-                        ctas={ctas}
-                        className={cn(styles.ctas, 'justify-center')}
-                    />
+                    {ctaMenu && (
+                        <Navigation
+                            headerMenu={ctaMenu}
+                            className={styles['nav--cta']}
+                        />
+                    )}
+                    {headerMenu && (
+                        <Navigation
+                            headerMenu={headerMenu}
+                            className={styles['nav--main']}
+                        />
+                    )}
+
                     {/* <Toggle /> */}
+                    <DayNight />
                 </Container>
-                <DayNight />
             </header>
         </>
     )
