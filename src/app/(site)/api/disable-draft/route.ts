@@ -1,3 +1,4 @@
+export const maxDuration = 60
 import { draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
 
