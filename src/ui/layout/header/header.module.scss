@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+.link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration-color: var(--rajah);
+}
+
 [data-theme='dark'] {
     .header {
         background: linear-gradient(
