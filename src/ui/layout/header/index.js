@@ -9,12 +9,13 @@ import Container from '@/ui/layout/container'
 import DayNight from '@/ui/components/dayNight'
 import SkipToContent from '@/ui/components/skipToContent'
 import Navigation from './Navigation'
+import Toggle from './Toggle'
 
 // styles
 import styles from './header.module.scss'
 
 export default async function Header() {
-    const { ctas } = await getSite()
+    const { headerMenu, ctas } = await getSite()
 
     return (
         <>
@@ -22,12 +23,12 @@ export default async function Header() {
 
             <header className={cn(styles.header)}>
                 <Container className={styles.container}>
-                    <Navigation />
-
+                    <Navigation headerMenu={headerMenu} />
                     <CTAList
                         ctas={ctas}
                         className={cn(styles.ctas, 'justify-center')}
                     />
+                    {/* <Toggle /> */}
                 </Container>
                 <DayNight />
             </header>
