@@ -54,7 +54,7 @@ const Footer = () => {
                     rel='noopener noreferrer'>
                     This page has an <span className='text-lg'>A+</span> carbon
                     rating
-                    <span className={styles.leaf}></span>
+                    <span className={styles['🌱']}></span>
                 </a>
             </div>
         </footer>

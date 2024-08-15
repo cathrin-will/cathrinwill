@@ -38,7 +38,7 @@
     @include hover {
         color: rgba(163, 245, 92, 0.8);
         text-decoration: none;
-        .leaf {
+        .🌱 {
             font-size: 2.5rem;
             &::before {
                 content: '🌿';
@@ -47,7 +47,7 @@
     }
 }
 
-.leaf {
+.🌱 {
     left: calc(100% - 10px);
     position: absolute;
     top: 50%;
