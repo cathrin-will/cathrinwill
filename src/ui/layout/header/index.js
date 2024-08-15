@@ -14,7 +14,7 @@ import Navigation from './Navigation'
 import styles from './header.module.scss'
 
 export default async function Header() {
-    const { title, ctas } = await getSite()
+    const { ctas } = await getSite()
 
     return (
         <>
@@ -22,18 +22,6 @@ export default async function Header() {
 
             <header className={cn(styles.header)}>
                 <Container className={styles.container}>
-                    {/* <div>
-                        <Link href='/'>
-                            <Image
-                                src='/images/logo.svg'
-                                alt={`${title} Logo`}
-                                width={175}
-                                height={28}
-                                className={styles.logo}
-                            />
-                        </Link>
-                    </div> */}
-
                     <Navigation />
 
                     <CTAList
