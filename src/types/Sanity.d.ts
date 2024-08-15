@@ -1,3 +1,4 @@
+import { Container } from '@/ui/layout/container'
 import type { SanityImageObject } from '@sanity/image-url/lib/types/types'
 import type { SanityDocument } from 'next-sanity'
 
@@ -29,7 +30,17 @@ declare global {
             blocks?: Block[]
         }
 
-        // objects
+        // components
+
+        type Section = {
+            children: ReactNode
+            className?: string
+        }
+
+        type Container = {
+            children: ReactNode
+            className?: string
+        }
 
         type Button = {
             link?: Link
@@ -72,6 +83,8 @@ declare global {
             _type: T
             _key: string
         } & T
+
+        // stats data
 
         type StatsData = {
             viewer: {
