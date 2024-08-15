@@ -1,11 +1,19 @@
+import { cn } from '@/lib/utils'
 import styles from './footer.module.scss'
+
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <a href='mailto:ac.will.dev@gmail.com'>ac.will.dev@gmail.com</a>
-            <ul className={styles.social}>
+            <a
+                href='mailto:ac.will.dev@gmail.com'
+                className={styles.link}>
+                ac.will.dev@gmail.com
+            </a>
+            <ul className={cn(styles.social)}>
                 <li>
-                    <a href='https://github.com/cathrin-will' target='_blank'>
+                    <a
+                        href='https://github.com/cathrin-will'
+                        target='_blank'>
                         <span className='sr-only'>
                             cathrin-will&lsquo;s Github
                         </span>
@@ -13,8 +21,8 @@ const Footer = () => {
                             version='1.1'
                             width='18'
                             height='18'
-                            viewBox='0 0 640 640'
-                        >
+                            viewBox='0 0 640 640'>
+                            <title> Github </title>
                             <path d='M421.76 361.888c-22.976 0-41.6 25.824-41.6 57.568 0 31.808 18.624 57.632 41.6 57.632s41.6-25.824 41.6-57.632c-0.032-31.744-18.624-57.568-41.6-57.568zM566.592 212.032c4.768-11.68 4.96-78.048-20.32-141.632 0 0-57.952 6.368-145.632 66.56-18.4-5.12-49.536-7.616-80.608-7.616-31.136 0-62.24 2.496-80.64 7.616-87.712-60.192-145.664-66.56-145.664-66.56-25.248 63.584-24.992 129.952-20.288 141.632-29.696 32.256-47.84 71.008-47.84 123.872 0 229.952 190.816 233.632 238.944 233.632 10.944 0 32.576 0.064 55.488 0.064 22.88 0 44.544-0.064 55.424-0.064 48.192 0 238.944-3.68 238.944-233.632 0-52.864-18.112-91.616-47.808-123.872zM320.896 541.28h-1.792c-120.672 0-214.688-14.368-214.688-131.68 0-28.128 9.92-54.176 33.504-75.808 39.264-36.064 105.76-16.992 181.184-16.992 0.32 0 0.64 0 0.928 0 0.32 0 0.576 0 0.864 0 75.424 0 141.952-19.072 181.248 16.992 23.52 21.632 33.44 47.68 33.44 75.808 0 117.312-93.984 131.68-214.688 131.68zM218.272 361.888c-22.976 0-41.6 25.824-41.6 57.568 0 31.808 18.624 57.632 41.6 57.632 23.008 0 41.632-25.824 41.632-57.632 0-31.744-18.624-57.568-41.632-57.568z'></path>
                         </svg>
                     </a>
@@ -22,8 +30,7 @@ const Footer = () => {
                 <li>
                     <a
                         href='https://www.linkedin.com/in/cathrinwill/'
-                        target='_blank'
-                    >
+                        target='_blank'>
                         <span className='sr-only'>
                             Ann-Cathrin Will&lsquo;s LinkedIn
                         </span>
@@ -31,16 +38,25 @@ const Footer = () => {
                             version='1.1'
                             width='18'
                             height='18'
-                            viewBox='0 0 640 640'
-                        >
-                            <title></title>
-                            <g id='icomoon-ignore'></g>
+                            viewBox='0 0 640 640'>
+                            <title>LinkedIn</title>
                             <path d='M160 96c0 33.984-22.72 63.232-64.032 63.232-38.88 0-63.968-27.584-63.968-61.568 0-34.88 24.32-65.664 64-65.664s63.232 29.12 64 64zM32 608v-416h128v416h-128z'></path>
                             <path d='M224 334.208c0-49.44-1.632-90.752-3.264-126.432h115.008l5.696 55.136h2.432c16.192-25.952 55.872-64 122.304-64 81.024 0 141.824 54.24 141.824 170.944v238.144h-128v-219.552c0-51.008-19.424-89.92-64-89.92-33.984 0-51.008 27.52-59.936 50.208-3.264 8.128-4.064 19.456-4.064 30.816v228.448h-128v-273.792z'></path>
                         </svg>
                     </a>
                 </li>
             </ul>
+            <div className='flex justify-center text-center small:justify-end small:text-right'>
+                <a
+                    href='https://www.websitecarbon.com/website/acwill-dev/'
+                    className={cn(styles.link, styles.carbon)}
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    This page has an <span className='text-lg'>A+</span> carbon
+                    rating
+                    <span className={styles.leaf}></span>
+                </a>
+            </div>
         </footer>
     )
 }

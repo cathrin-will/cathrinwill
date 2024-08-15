@@ -18,14 +18,43 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
 
-    a {
+.link {
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    @include hover {
+        color: var(--rajah);
         text-decoration: underline;
-        transition: color 0.2s;
-        @include hover {
-            color: var(--rajah);
-            text-decoration: none;
+    }
+}
+
+.carbon {
+    display: block;
+    padding-inline: 20px;
+    position: relative;
+
+    @include hover {
+        color: rgba(163, 245, 92, 0.8);
+        text-decoration: none;
+        .leaf {
+            font-size: 2.5rem;
+            &::before {
+                content: '🌿';
+            }
         }
+    }
+}
+
+.leaf {
+    left: calc(100% - 10px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: font-size 0.5s;
+    &::before {
+        content: '🌱';
     }
 }
 
