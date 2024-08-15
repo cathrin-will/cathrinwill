@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <html
             lang='en'
             className={font.className}>
-            <GoogleTagManager gtmId='UA-38670955-1' />
+            <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
             <body
                 className={styles.body}
                 suppressHydrationWarning={true}>
