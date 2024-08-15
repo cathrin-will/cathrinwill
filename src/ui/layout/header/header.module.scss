@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
 .header {
     align-items: center;
     background: linear-gradient(
@@ -19,11 +23,6 @@
     justify-content: space-between;
     padding: 20px;
     text-align: center;
-    a {
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: underline;
-        text-decoration-color: var(--accent);
-    }
 }
 
 [data-theme='dark'] {
