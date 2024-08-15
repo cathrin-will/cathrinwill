@@ -48,20 +48,23 @@
     align-items: center;
     display: grid;
     gap: 20px;
-    grid-template-columns: 60px 1fr 60px;
+    grid-template-columns: 70px 1fr 100px;
     justify-content: space-between;
+    margin-inline: auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .nav {
     align-items: center;
     display: flex;
     gap: 20px;
-    justify-content: center;
     width: 100%;
     &--cta {
         width: auto;
     }
     &--main {
         flex-grow: 1;
+        justify-content: center;
     }
 }
