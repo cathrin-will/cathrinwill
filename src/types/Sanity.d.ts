@@ -54,6 +54,8 @@ declare global {
         type LinkList = {
             readonly _type: 'link.list'
             label: string
+            style: string
+            blurb?: string
             links?: Link[]
         }
 

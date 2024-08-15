@@ -1,12 +1,16 @@
 import { PortableText } from '@portabletext/react'
-import Image from './Image'
-import styles from './text.module.scss'
+import { cn } from '@/lib/utils'
+
 import Button from '@/ui/components/button'
-export default function Text({ content, children }: any) {
-    if (children) return <div className={styles['text']}>{children}</div>
+import Image from './Image'
+
+import styles from './text.module.scss'
+export default function Text({ content, children, className }: any) {
+    if (children)
+        return <div className={cn(styles['text'], className)}>{children}</div>
 
     return (
-        <div className={styles['text']}>
+        <div className={cn(styles['text'], className)}>
             <PortableText
                 value={content}
                 components={{

@@ -13,6 +13,23 @@ export const linkListSchema = defineType({
             type: 'string',
         }),
         defineField({
+            name: 'style',
+            type: 'string',
+            options: {
+                layout: 'radio',
+                direction: 'horizontal',
+                list: [
+                    { title: 'text', value: 'text' },
+                    { title: 'button', value: 'button' },
+                ],
+            },
+            initialValue: 'text',
+        }),
+        defineField({
+            name: 'blurb',
+            type: 'text',
+        }),
+        defineField({
             name: 'links',
             type: 'array',
             of: [{ type: 'link' }],

@@ -1,0 +1,92 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.summary {
+    list-style: none;
+    position: relative;
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+.details {
+    position: relative;
+}
+
+.drop {
+    background: var(--blue-charcoal);
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    top: calc(100% + 18px);
+    width: 300px;
+    z-index: 1;
+    &:before {
+        border-bottom: 12px solid var(--blue-charcoal);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-style: solid;
+        border-top: 0;
+        bottom: 100%;
+        content: '';
+        display: block;
+        height: 0;
+        left: 24px;
+        position: absolute;
+        width: 0;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    a {
+        display: block;
+        font-weight: 400;
+        padding: 8px;
+        text-align: left;
+        text-decoration: none;
+        transition: background 0.2s ease-out;
+        width: 100%;
+        @include hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.button {
+    background: var(--blue-charcoal);
+    border: none;
+    border-radius: 0 100px 100px 100px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition:
+        box-shadow 0.2s ease-out,
+        border-radius 0.2s ease-out;
+    width: 100%;
+    @include hover {
+        border-radius: 100px 0px 100px 100px;
+        box-shadow: 0px 0px 20px var(--button-glow);
+    }
+}
+
+.blurb {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
