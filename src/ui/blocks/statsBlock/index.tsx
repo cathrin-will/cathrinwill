@@ -15,9 +15,11 @@ export default function StatsBlock({
     wrapIt = true,
 }) {
     const [stats, setStats] = useState<Sanity.StatsData | null>(null)
-    const [totalStats, setTotalStats] = useState<Sanity.TotalStatsData | null>(
-        null,
-    )
+    const [totalStats, setTotalStats] = useState<Sanity.TotalStatsData>({
+        prs: 0,
+        reviews: 0,
+        repos: 0,
+    })
     const octokit = new Octokit({
         auth: process.env.GITHUB_TOKEN ?? process.env.NEXT_PUBLIC_GITHUB_TOKEN, // https://github.com/settings/tokens
     })
@@ -54,8 +56,14 @@ export default function StatsBlock({
         }
 
         getStats()
+        doTheMaths()
     }, [])
+
     useEffect(() => {
+        doTheMaths()
+    }, [stats])
+
+    const doTheMaths = () => {
         const totals = placesWorkedStats.reduce(
             (acc, item) => {
                 acc.totalPRs += item.totalPRs
@@ -69,25 +77,22 @@ export default function StatsBlock({
                 repositoriesContributedTo: 0,
             },
         )
+        const totalPrs =
+            ~~stats?.viewer?.pullRequests?.totalCount + totals.totalPRs
+        const totalPrContributions =
+            ~~stats?.viewer?.contributionsCollection
+                ?.totalPullRequestReviewContributions +
+            totals.totalPRContributions
+        const repositoriesContributedTo =
+            ~~stats?.viewer?.repositoriesContributedTo?.totalCount +
+            totals.repositoriesContributedTo
 
-        if (stats) {
-            const totalPrs =
-                stats?.viewer?.pullRequests?.totalCount + totals.totalPRs
-            const totalPrContributions =
-                stats?.viewer?.contributionsCollection
-                    ?.totalPullRequestReviewContributions +
-                totals.totalPRContributions
-            const repositoriesContributedTo =
-                stats?.viewer?.repositoriesContributedTo?.totalCount +
-                totals.repositoriesContributedTo
-
-            setTotalStats({
-                prs: totalPrs,
-                reviews: totalPrContributions,
-                repos: repositoriesContributedTo,
-            })
-        }
-    }, [stats])
+        setTotalStats({
+            prs: totalPrs,
+            reviews: totalPrContributions,
+            repos: repositoriesContributedTo,
+        })
+    }
 
     return (
         <Wrap wrapIt={wrapIt}>
