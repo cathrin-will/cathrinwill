@@ -28,7 +28,12 @@ export default function Text({ content, children, className }: any) {
                         },
                         link: ({ children, value }) => {
                             value.label = children
-                            return <Button link={value} />
+                            return (
+                                <Button
+                                    link={value}
+                                    style={false}
+                                />
+                            )
                         },
                     },
 

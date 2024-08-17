@@ -27,7 +27,27 @@
 
 .link {
     color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
     text-decoration-color: var(--rajah);
+    &:before {
+        background: var(--rajah);
+        border-radius: 3px;
+        bottom: -5px;
+        content: '';
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: width 0.25s ease-out;
+        width: 0;
+    }
+    @include hover {
+        &:before {
+            width: 100%;
+        }
+    }
 }
 
 [data-theme='dark'] {

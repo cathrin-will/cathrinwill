@@ -27,6 +27,7 @@ export default function MenuContent({ headerMenu, navOpen, className }) {
 
                         return (
                             <Button
+                                style='link'
                                 className={cn(
                                     styles.link,
                                     active && styles.active,

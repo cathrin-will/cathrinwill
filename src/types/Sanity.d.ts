@@ -44,7 +44,7 @@ declare global {
 
         type Button = {
             link?: Link
-            style?: string
+            style?: string | false
         }
 
         type Image = SanityImageObject &
