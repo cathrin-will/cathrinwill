@@ -6,5 +6,6 @@ export const blocks = [
     { type: 'sliderBlock' },
     { type: 'textBlock' },
     { type: 'formBlock' },
+    { type: 'skillsBlock' },
     { type: 'statsBlock' },
 ]

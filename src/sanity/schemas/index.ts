@@ -32,6 +32,7 @@ import { htmlBlockSchema } from './blocks/html-block-schema'
 import { imageBlockSchema } from './blocks/image-block-schema'
 import { sliderBlockSchema } from './blocks/slider-block-schema'
 import { statsBlockSchema } from './blocks/stats-block-schema'
+import { skillsBlockSchema } from './blocks/skills-block-schema'
 import { textBlockSchema } from './blocks/text-block-schema'
 
 export const schemaTypes = [
@@ -59,6 +60,7 @@ export const schemaTypes = [
     pageSchema,
     siteSchema,
     sliderBlockSchema,
+    skillsBlockSchema,
     statsBlockSchema,
     textBlockSchema,
 ]
