@@ -118,7 +118,7 @@ export default function StatsBlock({
                                 rel='noreferrer noopener'>
                                 WakaTime
                             </a>{' '}
-                            hours logged: 4,725 hrs 24 mins
+                            hours logged: ~4,830 hrs
                         </li>
 
                         <li>
