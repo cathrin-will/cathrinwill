@@ -9,6 +9,7 @@
     --chestnut-rose: #cb4e64;
     --rajah: #f7ab7f;
     --white: #fff;
+    --black: #000;
     --blue-charcoal: rgb(1, 15, 23);
     --blue-charcoal-90: rgba(1, 15, 23, 0.9);
 
@@ -69,10 +70,14 @@
     }
 }
 
+html {
+    scroll-timeline: --page-scroll block;
+}
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
 }
+
 

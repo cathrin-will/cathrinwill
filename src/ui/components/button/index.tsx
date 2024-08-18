@@ -13,7 +13,7 @@ export default function Button({
     if (!link?.type) return null
 
     const props = {
-        className: cn(className, styles[style ?? link.style]),
+        className: style ? cn(className, styles[style ?? link.style]) : null,
         children: children || link.label || link.internal?.title,
         onClick: onClick,
     }
@@ -26,8 +26,7 @@ export default function Button({
                     href={processUrl(link.internal, {
                         base: false,
                     })}
-                    {...props}
-                >
+                    {...props}>
                     {link.label}
                 </Link>
             )
@@ -38,8 +37,7 @@ export default function Button({
                     href={link.external}
                     {...props}
                     target='_blank'
-                    rel='noreferrer noopenner'
-                >
+                    rel='noreferrer noopenner'>
                     {link.label}
                 </a>
             )

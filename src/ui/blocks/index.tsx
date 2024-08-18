@@ -4,6 +4,7 @@ import CustomHTML from './customHTMLBlock'
 import FormBlock from './formBlock'
 import ImageBlock from './imageBlock'
 import SliderBlock from './sliderBlock'
+import SkillsBlock from './skillsBlock'
 import StatsBlock from './statsBlock'
 import TextBlock from './textBlock'
 
@@ -23,6 +24,8 @@ export default function Modules({ blocks }: { blocks?: Sanity.Block[] }) {
                         return <CustomHTML {...block} key={block._key} />
                     case 'imageBlock':
                         return <ImageBlock {...block} key={block._key} />
+                    case 'skillsBlock':
+                        return <SkillsBlock {...block} key={block._key} />
                     case 'statsBlock':
                         return <StatsBlock {...block} key={block._key} />
                     case 'sliderBlock':

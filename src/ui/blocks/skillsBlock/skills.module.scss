@@ -1,0 +1,104 @@
+@use 'sass:math';
+@use '../../../styles/settings/' as *;
+@use '../../../styles/utils/' as *;
+
+.skills {
+    display: flex;
+    margin-block: 24px;
+    overflow: hidden;
+    position: relative;
+    &__inner {
+        animation: logo-left;
+        animation-timeline: --page-scroll;
+        display: flex;
+        gap: 8px;
+        @supports not (scroll-timeline: --page-scroll) {
+            animation: logo-left 1s linear infinite;
+            animation-delay: calc(var(--scroll) * -0.1s);
+            animation-play-state: paused;
+            transition: --scroll 0.5s ease-in-out;
+        }
+    }
+    &--2 {
+        .scroll-logos__inner {
+            animation-direction: reverse;
+        }
+    }
+}
+
+.card {
+    align-items: center;
+    aspect-ratio: 3 / 1;
+    background: var(--white);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    cursor: pointer;
+    display: flex;
+    font-size: 0.75rem;
+    justify-content: center;
+    padding: 18px;
+    position: relative;
+    svg {
+        z-index: 1;
+    }
+    &--1 {
+        --bg: rgb(252, 195, 153);
+    }
+    &--2 {
+        --bg: rgb(249, 159, 122);
+    }
+    &--3 {
+        --bg: rgb(244, 102, 99);
+    }
+    &--4 {
+        --bg: rgb(214, 72, 98);
+    }
+    &--5 {
+        --bg: rgb(167, 45, 77);
+    }
+    &--6 {
+        --bg: rgb(252, 195, 153);
+    }
+    &--7 {
+        --bg: rgb(249, 159, 122);
+    }
+    &--8 {
+        --bg: rgb(244, 102, 99);
+    }
+    &--9 {
+        --bg: rgb(214, 72, 98);
+    }
+    &--10 {
+        --bg: rgb(167, 45, 77);
+    }
+
+    &:after {
+        background: var(--bg);
+        border-radius: 100%;
+        content: '';
+        height: 100%;
+        position: absolute;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+    }
+    @include hover {
+        &:after {
+            transform: scale(2);
+        }
+    }
+}
+
+.icon {
+    color: var(--black);
+    font-size: 2rem;
+}
+
+@keyframes logo-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-30%);
+    }
+}

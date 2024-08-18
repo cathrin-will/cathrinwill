@@ -30,11 +30,6 @@ export const metaSchema = defineType({
             type: 'image',
         }),
         defineField({
-            name: 'showInTopNav',
-            title: 'Show in Top Nav',
-            type: 'boolean',
-        }),
-        defineField({
             name: 'noIndex',
             description: 'Prevent search engines from indexing this page.',
             type: 'boolean',
