@@ -128,10 +128,6 @@ export const blockObject = {
                     type: 'string',
                 }),
                 defineField({
-                    name: 'hover',
-                    type: 'image',
-                }),
-                defineField({
                     name: 'style',
                     type: 'string',
                     options: {
