@@ -104,3 +104,44 @@
     border-radius: 4px;
     padding: 5px;
 }
+
+.profile {
+    aspect-ratio: 1 / 1;
+    border-radius: 50% 0 50% 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 0 10px 10px;
+    position: relative;
+    shape-outside: circle(50%);
+    width: 250px;
+    @include breakpoint(small, min) {
+        float: right;
+    }
+    .image {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    @include hover {
+        .video {
+            display: block;
+        }
+    }
+}
+
+.image {
+    margin-inline: auto;
+}
+
+.video {
+    display: none;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
