@@ -13,10 +13,13 @@ import { presentationTool } from 'sanity/presentation'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { structure } from '@/sanity/structure/'
 import { defaultDocumentNode } from '@/sanity/structure/defaultDocumentNode'
-import { apiVersion, dataset, projectId } from '@/sanity/env'
+
 import { schemaTypes } from '@/sanity/schemas'
 
-const isDev = process.env.NEXT_PUBLIC_SANITY_DATASET !== 'production'
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION
+const isDev = dataset !== 'production'
 const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
 
 export default defineConfig({
@@ -25,6 +28,7 @@ export default defineConfig({
     basePath: '/admin',
     projectId,
     dataset,
+    apiVersion,
     schema: { types: schemaTypes },
     plugins: [
         structureTool({ title: 'Content', structure, defaultDocumentNode }),
