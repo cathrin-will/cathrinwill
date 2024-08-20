@@ -2,20 +2,21 @@ import { cn } from '@/lib/utils'
 import styles from './footer.module.scss'
 import { FaGithub } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa'
+import { FaCodepen } from 'react-icons/fa'
+
+import EmailIcon from '@/ui/components/lordicon/emailIcon'
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <a
-                href='mailto:ac.will.dev@gmail.com'
-                className={styles.link}>
-                ac.will.dev@gmail.com
-            </a>
+            <EmailIcon />
             <ul className={cn(styles.social)}>
                 <li>
                     <a
                         href='https://github.com/cathrin-will'
-                        target='_blank'>
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        title='GitHub'>
                         <span className='sr-only'>
                             cathrin-will&lsquo;s Github
                         </span>
@@ -24,8 +25,22 @@ const Footer = () => {
                 </li>
                 <li>
                     <a
+                        href='https://codepen.io/cathrinwill'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        title='codepen'>
+                        <span className='sr-only'>
+                            Ann-Cathrin Will&lsquo;s CodePen
+                        </span>
+                        <FaCodepen />
+                    </a>
+                </li>
+                <li>
+                    <a
                         href='https://www.linkedin.com/in/cathrinwill/'
-                        target='_blank'>
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        title='LinkedIn'>
                         <span className='sr-only'>
                             Ann-Cathrin Will&lsquo;s LinkedIn
                         </span>
