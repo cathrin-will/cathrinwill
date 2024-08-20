@@ -8,7 +8,7 @@ import SkillsBlock from './skillsBlock'
 import StatsBlock from './statsBlock'
 import TextBlock from './textBlock'
 
-export default function Modules({ blocks }: { blocks?: Sanity.Block[] }) {
+export default function Blocks({ blocks }: { blocks?: Sanity.Block[] }) {
     return (
         <>
             {blocks?.map((block) => {

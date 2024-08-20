@@ -6,12 +6,14 @@ export default async function processMetadata(page) {
     const site = await getSite()
 
     const url = processUrl(page)
-    const { title, description, ogimage, noIndex } = page?.metadata ?? {
-        title: '',
-        description: '',
-        ogimage: '',
+
+    let { title, description, ogimage, noIndex } = page?.metadata ?? {
+        title: 'Portfolio',
+        description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
+        ogimage: '/images/ac.webp',
         noIndex: false,
     }
+    title = `${title} | AC Will Dev`
 
     return {
         metadataBase: new URL(SITE_URL),

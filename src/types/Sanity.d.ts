@@ -51,6 +51,7 @@ declare global {
             Partial<{
                 alt: string
                 loading: 'lazy' | 'eager'
+                style?: string
             }>
 
         type Link = {

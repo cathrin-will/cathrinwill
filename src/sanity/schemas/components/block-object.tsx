@@ -128,13 +128,23 @@ export const blockObject = {
                     type: 'string',
                 }),
                 defineField({
-                    name: 'caption',
-                    type: 'text',
-                    rows: 2,
+                    name: 'hover',
+                    type: 'image',
+                }),
+                defineField({
+                    name: 'style',
+                    type: 'string',
+                    options: {
+                        layout: 'dropdown',
+                        list: [
+                            { title: 'default', value: 'default' },
+                            { title: 'profile', value: 'profile' },
+                        ],
+                    },
+                    initialValue: 'default',
                 }),
             ],
         },
-        // { type: 'imageUrl' },
     ],
 }
 
