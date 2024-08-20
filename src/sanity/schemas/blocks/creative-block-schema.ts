@@ -2,7 +2,7 @@ import { defineArrayMember, defineField, defineType } from 'sanity'
 import { count, getBlockText } from '@/sanity/utils'
 import { blocks } from './../blocks'
 import { VscExtensions } from 'react-icons/vsc'
-
+import { blockObject } from '../components/block-object'
 export const creativeBlockSchema = defineType({
     name: 'creativeBlock',
     icon: VscExtensions,
@@ -19,7 +19,7 @@ export const creativeBlockSchema = defineType({
             name: 'content',
             group: 'content',
             type: 'array',
-            of: [{ type: 'block' }],
+            ...blockObject,
         }),
         defineField({
             name: 'columnsNumber',
