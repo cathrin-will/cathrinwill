@@ -3,7 +3,7 @@ import { stegaClean } from '@sanity/client/stega'
 import Section from '@/ui/layout/section'
 import Container from '@/ui/layout/container'
 import Text from '@/ui/components/text'
-import TextBlock from '@/ui/blocks/textBlock'
+import Blocks from '@/ui/blocks'
 export default function CreativeBlock({
     content,
     columns,
@@ -44,22 +44,8 @@ export default function CreativeBlock({
                             alignItems,
                         }}>
                         {columns?.map(({ subModules }, i) => (
-                            <div
-                                key={i}
-                                className='border-dotted border-2'>
-                                {subModules?.map((subModule, ii) => {
-                                    subModule.wrapIt = false
-
-                                    switch (subModule._type) {
-                                        case 'textBlock':
-                                            return (
-                                                <TextBlock
-                                                    {...subModule}
-                                                    key={ii}
-                                                />
-                                            )
-                                    }
-                                })}
+                            <div key={i}>
+                                <Blocks blocks={subModules} />
                             </div>
                         ))}
                     </div>
