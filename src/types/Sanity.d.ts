@@ -1,4 +1,3 @@
-import { Container } from '@/ui/layout/container'
 import type { SanityImageObject } from '@sanity/image-url/lib/types/types'
 import type { SanityDocument } from 'next-sanity'
 
@@ -28,23 +27,6 @@ declare global {
         type Page = PageBase & {
             readonly _type: 'page'
             blocks?: Block[]
-        }
-
-        // components
-
-        type Section = {
-            children: ReactNode
-            className?: string
-        }
-
-        type Container = {
-            children: ReactNode
-            className?: string
-        }
-
-        type Button = {
-            link?: Link
-            style?: string | false
         }
 
         type Image = SanityImageObject &
@@ -85,28 +67,65 @@ declare global {
             _key: string
         } & T
 
-        // stats data
-
-        type StatsData = {
-            viewer: {
-                contributionsCollection: {
-                    totalPullRequestReviewContributions: number
-                }
-                pullRequests: {
-                    totalCount: number
-                }
-                repositoriesContributedTo: {
-                    totalCount: number
-                }
-            }
-            rateLimit: {
-                remaining: number
-            }
+        // blocks
+        type accordionBlock = {
+            content: any[]
+            items: [{ summary: string; details: any[] }]
+            wrapIt?: boolean
         }
-        type TotalStatsData = {
-            prs: 0
-            reviews: 0
-            repos: 0
+
+        type creativeBlock = {
+            content: any[]
+            columns: [{ percentageWidth?: number; subModules: Block[] }]
+            columnsNumber?: number
+            alignItems?: string
+            wrapIt?: boolean
+        }
+
+        type formBlock = {
+            formReference: {
+                _id: string
+                title: string
+                description: string
+                submitButtonText: string
+                fields: []
+            }
+            wrapIt?: boolean
+        }
+
+        type imageBlock = {
+            image: Image
+            wrapIt?: boolean
+        }
+
+        type skillsBlock = {
+            content: any[]
+            wrapIt?: boolean
+        }
+
+        type textBlock = {
+            content: any
+            wrapIt?: boolean
+            children?: ReactNode
+        }
+
+        type statsBlock = {
+            introContent: any[]
+            githubContent: any[]
+            wakaContent: any[]
+            placesWorkedStats: {
+                repositoriesContributedTo: number
+                totalPRContributions: number
+                totalPRs: number
+                name: string
+            }[]
+            wrapIt?: boolean
+        }
+
+        type sliderBlock = {
+            content: any
+            images: Image[]
+            wrapIt?: boolean
         }
     }
 }

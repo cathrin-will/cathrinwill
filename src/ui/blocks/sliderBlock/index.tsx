@@ -11,7 +11,11 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styles from './slider.module.scss'
 
-export default function SliderBlock({ content, images, wrapIt = true }) {
+export default function SliderBlock({
+    content,
+    images,
+    wrapIt = true,
+}: Sanity.sliderBlock) {
     var settings = {
         dots: true,
         infinite: true,
@@ -28,7 +32,7 @@ export default function SliderBlock({ content, images, wrapIt = true }) {
             <Slider
                 {...settings}
                 className={cn(styles.slider)}>
-                {images?.map(({ image }, key) => (
+                {images?.map(({ image }: any, key) => (
                     <div
                         className={cn(styles.slide)}
                         key={key}>

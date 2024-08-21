@@ -17,11 +17,14 @@ interface FormMessage {
     show: boolean
 }
 
-export default function FormBlock({ formReference, wrapIt = true }) {
+export default function FormBlock({
+    formReference,
+    wrapIt = true,
+}: Sanity.formBlock) {
     const { title, description, submitButtonText } = formReference
-    let { fields } = formReference
+
     const [form, setForm] = useState(null)
-    const [formData, setFormData] = useState({})
+    const [formData, setFormData] = useState<any>({})
     const [formMessage, setFormMessage] = useState<FormMessage>({
         type: 'error',
         content: '',
@@ -29,17 +32,18 @@ export default function FormBlock({ formReference, wrapIt = true }) {
     })
     const formId = formReference._id
 
-    const cleanObject = (obj) => {
-        const newObj = {}
+    const cleanObject = (obj: Record<string, any>): Record<string, any> => {
+        const newObj: Record<string, any> = {}
         Object.keys(obj).forEach((key) => {
             newObj[key] = stegaClean(obj[key])
         })
         return newObj
     }
-    const cleanArray = (arr) => {
+    const cleanArray = (arr: []) => {
         return arr.map((item) => cleanObject(item))
     }
-    fields = cleanArray(fields)
+
+    const fields = cleanArray(formReference.fields)
 
     useEffect(() => {
         sanityClient
@@ -47,27 +51,44 @@ export default function FormBlock({ formReference, wrapIt = true }) {
             .then((data) => {
                 setForm(data[0])
                 // Initialize formData with default values
-                const initialFormData = {}
+                const initialFormData: any = {}
 
-                data[0].fields.forEach((field) => {
-                    initialFormData[field.name.current] =
-                        field.defaultValue || ''
-                })
+                data[0].fields.forEach(
+                    (field: {
+                        name: { current: string }
+                        defaultValue: string | null
+                    }) => {
+                        initialFormData[field.name.current] =
+                            field.defaultValue || ''
+                    },
+                )
 
                 setFormData(initialFormData)
             })
     }, [formId])
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target
+    const handleChange = (
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >,
+    ) => {
+        const { name, value, type } = e.target
 
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: type === 'checkbox' ? checked : value,
-        }))
+        if (type === 'checkbox') {
+            const checked = (e.target as HTMLInputElement).checked
+            setFormData((prevData: any) => ({
+                ...prevData,
+                [name]: checked ? value : '',
+            }))
+        } else {
+            setFormData((prevData: any) => ({
+                ...prevData,
+                [name]: value,
+            }))
+        }
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
         const formattedData = Object.entries(formData).map(([key, value]) => ({
@@ -102,10 +123,10 @@ export default function FormBlock({ formReference, wrapIt = true }) {
                 content: result.message,
                 show: true,
             })
-        } catch (error) {
+        } catch (error: any) {
             setFormMessage({
                 type: 'error',
-                content: `Error submitting form ${error.message}`,
+                content: `Error submitting form: ${error?.message ?? 'unknown'}`,
                 show: true,
             })
         }
@@ -190,7 +211,10 @@ export default function FormBlock({ formReference, wrapIt = true }) {
                                     </label>
                                     <div className='flex gap-4'>
                                         {field.options.map(
-                                            (option, optionIndex) => (
+                                            (
+                                                option: string,
+                                                optionIndex: number,
+                                            ) => (
                                                 <label
                                                     className='flex gap-2'
                                                     key={optionIndex}>
@@ -237,7 +261,10 @@ export default function FormBlock({ formReference, wrapIt = true }) {
                                             formData[field.name.current] || ''
                                         }>
                                         {field.options.map(
-                                            (option, optionIndex) => (
+                                            (
+                                                option: string,
+                                                optionIndex: number,
+                                            ) => (
                                                 <option
                                                     key={optionIndex}
                                                     value={stegaClean(option)}>

@@ -1,6 +1,6 @@
 import Section from '@/ui/layout/section'
 import Container from '@/ui/layout/container'
-const Wrap = ({ children, wrapIt = true }) => {
+const Wrap = ({ children, wrapIt = true }: Model.wrapIt) => {
     if (!wrapIt) return children
     return (
         <Section>

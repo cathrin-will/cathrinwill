@@ -2,9 +2,9 @@ export const maxDuration = 60
 import sanityClient from '@/lib/sanity/client'
 
 import { NextResponse } from 'next/server'
-export async function POST(req) {
+export async function POST(req: Request) {
     try {
-        const body = await req.json() // Parse the request body
+        const body = await req.json()
         const response = await sanityClient.create({
             _type: 'formSubmission',
             ...body,
@@ -14,10 +14,12 @@ export async function POST(req) {
             message: 'Form submitted successfully',
             response,
         })
-    } catch (err) {
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'unknown'
+
         return NextResponse.json(
             {
-                message: `Internal server error: ${err.message}`,
+                message: `Internal server error: ${errorMessage}`,
             },
             { status: 500 },
         )

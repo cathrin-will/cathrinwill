@@ -4,18 +4,26 @@ import { notFound } from 'next/navigation'
 import Blocks from '@/ui/blocks'
 import processMetadata from '@/lib/processMetadata'
 
-export default async function Page({ params }) {
-    params.slug = params.slug?.join('/')
-    const page = await getPage(params)
+interface PageProps {
+    params: {
+        slug?: string[]
+    }
+}
 
-    if (!page) notFound()
+export default async function Page({ params }: PageProps) {
+    const slug = params.slug?.join('/')
+    const page = await getPage({ slug })
+
+    if (!page) {
+        notFound()
+    }
+
     return <Blocks blocks={page?.blocks} />
 }
 
-export async function generateMetadata({ params }) {
-    params.slug = params.slug?.join('/')
-
-    const page = await getPage(params)
+export async function generateMetadata({ params }: PageProps) {
+    const slug = params.slug?.join('/')
+    const page = await getPage({ slug })
     if (!page) notFound()
     return processMetadata(page)
 }

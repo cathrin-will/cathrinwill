@@ -15,7 +15,11 @@ export const metadata = {
     description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     return (
         <html
             lang='en'

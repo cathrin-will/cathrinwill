@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 
 const useIntersectionObserver = (
-    callback,
+    callback: (element: Element) => void,
     options = { rootMargin: '10%', threshold: 0.3 },
 ) => {
-    const observer = useRef(null)
+    const observer = useRef<IntersectionObserver | null>(null)
 
     useEffect(() => {
         if (observer.current) observer.current.disconnect()
@@ -17,10 +17,10 @@ const useIntersectionObserver = (
             })
         }, options)
 
-        return () => observer.current.disconnect()
+        return () => observer.current?.disconnect()
     }, [callback, options])
 
-    const observe = (element) => {
+    const observe = (element: Element) => {
         if (observer.current && element) {
             observer.current.observe(element)
         }
