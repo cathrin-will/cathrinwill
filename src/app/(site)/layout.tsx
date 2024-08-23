@@ -25,9 +25,7 @@ export default function RootLayout({
             lang='en'
             className={font.className}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
-            <body
-                className={styles.body}
-                suppressHydrationWarning={true}>
+            <body className={styles.body}>
                 {draftMode().isEnabled && (
                     <div>
                         <a
