@@ -25,7 +25,7 @@ export const blockObject = {
                         title: 'Highlight',
                         value: 'highlight',
                         icon: PiHighlighterDuotone,
-                        component: (props) => (
+                        component: (props: { children: React.ReactNode }) => (
                             <span className='color-rajah'>
                                 {props.children}
                             </span>
@@ -36,7 +36,7 @@ export const blockObject = {
                         title: 'Center Align',
                         value: 'centerAlign',
                         icon: BsTextCenter,
-                        component: (props) => (
+                        component: (props: { children: React.ReactNode }) => (
                             <div className='text-center'>{props.children}</div>
                         ),
                     },
@@ -44,7 +44,7 @@ export const blockObject = {
                         title: 'Right Align',
                         value: 'rightAlign',
                         icon: BsTextRight,
-                        component: (props) => (
+                        component: (props: { children: React.ReactNode }) => (
                             <div className='text-right'>{props.children}</div>
                         ),
                     },

@@ -18,7 +18,7 @@ export function slug(str: string) {
         .replace(/-$/, '')
 }
 
-export const wrapHighlightedText = (text, highlight) => {
+export const wrapHighlightedText = (text: string, highlight: string) => {
     if (!highlight) return text
     highlight = stegaClean(highlight)
     text = stegaClean(text)

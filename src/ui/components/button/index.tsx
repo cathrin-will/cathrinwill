@@ -9,11 +9,13 @@ export default function Button({
     className,
     children,
     onClick,
-}: Sanity.Button & React.HTMLAttributes<HTMLAnchorElement>) {
+}: Model.Button & React.HTMLAttributes<HTMLAnchorElement>) {
     if (!link?.type) return null
 
     const props = {
-        className: style ? cn(className, styles[style ?? link.style]) : null,
+        className: style
+            ? cn(className, styles[style ?? link.style])
+            : undefined,
         children: children || link.label || link.internal?.title,
         onClick: onClick,
     }

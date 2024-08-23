@@ -13,7 +13,10 @@ import { FaSquareJs } from 'react-icons/fa6'
 import { FaGithub } from 'react-icons/fa6'
 
 import styles from './skills.module.scss'
-export default function TextBlock({ content, wrapIt = true }) {
+export default function SkillsBlock({
+    content,
+    wrapIt = true,
+}: Sanity.skillsBlock) {
     const test = 'rgb(252, 195, 153)'
     return (
         <Wrap wrapIt={wrapIt}>

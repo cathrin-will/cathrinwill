@@ -5,7 +5,15 @@ import Button from '@/ui/components/button'
 import Image from './Image'
 
 import styles from './text.module.scss'
-export default function Text({ content, children, className }: any) {
+export default function Text({
+    content,
+    children,
+    className,
+}: {
+    content?: any
+    children?: React.ReactNode
+    className?: string
+}) {
     if (children)
         return <div className={cn(styles['text'], className)}>{children}</div>
 

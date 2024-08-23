@@ -15,15 +15,17 @@ export const metadata = {
     description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     return (
         <html
             lang='en'
             className={font.className}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
-            <body
-                className={styles.body}
-                suppressHydrationWarning={true}>
+            <body className={styles.body}>
                 {draftMode().isEnabled && (
                     <div>
                         <a

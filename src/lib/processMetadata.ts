@@ -2,7 +2,7 @@ import { getSite } from '@/lib/sanity/queries'
 import processUrl, { SITE_URL } from './processUrl'
 import type { Metadata } from 'next'
 
-export default async function processMetadata(page) {
+export default async function processMetadata(page: any) {
     const site = await getSite()
 
     const url = processUrl(page)

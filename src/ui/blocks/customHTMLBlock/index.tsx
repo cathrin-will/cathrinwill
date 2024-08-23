@@ -1,8 +1,8 @@
 export default function CustomHTML({
-	html,
+    html,
 }: Partial<{
-	html: string
+    html: string
 }>) {
-	if (!html) return null
-	return <div dangerouslySetInnerHTML={{ __html: html }} />
+    if (!html) return null
+    return <div dangerouslySetInnerHTML={{ __html: html }} />
 }

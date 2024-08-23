@@ -13,9 +13,9 @@ export default function StatsBlock({
     placesWorkedStats,
     wakaContent,
     wrapIt = true,
-}) {
-    const [stats, setStats] = useState<Sanity.StatsData | null>(null)
-    const [totalStats, setTotalStats] = useState<Sanity.TotalStatsData>({
+}: Sanity.statsBlock) {
+    const [stats, setStats] = useState<Model.StatsData | null>(null)
+    const [totalStats, setTotalStats] = useState<Model.TotalStatsData>({
         prs: 0,
         reviews: 0,
         repos: 0,
@@ -30,7 +30,7 @@ export default function StatsBlock({
             // https://github.com/octokit/core.js#readme
 
             try {
-                const data: Sanity.StatsData = await octokit.graphql(`
+                const data: Model.StatsData = await octokit.graphql(`
                     {
                         viewer {
                             contributionsCollection {
@@ -78,13 +78,14 @@ export default function StatsBlock({
             },
         )
         const totalPrs =
-            ~~stats?.viewer?.pullRequests?.totalCount + totals.totalPRs
+            ~~(stats?.viewer?.pullRequests?.totalCount ?? 0) + totals.totalPRs
         const totalPrContributions =
-            ~~stats?.viewer?.contributionsCollection
-                ?.totalPullRequestReviewContributions +
-            totals.totalPRContributions
+            ~~(
+                stats?.viewer?.contributionsCollection
+                    ?.totalPullRequestReviewContributions ?? 0
+            ) + totals.totalPRContributions
         const repositoriesContributedTo =
-            ~~stats?.viewer?.repositoriesContributedTo?.totalCount +
+            ~~(stats?.viewer?.repositoriesContributedTo?.totalCount ?? 0) +
             totals.repositoriesContributedTo
 
         setTotalStats({
