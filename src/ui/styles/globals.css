@@ -12,6 +12,8 @@
     --black: #000;
     --blue-charcoal: rgb(1, 15, 23);
     --blue-charcoal-90: rgba(1, 15, 23, 0.9);
+    --success-color: #4caf50;
+    --error-color: #f44336;
 
     /* specifics for dark/light mode */
     --main-bg-color: radial-gradient(

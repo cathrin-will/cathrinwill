@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/ui/styles/globals.css'
 import { VisualEditing } from 'next-sanity'
 import { draftMode } from 'next/headers'
 import StoreProvider from '@/store/storeProvider'

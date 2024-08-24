@@ -1,6 +1,6 @@
 @use 'sass:math';
-@use '../../../styles/settings/' as *;
-@use '../../../styles/utils/' as *;
+@use '../../styles/settings/' as *;
+@use '../../styles/utils/' as *;
 
 .day-night {
     --toggle-height: 53px;
@@ -59,8 +59,8 @@
     display: block;
     height: var(--toggle-size);
     left: calc(var(--toggle-width) * 0.15);
-    // margin-left: 5px;
-    // margin-top: 5px;
+    // margin-left: 5px;margin-left
+    // margin-top: 5px;margin-top
     position: absolute;
     top: calc(var(--toggle-height) * 0.2);
     transform: rotate(-75deg);
