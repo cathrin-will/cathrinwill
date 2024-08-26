@@ -1,0 +1,26 @@
+@use 'sass:math';
+@use '../../styles/settings/' as *;
+@use '../../styles/utils/' as *;
+
+.skip {
+    background: var(--white);
+    border-radius: 5px;
+    color: var(--black);
+    cursor: pointer;
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0;
+    padding: 30px;
+    pointer-events: none;
+    position: absolute;
+
+    &:focus {
+        margin: 20px;
+        opacity: 1;
+        pointer-events: auto;
+        position: relative;
+    }
+}
