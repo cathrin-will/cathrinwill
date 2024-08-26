@@ -35,7 +35,7 @@ export default function MenuContent({
 
                         return (
                             <Button
-                                style='link'
+                                style='plain'
                                 className={cn(
                                     styles.link,
                                     active && styles.active,

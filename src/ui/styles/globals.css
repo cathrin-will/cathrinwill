@@ -6,12 +6,14 @@
     --spacing: 16px;
 
     /* colors */
-    --chestnut-rose: #cb4e64;
-    --rajah: #f7ab7f;
-    --white: #fff;
-    --black: #000;
+    --chestnut-rose: rgb(203, 78, 100);
+    --rajah: rgb(247, 171, 127);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
     --blue-charcoal: rgb(1, 15, 23);
     --blue-charcoal-90: rgba(1, 15, 23, 0.9);
+    --success-color: rgb(23, 82, 58);
+    --error-color: rgb(139, 0, 0);
 
     /* specifics for dark/light mode */
     --main-bg-color: radial-gradient(
@@ -79,5 +81,3 @@ html {
         text-wrap: balance;
     }
 }
-
-

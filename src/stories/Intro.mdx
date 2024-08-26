@@ -1,0 +1,62 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+
+<Meta title="AC Will Dev" />
+
+<div className="container">
+
+    <h1>AC Will Dev</h1>
+    <p>This is the Storybook for AC Will Dev. It is a collection of components that are used in the AC Will Dev project.</p>
+    <ColorPalette>
+        <ColorItem
+            title="Standard"
+            subtitle="Black and White"
+            colors={{ White: 'rgb(255, 255, 255)', Black: 'rgb(0, 0, 0)' }}
+        />
+        <ColorItem
+            title="Informational"
+            subtitle="Success and error"
+            colors={{ success: 'rgb(23, 82, 58)', error: 'rgb(139, 0, 0)' }}
+        />
+        <ColorItem
+            title="Text color"
+            subtitle="--text-color"
+            colors={{ 'Light mode': 'rgba(0, 0, 0, 0.8)', 'Dark mode': 'rgba(255, 255, 255, 0.9)' }}
+        />
+        <ColorItem
+            title="Accent"
+            subtitle="--accent"
+            colors={{ 'Light mode (--chestunut-rose)': 'rgb(203, 78, 100)', 'Dark mode (--rajah)': 'rgb(247, 171, 127)' }}
+        />
+         <ColorItem
+            title="Button Glow"
+            subtitle="--button-glow"
+            colors={{ 'Light mode': 'rgb(252, 195, 153)', 'Dark mode': 'rgba(217, 251, 255 , .5)' }}
+        />
+        <ColorItem
+            title="Footer Background Color"
+            subtitle="--footer-bg-color"
+            colors={{ 'Light mode': 'rgb(41, 51, 106)', 'Dark mode': 'rgb(1, 15, 23)' }}
+        />
+        <ColorItem
+            title="Heading Underline"
+            subtitle="--heading-underline"
+            colors={{ 'Light mode': 'rgba(0, 0, 0, 0.2)', 'Dark mode': 'rgba(255, 255, 255, 0.2)' }}
+        />
+        <ColorItem
+            title="Blue Charcoal"
+            subtitle="Blue charcoal alphas"
+                  colors={{
+                      '--blue-charcoal-90': 'rgba(1, 15, 23, 0.9)',
+                      '--blue-charcoal': 'rgb(1, 15, 23)'
+                  }}
+        />
+    </ColorPalette>
+</div>
+<style>
+  {`
+    .container {
+        margin-bottom: 48px;
+    }
+  `}
+</style>
