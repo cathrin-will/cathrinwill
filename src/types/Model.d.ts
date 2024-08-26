@@ -14,7 +14,7 @@ declare global {
 
         type Button = {
             link?: Link
-            style?: 'button' | 'text' | false
+            style?: 'button' | 'text' | 'link' | false
         }
 
         type wrapIt = {
