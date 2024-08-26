@@ -12,7 +12,7 @@ const meta = {
         },
         style: {
             control: 'radio',
-            options: ['button', 'link'],
+            options: ['button', 'text', 'plain'],
         },
     },
     parameters: {
@@ -24,13 +24,25 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const External: Story = {
     args: {
-        children: <p>lorem ipsum</p>,
         link: {
             type: 'external',
             external: 'https://google.com',
             label: 'Google',
+        },
+        style: 'button',
+    },
+}
+
+export const Internal: Story = {
+    args: {
+        link: {
+            type: 'internal',
+            internal: {
+                slug: 'about',
+                title: 'About',
+            },
         },
         style: 'button',
     },

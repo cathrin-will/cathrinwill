@@ -7,7 +7,6 @@ export default function Button({
     link,
     style,
     className,
-    children,
     onClick,
 }: Model.Button & React.HTMLAttributes<HTMLAnchorElement>) {
     if (!link?.type) return null
@@ -16,9 +15,9 @@ export default function Button({
         className: style
             ? cn(className, styles[style ?? link.style])
             : undefined,
-        children: children || link.label || link.internal?.title,
         onClick: onClick,
     }
+    const label = link.label || link.internal?.title
     switch (link.type) {
         case 'internal':
             if (!link.internal) return null
@@ -29,7 +28,7 @@ export default function Button({
                         base: false,
                     })}
                     {...props}>
-                    {link.label}
+                    {label}
                 </Link>
             )
 
@@ -40,7 +39,7 @@ export default function Button({
                     {...props}
                     target='_blank'
                     rel='noreferrer noopenner'>
-                    {link.label}
+                    {label}
                 </a>
             )
 
