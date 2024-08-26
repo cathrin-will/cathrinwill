@@ -18,6 +18,7 @@ export default function Button({
         onClick: onClick,
     }
     const label = link.label || link.internal?.title
+
     switch (link.type) {
         case 'internal':
             if (!link.internal) return null

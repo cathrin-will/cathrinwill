@@ -40,8 +40,12 @@ export const Internal: Story = {
         link: {
             type: 'internal',
             internal: {
-                slug: 'about',
                 title: 'About',
+                metadata: {
+                    slug: {
+                        current: 'about',
+                    },
+                },
             },
         },
         style: 'button',
