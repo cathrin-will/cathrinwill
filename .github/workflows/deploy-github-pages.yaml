@@ -3,11 +3,7 @@
 # Workflow name
 name: Build and Publish Storybook to GitHub Pages
 
-on:
-  # Event for the workflow to run on
-  push:
-    branches:
-      - 'master'
+on: push
 
 permissions:
   contents: read
