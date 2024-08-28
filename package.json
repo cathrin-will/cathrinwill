@@ -69,7 +69,6 @@
         "@types/jest": "^29.5.12",
         "autoprefixer": "^10.4.20",
         "chromatic": "^11.7.1",
-        "dotenv": "^16.4.5",
         "eslint": "^9.9.0",
         "eslint-config-next": "^14.2.5",
         "eslint-plugin-storybook": "^0.8.0",
