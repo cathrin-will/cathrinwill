@@ -6,7 +6,7 @@ import Button from '@/ui/components/button'
 import Text from '@/ui/components/text'
 import { cn } from '@/lib/utils'
 
-import styles from './link-list.module.scss'
+import styles from './linkList.module.scss'
 export default function LinkList({
     label,
     style,

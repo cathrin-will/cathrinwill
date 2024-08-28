@@ -1,4 +1,4 @@
-import styles from './skip.module.scss'
+import styles from './skipToContent.module.scss'
 export default function SkipToContent({}: {}) {
     return (
         <a

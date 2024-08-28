@@ -4,7 +4,7 @@ import Message from '@/ui/components/message'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-    title: 'Components/Message',
+    title: 'Components/message',
     component: Message,
     parameters: {
         layout: 'centered',

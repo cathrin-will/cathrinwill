@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Index from './index'
 
 const meta = {
-    title: 'Components/Button',
+    title: 'Components/button',
     component: Index,
     tags: ['autodocs'],
     argTypes: {

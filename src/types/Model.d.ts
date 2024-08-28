@@ -17,9 +17,15 @@ declare global {
             style?: 'button' | 'text' | 'plain' | false
         }
 
-        type wrapIt = {
+        type WrapIt = {
             children: React.ReactNode
             wrapIt?: boolean
+        }
+
+        type Lordicon = {
+            icon: string
+            link?: string
+            text?: string
         }
 
         // stats data
