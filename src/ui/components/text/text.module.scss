@@ -111,18 +111,28 @@
 
 .profile {
     aspect-ratio: 1 / 1;
-    border-radius: 50% 0 50% 50%;
     box-sizing: border-box;
     margin-inline: auto;
-    overflow: hidden;
-    padding: 10px 0 10px 10px;
     position: relative;
     shape-outside: circle(50%);
     width: 250px;
+    &:before {
+        background-color: var(--white);
+        border-radius: 50% 0 50% 50%;
+        content: '';
+        height: calc(100% + 40px);
+        opacity: 0.2;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        width: calc(100% + 40px);
+    }
     @include breakpoint(small, min) {
         float: right;
+        margin: 30px 20px 30px 30px;
     }
     .image {
+        border-radius: 50% 0 50% 50%;
         height: 100%;
         left: 0;
         object-fit: cover;
@@ -138,6 +148,7 @@
 }
 
 .video {
+    border-radius: 50% 0 50% 50%;
     display: none;
     height: 100%;
     left: 0;
