@@ -9,7 +9,9 @@
         "lint": "next lint",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "chromatic": "npx chromatic --project-token=chpt_1a50fe329b469b7"
+        "chromatic": "npx chromatic --project-token=chpt_1a50fe329b469b7",
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@lordicon/react": "^1.10.0",
@@ -44,10 +46,14 @@
         "sanity-plugin-vercel-deploy": "^3.3.4",
         "slick-carousel": "^1.8.1",
         "styled-components": "^6.1.12",
-        "tailwind-merge": "^2.5.2"
+        "tailwind-merge": "^2.5.2",
+        "ts-node": "^10.9.2",
+        "tsparticles-engine": "^2.12.0"
     },
     "devDependencies": {
+        "@babel/preset-typescript": "^7.24.7",
         "@chromatic-com/storybook": "^1.7.0",
+        "@jest/globals": "^29.7.0",
         "@storybook/addon-a11y": "^8.2.9",
         "@storybook/addon-essentials": "^8.2.9",
         "@storybook/addon-interactions": "^8.2.9",
@@ -57,11 +63,18 @@
         "@storybook/nextjs": "^8.2.9",
         "@storybook/react": "^8.2.9",
         "@storybook/test": "^8.2.9",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.5.0",
+        "@testing-library/react": "^16.0.0",
+        "@types/jest": "^29.5.12",
         "autoprefixer": "^10.4.20",
         "chromatic": "^11.7.1",
+        "dotenv": "^16.4.5",
         "eslint": "^9.9.0",
         "eslint-config-next": "^14.2.5",
         "eslint-plugin-storybook": "^0.8.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "postcss": "^8.4.41",
         "sass": "^1.77.8",
         "storybook": "^8.2.9",
