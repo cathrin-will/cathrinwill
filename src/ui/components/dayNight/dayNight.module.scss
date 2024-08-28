@@ -8,7 +8,7 @@
     --toggle-size: calc(var(--toggle-height) * 0.625);
 
     --bg-color-dark: var(--main-bg-color);
-    --moon-color: #d9fbff;
+    --moon-color: rgb(217, 251, 255);
 }
 
 .checkbox {
@@ -59,8 +59,6 @@
     display: block;
     height: var(--toggle-size);
     left: calc(var(--toggle-width) * 0.15);
-    // margin-left: 5px;margin-left
-    // margin-top: 5px;margin-top
     position: absolute;
     top: calc(var(--toggle-height) * 0.2);
     transform: rotate(-75deg);
@@ -70,27 +68,27 @@
 
 //  sun
 [data-theme='light'] .sun-or-moon {
-    background: #fff;
+    background: var(--white);
     box-shadow:
         calc(var(--toggle-width) * 0.1) calc(var(--toggle-height) * 0.1) 0
-            calc(var(--toggle-height) * 0.3125) #fff inset,
+            calc(var(--toggle-height) * 0.3125) var(--white) inset,
         0 calc(var(--toggle-height) * -0.3125) 0
-            calc(var(--toggle-height) * -0.16875) #fff,
+            calc(var(--toggle-height) * -0.16875) var(--white),
         calc(var(--toggle-width) * 0.1167) calc(var(--toggle-height) * -0.21875)
-            0 calc(var(--toggle-height) * -0.1875) #fff,
+            0 calc(var(--toggle-height) * -0.1875) var(--white),
         calc(var(--toggle-width) * 0.1667) 0 0
-            calc(var(--toggle-height) * -0.16875) #fff,
+            calc(var(--toggle-height) * -0.16875) var(--white),
         calc(var(--toggle-width) * 0.1167) calc(var(--toggle-height) * 0.21875)
-            0 calc(var(--toggle-height) * -0.1875) #fff,
+            0 calc(var(--toggle-height) * -0.1875) var(--white),
         0 calc(var(--toggle-height) * 0.3125) 0
-            calc(var(--toggle-height) * -0.16875) #fff,
+            calc(var(--toggle-height) * -0.16875) var(--white),
         calc(var(--toggle-width) * -0.1167) calc(var(--toggle-height) * 0.21875)
-            0 calc(var(--toggle-height) * -0.1875) #fff,
+            0 calc(var(--toggle-height) * -0.1875) var(--white),
         calc(var(--toggle-width) * -0.1667) 0 0
-            calc(var(--toggle-height) * -0.16875) #fff,
+            calc(var(--toggle-height) * -0.16875) var(--white),
         calc(var(--toggle-width) * -0.1167)
             calc(var(--toggle-height) * -0.21875) 0
-            calc(var(--toggle-height) * -0.1875) #fff;
+            calc(var(--toggle-height) * -0.1875) var(--white);
     height: calc(var(--toggle-height) * 0.4375);
     left: calc(var(--toggle-width) * 0.5);
     top: calc(var(--toggle-height) * 0.3);
