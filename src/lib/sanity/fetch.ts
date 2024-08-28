@@ -1,5 +1,5 @@
 import client from '@/lib/sanity/client'
-import isDev from '@/lib/env'
+import { isDev } from '@/lib/env'
 // import { draftMode } from 'next/headers'
 import type { QueryParams, ResponseQueryOptions } from 'next-sanity'
 

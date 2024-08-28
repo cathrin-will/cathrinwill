@@ -13,13 +13,9 @@ import { presentationTool } from 'sanity/presentation'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { structure } from '@/sanity/structure/'
 import { defaultDocumentNode } from '@/sanity/structure/defaultDocumentNode'
-
 import { schemaTypes } from '@/sanity/schemas'
+import { isDev, apiVersion, projectId, dataset } from '@/lib/env'
 
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION
-const isDev = dataset !== 'production'
 const devPlugins = isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []
 
 export default defineConfig({
