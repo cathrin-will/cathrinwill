@@ -51,6 +51,9 @@
         "tsparticles-engine": "^2.12.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@babel/preset-env": "^7.25.4",
+        "@babel/preset-react": "^7.24.7",
         "@babel/preset-typescript": "^7.24.7",
         "@chromatic-com/storybook": "^1.7.0",
         "@jest/globals": "^29.7.0",
@@ -68,6 +71,7 @@
         "@testing-library/react": "^16.0.0",
         "@types/jest": "^29.5.12",
         "autoprefixer": "^10.4.20",
+        "babel-jest": "^29.7.0",
         "chromatic": "^11.7.1",
         "eslint": "^9.9.0",
         "eslint-config-next": "^14.2.5",

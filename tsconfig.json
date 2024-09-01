@@ -1,40 +1,37 @@
 {
-    "compilerOptions":{
-        "lib":[
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
-        "allowJs":true,
-        "skipLibCheck":true,
-        "strict":true,
-        "noEmit":true,
-        "incremental":true,
-        "module":"esnext",
-        "esModuleInterop":true,
-        "moduleResolution":"node",
-        "resolveJsonModule":true,
-        "isolatedModules":true,
-        "jsx":"preserve",
-        "plugins":[
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "incremental": true,
+        "module": "esnext",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "allowSyntheticDefaultImports": true,
+        "target": "ESNext",
+        "plugins": [
             {
-                "name":"next"
+                "name": "next"
             }
         ],
-        "paths":{
-            "@/*":[
-                "./src/*"
-            ]
+        "paths": {
+            "@/*": ["./src/*"]
         },
+        "forceConsistentCasingInFileNames": true
     },
-    "include":[
+    "include": [
         "next-env.d.ts",
         ".next/types/**/*.ts",
         "**/*.ts",
-        "**/*.tsx"
-, "src/ui/layout/page/index.js"    ],
-    "exclude":[
-        "node_modules"
+        "**/*.tsx",
+        "src/ui/layout/page/index.js",
+        "jest.setup.ts",
+        "jest.config.ts"
     ],
-
+    "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-export default function CustomHTML({
+export default function CustomHtmlBlock({
     html,
 }: Partial<{
     html: string

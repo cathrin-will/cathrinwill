@@ -70,13 +70,13 @@ declare global {
         // blocks
         type accordionBlock = {
             content: any[]
-            items: [{ summary: string; details: any[] }]
+            items: { summary: string; details: any[] }[]
             wrapIt?: boolean
         }
 
         type creativeBlock = {
             content: any[]
-            columns: [{ percentageWidth?: number; subModules: Block[] }]
+            columns?: [{ percentageWidth?: number; subModules?: Block[] }]
             columnsNumber?: number
             alignItems?: string
             wrapIt?: boolean
