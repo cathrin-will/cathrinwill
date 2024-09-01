@@ -70,7 +70,7 @@ declare global {
         // blocks
         type accordionBlock = {
             content: any[]
-            items: [{ summary: string; details: any[] }]
+            items: { summary: string; details: any[] }[]
             wrapIt?: boolean
         }
 
