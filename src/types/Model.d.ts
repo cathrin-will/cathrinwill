@@ -1,3 +1,4 @@
+import { Message } from '@/ui/components/message'
 declare global {
     namespace Model {
         // components
@@ -26,6 +27,12 @@ declare global {
             icon: string
             link?: string
             text?: string
+        }
+
+        type Message = {
+            type: 'error' | 'success'
+            content: string
+            className?: string
         }
 
         // stats data

@@ -5,11 +5,7 @@ export default function Message({
     type = 'error',
     content,
     className,
-}: {
-    type: 'error' | 'success'
-    content: string
-    className?: string
-}) {
+}: Model.Message) {
     const props = {
         className: cn(className, type ? styles[type] : ''),
     }
