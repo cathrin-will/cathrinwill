@@ -4,12 +4,16 @@ import { FaGithub } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaCodepen } from 'react-icons/fa'
 
-import EmailIcon from '@/ui/components/lordicon/emailIcon'
+import Lordicon from '@/ui/components/lordicon/index'
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <EmailIcon />
+            <Lordicon
+                icon='email'
+                text='ac.will.dev@gmail.com'
+                link='mailto:ac.will.dev@gmail.com'
+            />
             <ul className={cn(styles.social)}>
                 <li>
                     <a

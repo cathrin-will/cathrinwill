@@ -2,9 +2,10 @@
 @use '../../styles/settings/' as *;
 @use '../../styles/utils/' as *;
 
-.email {
-    --lord-icon-colorize: rgb(255, 255, 255);
+.icon {
+    --lord-icon-colorize: var(--white);
     align-items: center;
+    color: var(--white);
     display: flex;
     font-weight: 600;
     gap: 5px;
