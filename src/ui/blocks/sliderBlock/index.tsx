@@ -16,13 +16,14 @@ export default function SliderBlock({
     images,
     wrapIt = true,
 }: Sanity.sliderBlock) {
-    var settings = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
     }
+
     return (
         <Wrap wrapIt={wrapIt}>
             <div>
@@ -36,7 +37,10 @@ export default function SliderBlock({
                     <div
                         className={cn(styles.slide)}
                         key={key}>
-                        <Img image={image} />
+                        <Img
+                            image={image}
+                            imageWidth={1312}
+                        />
                     </div>
                 ))}
             </Slider>

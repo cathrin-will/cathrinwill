@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import DayNight from './index'
+import CustomHtmlBlock from './index'
 
-describe('DayNight', () => {
+describe('CustomHtml', () => {
     it('renders without crashing', () => {
-        render(<DayNight />)
+        render(<CustomHtmlBlock html={'<b>HTML</b>'} />)
     })
 })
