@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import Button from './index'
+import Container from './index'
 
-describe('Button', () => {
+describe('Container', () => {
     it('renders without crashing', () => {
-        render(<Button />)
+        render(<Container children={''} />)
     })
 })

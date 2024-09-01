@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import DayNight from '.'
+import DayNight from './index'
 
 Object.defineProperty(window, 'matchMedia', {
     writable: true,
