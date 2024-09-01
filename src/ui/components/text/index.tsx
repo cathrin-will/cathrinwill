@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react'
 import { cn } from '@/lib/utils'
 
 import Button from '@/ui/components/button'
-import Image from './image'
+import Image from './img'
 
 import styles from './text.module.scss'
 export default function Text({
