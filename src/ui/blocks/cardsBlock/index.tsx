@@ -12,8 +12,35 @@ export default function Cards({
 }: Sanity.cardsBlock) {
     const [cards, setCards] = useState(initialCards)
 
+    const eggTexts = [
+        '🥚 You found my pointless easter egg! 🥚',
+        "You just can't help yourself, can you?",
+        'Another pointless egg for you! 🥚',
+        "You're really into these eggs, huh? 🥚",
+        'How many more of these will you click? 🥚',
+        'This is the last egg. 🥚',
+        'Ok I lied. 🥚',
+        'This one really is! 🥚',
+        '🥚',
+        '🐣',
+        '🥚',
+        '🐣',
+    ]
+
+    const [eggTextIndex, setEggTextIndex] = useState(0)
+
     const handleRemoveCard = (indexToRemove: number) => {
         setCards(cards?.filter((_, index) => index !== indexToRemove))
+    }
+
+    const changeEggText = () => {
+        if (eggTextIndex === 10) {
+            setEggTextIndex(11)
+        } else if (eggTextIndex === 11) {
+            setEggTextIndex(10)
+        } else {
+            setEggTextIndex((prevIndex) => (prevIndex + 1) % eggTexts.length)
+        }
     }
 
     return (
@@ -136,7 +163,41 @@ export default function Cards({
                         </div>
                     ))}
                     {cards?.length === 0 && (
-                        <Text>Congrats on removing all my work 🥚</Text>
+                        <div className={cn(styles.card)}>
+                            <div className={cn(styles.tools)}>
+                                <button
+                                    className={cn(styles.circle)}
+                                    onClick={changeEggText}>
+                                    <span className='sr-only'>
+                                        red circle/ close button
+                                    </span>
+                                    <span
+                                        className={cn(
+                                            styles.box,
+                                            styles.red,
+                                        )}></span>
+                                </button>
+                                <div className={cn(styles.circle)}>
+                                    <span
+                                        className={cn(
+                                            styles.box,
+                                            styles.yellow,
+                                        )}></span>
+                                </div>
+                                <div className={cn(styles.circle)}>
+                                    <span
+                                        className={cn(
+                                            styles.box,
+                                            styles.green,
+                                        )}></span>
+                                </div>
+                            </div>
+                            <div className={cn(styles.content)}>
+                                <Text className={cn('text-center')}>
+                                    <h3>{eggTexts[eggTextIndex]}</h3>
+                                </Text>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>
