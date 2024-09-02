@@ -104,8 +104,11 @@ export default function Cards({
                                             <dd className='mb-4'>
                                                 {card.details}
                                             </dd>
-                                            <dt className='text-green-400'>
-                                                Tech Stack:
+                                            <dt>
+                                                <span className='text-green-400'>
+                                                    Tech Stack:
+                                                </span>{' '}
+                                                {card.techStack}
                                             </dt>
                                             <dd className='mb-4'>
                                                 <span className='text-green-400'>
