@@ -29,14 +29,14 @@
             }
         }
     }
-    p {
+    p:not([class]) {
         font-size: 1.1rem;
         &:not(:last-child) {
             margin-bottom: var(--spacing);
         }
     }
-    ul,
-    ol {
+    ul:not([class]),
+    ol:not([class]) {
         font-size: 1.1rem;
         list-style-position: inside;
         list-style-type: disc;
@@ -49,7 +49,7 @@
             }
         }
     }
-    ol {
+    ol:not([class]) {
         list-style-type: decimal;
     }
 

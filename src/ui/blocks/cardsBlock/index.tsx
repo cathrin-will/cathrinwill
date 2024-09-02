@@ -1,15 +1,20 @@
+'use client'
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
-
 import Wrap from '@/ui/layout/wrap'
 import Text from '@/ui/components/text'
 import styles from './cards.module.scss'
 
 export default function Cards({
     content,
-    cards,
+    cards: initialCards,
     wrapIt = true,
 }: Sanity.cardsBlock) {
-    console.log(cards)
+    const [cards, setCards] = useState(initialCards)
+
+    const handleRemoveCard = (indexToRemove: number) => {
+        setCards(cards?.filter((_, index) => index !== indexToRemove))
+    }
 
     return (
         <Wrap wrapIt={wrapIt}>
@@ -20,18 +25,23 @@ export default function Cards({
                 />
                 <div className={cn(styles.scroll)}>
                     {cards?.map((card, key) => (
-                        <div className={cn(styles.scrollItem)}>
-                            <div
-                                className={cn(styles.card)}
-                                key={key}>
+                        <div
+                            className={cn(styles.scrollItem)}
+                            key={key}>
+                            <div className={cn(styles.card)}>
                                 <div className={cn(styles.tools)}>
-                                    <div className={cn(styles.circle)}>
+                                    <button
+                                        className={cn(styles.circle)}
+                                        onClick={() => handleRemoveCard(key)}>
+                                        <span className='sr-only'>
+                                            red circle/ close button
+                                        </span>
                                         <span
                                             className={cn(
                                                 styles.box,
                                                 styles.red,
                                             )}></span>
-                                    </div>
+                                    </button>
                                     <div className={cn(styles.circle)}>
                                         <span
                                             className={cn(
@@ -49,18 +59,85 @@ export default function Cards({
                                 </div>
                                 <div className={cn(styles.content)}>
                                     <Text>
-                                        {card.type}
-                                        {card.siteType}
-                                        {card.details}
-                                        {card.myRole}
-                                        {card.techStack}
-                                        {card.team}
+                                        <span className='absolute top-3 right-3 text-xs'>
+                                            $ {card.type} Work
+                                        </span>
+
+                                        <dl className='flex gap-1 flex-col'>
+                                            <dt className='text-green-400'>
+                                                Site type:
+                                            </dt>
+                                            <dd className='mb-4'>
+                                                {card.siteType}
+                                            </dd>
+
+                                            <dt className='text-green-400'>
+                                                Description:
+                                            </dt>
+                                            <dd className='mb-4'>
+                                                {card.details}
+                                            </dd>
+                                            <dt className='text-green-400'>
+                                                Tech Stack:
+                                            </dt>
+                                            <dd className='mb-4'>
+                                                <span className='text-green-400'>
+                                                    [{' '}
+                                                </span>
+                                                {card.tech.map(
+                                                    (tech, techKey) => (
+                                                        <span key={techKey}>
+                                                            {tech}
+                                                            {techKey !==
+                                                                card.tech
+                                                                    .length -
+                                                                    1 && (
+                                                                <span className='text-green-400'>
+                                                                    {' '}
+                                                                    |{' '}
+                                                                </span>
+                                                            )}
+                                                        </span>
+                                                    ),
+                                                )}
+                                                <span className='text-green-400'>
+                                                    {' '}
+                                                    ]
+                                                </span>
+                                            </dd>
+                                            <dt className='text-green-400'>
+                                                My role:
+                                            </dt>
+                                            <dd className='mb-4'>
+                                                {card.myRole}
+                                            </dd>
+
+                                            <dt className='text-green-400 grow-1'>
+                                                Team:
+                                            </dt>
+                                            <dd>
+                                                <ul className='text-sm list-none'>
+                                                    {card.team.map(
+                                                        (member, memberKey) => (
+                                                            <li key={memberKey}>
+                                                                {member}{' '}
+                                                                <span className='text-green-400'>
+                                                                    ✓
+                                                                </span>
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            </dd>
+                                        </dl>
                                     </Text>
-                                    {/* <Text content={card.tech} /> */}
                                 </div>
                             </div>
                         </div>
                     ))}
+                    {cards?.length === 0 && (
+                        <Text>Congrats on removing all my work 🥚</Text>
+                    )}
                 </div>
             </div>
         </Wrap>
