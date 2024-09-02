@@ -7,6 +7,7 @@ import SliderBlock from './sliderBlock'
 import SkillsBlock from './skillsBlock'
 import StatsBlock from './statsBlock'
 import TextBlock from './textBlock'
+import CardsBlock from './cardsBlock'
 
 export default function Blocks({ blocks }: { blocks?: Sanity.Block[] }) {
     return (
@@ -32,6 +33,8 @@ export default function Blocks({ blocks }: { blocks?: Sanity.Block[] }) {
                         return <SliderBlock {...block} key={block._key} />
                     case 'textBlock':
                         return <TextBlock {...block} key={block._key} />
+                    case 'cardsBlock':
+                        return <CardsBlock {...block} key={block._key} />
 
                     default:
                         return <div data-type={block._type} key={block._key} />
