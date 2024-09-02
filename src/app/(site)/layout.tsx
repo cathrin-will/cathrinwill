@@ -37,7 +37,6 @@ export default function RootLayout({
                 )}
                 <StoreProvider>
                     <Header />
-
                     <main
                         id='main'
                         className={styles.main}>

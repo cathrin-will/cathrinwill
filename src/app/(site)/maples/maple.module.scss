@@ -1,0 +1,77 @@
+@use '../../../ui/styles/settings/' as *;
+@use '../../../ui/styles/utils/' as *;
+
+.container {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.wrap {
+    --width: 220px;
+    padding-left: 5px;
+    width: calc(var(--width) * 2 + 10px);
+    @include hover {
+        .card {
+            margin-left: var(--width);
+        }
+        .cover {
+            transform: rotatey(-180deg);
+            transition: all 0.5s;
+        }
+    }
+
+    .card {
+        align-items: center;
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+        color: var(--black);
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        perspective: 2000px;
+        position: relative;
+        transform: preserve-3d;
+        transition: margin-left 0.5s;
+        width: var(--width);
+
+        @include hover {
+            margin-left: var(--width);
+            .cover {
+                transform: rotatey(-180deg);
+                transition: all 0.5s;
+                * {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .cover {
+        align-items: center;
+        background-color: rgb(211, 211, 211);
+        border-radius: 10px;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        transform-origin: 0;
+        transition: all 0.5s;
+        width: 100%;
+    }
+    .inner {
+        text-align: center;
+    }
+    .h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .h2 {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+}
