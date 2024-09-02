@@ -62,6 +62,11 @@ module.exports = function (plop) {
                 path: 'src/ui/blocks/{{camelCase name}}Block/{{camelCase name}}.test.tsx',
                 templateFile: 'plop-templates/block/Block.test.hbs',
             },
+            {
+                type: 'add',
+                path: 'src/sanity/schemas/blocks/{{dashCase name}}-block-schema.tsx',
+                templateFile: 'plop-templates/block/Block.schema.hbs',
+            },
         ],
     })
 }
