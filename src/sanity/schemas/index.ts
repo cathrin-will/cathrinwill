@@ -9,6 +9,7 @@ import { pageSchema } from './page/page-schema'
 
 // components
 import { ctaSchema } from './components/cta-schema'
+import { cardSchema } from './components/card-schema'
 import { linkSchema } from './components/link-schema'
 import { imageUrlSchema } from './components/image-url-schema'
 
@@ -25,6 +26,7 @@ import { formTextareaSchema } from './forms/form-textarea-schema'
 
 // blocks
 import { accordionBlockSchema } from './blocks/accordion-block-schema'
+import { cardsBlockSchema } from './blocks/cards-block-schema'
 import { creativeBlockSchema } from './blocks/creative-block-schema'
 import { formBlockSchema } from './blocks/form-block-schema'
 import { heroBlockSchema } from './blocks/hero-block-schema'
@@ -37,6 +39,8 @@ import { textBlockSchema } from './blocks/text-block-schema'
 
 export const schemaTypes = [
     accordionBlockSchema,
+    cardSchema,
+    cardsBlockSchema,
     creativeBlockSchema,
     ctaSchema,
     formBlockSchema,
@@ -59,8 +63,8 @@ export const schemaTypes = [
     navigationSchema,
     pageSchema,
     siteSchema,
-    sliderBlockSchema,
     skillsBlockSchema,
+    sliderBlockSchema,
     statsBlockSchema,
     textBlockSchema,
 ]
