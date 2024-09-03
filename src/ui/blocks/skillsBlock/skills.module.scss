@@ -2,16 +2,64 @@
 @use '../../styles/settings/' as *;
 @use '../../styles/utils/' as *;
 
+.particles {
+    background-color: var(--particle-bg);
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    &:before,
+    &:after {
+        pointer-events: none;
+        transition: background-color 0.5s;
+    }
+    &:before {
+        background: linear-gradient(
+            180deg,
+            var(--particle-bg) 0%,
+            var(--particle-fade) 100%
+        );
+        content: '';
+        height: 500px;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+    &:after {
+        background: linear-gradient(
+            180deg,
+            var(--particle-fade) 0%,
+            var(--particle-bg) 100%
+        );
+        bottom: 100%;
+        content: '';
+        height: 500px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
 .skills {
+    --speed: -80%;
+
+    @include breakpoint(small, min) {
+        --speed: -20%;
+    }
+    @include breakpoint(medium, min) {
+        --speed: -5%;
+    }
     display: flex;
     margin: 24px -24px;
-    overflow: hidden;
     position: relative;
     &__inner {
         animation: logo-left;
         animation-timeline: --page-scroll;
         display: flex;
-        gap: 8px;
+        gap: 5vw;
         @supports not (scroll-timeline: --page-scroll) {
             animation: logo-left 1s linear infinite;
             animation-delay: calc(var(--scroll) * -0.1s);
@@ -30,15 +78,52 @@
     align-items: center;
     aspect-ratio: 3 / 1;
     background: var(--white);
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     font-size: 0.75rem;
+    height: 5vw;
+
     justify-content: center;
+    min-height: 65px;
+
+    min-width: 65px;
     padding: 18px;
     position: relative;
+    width: 5vw;
+
     svg {
+        transition: transform 0.3s ease-in-out;
         z-index: 1;
+    }
+    @include breakpoint(medium, min) {
+        &--2 {
+            transform: translate(0px, 20px);
+        }
+        &--3 {
+            transform: translate(10px, 20px);
+        }
+        &--4 {
+            transform: translate(20px, 20px);
+        }
+        &--5 {
+            transform: translate(10px, -20px);
+        }
+        &--6 {
+            transform: translate(-10px, 20px);
+        }
+        &--7 {
+            transform: translate(0, -20px);
+        }
+        &--8 {
+            transform: translate(20px, 20px);
+        }
+        &--9 {
+            transform: translate(10px, -10px);
+        }
+        &--10 {
+            transform: translate(20px, -20px);
+        }
     }
     &--1 {
         --bg: rgb(252, 195, 153);
@@ -82,8 +167,11 @@
         width: 100%;
     }
     @include hover {
+        svg {
+            transform: scale(1.5);
+        }
         &:after {
-            transform: scale(2);
+            transform: scale(0.9);
         }
     }
 }
@@ -95,10 +183,10 @@
 
 @keyframes logo-left {
     from {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     to {
-        transform: translateX(-30%);
+        transform: translateX(var(--speed));
     }
 }

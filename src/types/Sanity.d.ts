@@ -106,7 +106,6 @@ declare global {
 
         type skillsBlock = {
             content: SanityContent
-            wrapIt?: boolean
         }
 
         type textBlock = {
