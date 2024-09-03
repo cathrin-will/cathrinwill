@@ -29,7 +29,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <a
-                        href='https://codepen.io/cathrinwill'
+                        href='https://codepen.io/acwilldev'
                         target='_blank'
                         rel='noopener noreferrer'
                         title='codepen'>

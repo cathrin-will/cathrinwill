@@ -17,7 +17,6 @@ export default function SkillsBlock({
     content,
     wrapIt = true,
 }: Sanity.skillsBlock) {
-    const test = 'rgb(252, 195, 153)'
     return (
         <Wrap wrapIt={wrapIt}>
             <div className={styles.skills}>
