@@ -38,9 +38,10 @@
     ul:not([class]),
     ol:not([class]) {
         font-size: 1.1rem;
-        list-style-position: inside;
+        list-style-position: outside;
         list-style-type: disc;
         margin-bottom: var(--spacing);
+        margin-left: 1rem;
         li {
             margin-bottom: 5px;
             &::marker {
@@ -56,20 +57,7 @@
     a:not([class]) {
         -webkit-background-clip: text;
         -moz-background-clip: text;
-        background-image: linear-gradient(
-            -90deg,
-            rgb(66, 66, 102) 0%,
-            rgb(75, 73, 113) 10%,
-            rgb(90, 78, 122) 30%,
-            rgb(138, 91, 110) 40%,
-            rgb(214, 72, 98) 50%,
-            rgb(167, 45, 77) 60%,
-            rgb(143, 35, 63) 70%,
-            rgb(120, 30, 58) 80%,
-            rgb(102, 26, 50) 90%,
-            rgb(84, 24, 43) 100%
-        );
-
+        background-image: var(--sunset);
         background-position: 100% 0;
         background-repeat: repeat;
         background-size: 200%;
@@ -113,19 +101,32 @@
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
     margin-inline: auto;
+    min-width: 250px;
     position: relative;
     shape-outside: circle(50%);
-    width: 250px;
+    width: 33%;
+
     &:before {
-        background-color: var(--white);
+        background: rgba(255, 255, 255, 0.5);
         border-radius: 50% 0 50% 50%;
         content: '';
         height: calc(100% + 40px);
-        opacity: 0.2;
         position: absolute;
         right: -20px;
         top: -20px;
         width: calc(100% + 40px);
+    }
+    &:after {
+        background: var(--neon);
+        border-radius: 0 50% 0 0;
+        content: '';
+        filter: blur(30px);
+        height: 100%;
+        left: 0;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
     @include breakpoint(small, min) {
         float: right;
@@ -139,6 +140,7 @@
         position: absolute;
         top: 0;
         width: 100%;
+        z-index: 1;
     }
     @include hover {
         .video {
@@ -156,4 +158,5 @@
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 1;
 }

@@ -110,6 +110,7 @@ declare global {
 
         type textBlock = {
             content: any
+            themed?: boolean
             wrapIt?: boolean
             children?: ReactNode
         }
