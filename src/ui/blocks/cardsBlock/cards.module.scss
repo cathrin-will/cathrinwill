@@ -1,19 +1,25 @@
 @use '../../styles/settings/' as *;
 @use '../../styles/utils/' as *;
 
+.intro {
+    max-width: 950px;
+}
+
 .scroll {
     display: flex;
     gap: 20px;
-    margin-inline: -20px;
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
     overflow-y: visible;
     overscroll-behavior-inline: contain;
     padding-block: 40px;
-    padding-inline: 20px;
     scroll-snap-type: x mandatory;
     scrollbar-color: var(--accent) var(--white);
     scrollbar-width: thin;
+
+    @include breakpoint(small) {
+        margin-inline: -20px;
+    }
 }
 
 .scrollItem {
@@ -38,7 +44,7 @@
 }
 
 .card {
-    background-color: rgb(1, 21, 34);
+    background-color: var(--terminal);
     border-radius: 8px;
     height: 100%;
     margin: 0 auto;

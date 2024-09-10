@@ -1,10 +1,10 @@
 import Section from '@/ui/layout/section'
 import Container from '@/ui/layout/container'
-const Wrap = ({ children, wrapIt = true }: Model.WrapIt) => {
+const Wrap = ({ children, wrapIt = true, containerSize }: Model.WrapIt) => {
     if (!wrapIt) return children
     return (
         <Section>
-            <Container>{children}</Container>
+            <Container containerSize={containerSize}>{children}</Container>
         </Section>
     )
 }

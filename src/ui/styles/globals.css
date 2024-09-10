@@ -16,6 +16,32 @@
     --error-color: rgb(139, 0, 0);
     --particle-bg: rgba(112, 121, 169, 0.8);
     --particle-fade: rgba(228, 232, 245, .1);
+    --terminal: rgb(1, 21, 34);
+    --beach: linear-gradient(144deg, #ca1eb3, #fd2e24, #ffd701 70%);
+    --neon: linear-gradient(315deg, #03a9f4, #ff0058);
+    --sunrise: linear-gradient(
+        -45deg,
+        rgb(252, 195, 153) 0%,
+        rgb(249, 159, 122) 15%,
+        rgb(244, 102, 99) 30%,
+        rgb(214, 72, 98) 50%,
+        rgb(167, 45, 77) 70%,
+        rgb(120, 30, 58) 85%,
+        rgb(84, 24, 43) 100%
+    );
+    --sunset: linear-gradient(
+            -45deg,
+            rgb(66, 66, 102) 0%,
+            rgb(75, 73, 113) 10%,
+            rgb(90, 78, 122) 30%,
+            rgb(138, 91, 110) 40%,
+            rgb(214, 72, 98) 50%,
+            rgb(167, 45, 77) 60%,
+            rgb(143, 35, 63) 70%,
+            rgb(120, 30, 58) 80%,
+            rgb(102, 26, 50) 90%,
+            rgb(84, 24, 43) 100%
+        );
 
     /* specifics for dark/light mode */
     --main-bg-color: radial-gradient(
@@ -30,6 +56,8 @@
     --accent: var(--chestnut-rose);
     --button-glow: rgb(252, 195, 153);
     --footer-bg-color: rgba(41, 51, 106, 1);
+    --header: var(--sunrise);
+    --header-rev: var(--sunset);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +71,8 @@
         --footer-bg-color: rgb(1, 15, 23);
         --particle-bg: #22283e;
         --particle-fade: var(--main-bg-color);
+        --header: var(--sunset);
+        --header-rev: var(--sunrise);
     }
     /* todo make DRY */
     [data-theme='light'] {
@@ -60,6 +90,8 @@
         --footer-bg-color: rgba(41, 51, 106, 1);
         --particle-bg: rgba(112, 121, 169, 0.8);
         --particle-fade: rgba(228, 232, 245, .1);
+        --header: var(--sunrise);
+        --header-rev: var(--sunset);
     }
 }
 
@@ -77,6 +109,8 @@
         --footer-bg-color: rgb(1, 15, 23);
         --particle-bg: #22283e;
         --particle-fade: var(--main-bg-color);
+        --header: var(--sunset);
+        --header-rev: var(--sunrise);
     }
 }
 

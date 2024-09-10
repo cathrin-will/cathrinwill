@@ -46,10 +46,12 @@ export default function Cards({
     return (
         <Wrap wrapIt={wrapIt}>
             <div className={cn(styles.cards)}>
-                <Text
-                    content={content}
-                    className={cn('mb-1')}
-                />
+                <div className={cn(styles.intro)}>
+                    <Text
+                        content={content}
+                        className={cn('mb-1')}
+                    />
+                </div>
                 <div className={cn(styles.scroll)}>
                     {cards?.map((card, key) => (
                         <div

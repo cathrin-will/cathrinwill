@@ -4,17 +4,7 @@
 
 .header {
     align-items: center;
-    background: linear-gradient(
-        -90deg,
-        rgb(252, 195, 153) 0%,
-        rgb(249, 159, 122) 15%,
-        rgb(244, 102, 99) 30%,
-        rgb(214, 72, 98) 50%,
-        rgb(167, 45, 77) 70%,
-        rgb(120, 30, 58) 85%,
-        rgb(84, 24, 43) 100%
-    );
-
+    background: var(--header);
     border-radius: 0px 0px 40px 0px;
     color: var(--text-color);
     display: flex;
@@ -47,24 +37,6 @@
         &:before {
             width: 100%;
         }
-    }
-}
-
-[data-theme='dark'] {
-    .header {
-        background: linear-gradient(
-            -90deg,
-            rgb(66, 66, 102) 0%,
-            rgb(75, 73, 113) 10%,
-            rgb(90, 78, 122) 30%,
-            rgb(138, 91, 110) 40%,
-            rgb(214, 72, 98) 50%,
-            rgb(167, 45, 77) 60%,
-            rgb(143, 35, 63) 70%,
-            rgb(120, 30, 58) 80%,
-            rgb(102, 26, 50) 90%,
-            rgb(84, 24, 43) 100%
-        );
     }
 }
 

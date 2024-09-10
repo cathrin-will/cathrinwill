@@ -1,11 +1,22 @@
 import { VscSymbolKeyword } from 'react-icons/vsc'
 import { getBlockText } from '@/sanity/utils'
-import { blockField } from '../components/block-object'
+import { blockObject } from '../components/block-object'
+import { defineField } from 'sanity'
 export const textBlockSchema = {
     name: 'textBlock',
     icon: VscSymbolKeyword,
     type: 'object',
-    fields: blockField,
+    fields: [
+        defineField({
+            name: 'themed',
+            type: 'boolean',
+        }),
+        defineField({
+            name: 'content',
+            type: 'array',
+            ...blockObject,
+        }),
+    ],
     preview: {
         select: {
             content: 'content',

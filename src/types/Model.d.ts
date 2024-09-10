@@ -11,6 +11,7 @@ declare global {
         type Container = {
             children: ReactNode
             className?: string
+            containerSize?: 'trim' | 'full'
         }
 
         type Button = {
@@ -21,6 +22,7 @@ declare global {
         type WrapIt = {
             children: React.ReactNode
             wrapIt?: boolean
+            containerSize?: 'trim' | 'full'
         }
 
         type Lordicon = {
