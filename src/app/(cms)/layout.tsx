@@ -1,3 +1,4 @@
+import '@/ui/styles/globals.css'
 import { ReactNode } from 'react'
 export const metadata = {
     title: 'Sanity',

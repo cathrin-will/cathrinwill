@@ -12,5 +12,14 @@ import { NextStudio } from 'next-sanity/studio'
 import config from '@/sanity/sanity.config'
 
 export default function AdminPage() {
-    return <NextStudio config={config} />
+    return (
+        <>
+            <NextStudio config={config} />
+
+            <span
+                className={`${config.dataset === 'staging' ? 'bg-lime-200' : 'bg-purple-400'} text-sm  rounded-sm right-40 px-3 py-1 absolute z-50 bottom-3 capitalize`}>
+                {config.dataset}
+            </span>
+        </>
+    )
 }
