@@ -2,6 +2,7 @@
     "name": "cathrinwill",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -69,6 +70,7 @@
         "@storybook/nextjs": "^8.2.9",
         "@storybook/react": "^8.2.9",
         "@storybook/test": "^8.2.9",
+        "@stylistic/eslint-plugin": "^2.8.0",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.5.0",
         "@testing-library/react": "^16.0.0",
