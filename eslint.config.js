@@ -16,9 +16,8 @@ export default [
         plugins: {
             '@stylistic': stylistic,
         },
-
         rules: {
-            // stylistic
+            // stylistic rules
             '@stylistic/comma-dangle': ['warn', 'always-multiline'],
             '@stylistic/comma-style': ['warn', 'last'],
             '@stylistic/eol-last': 'warn',
@@ -54,7 +53,7 @@ export default [
             ],
             '@stylistic/template-curly-spacing': 'off',
 
-            // custom not in specified in recommended
+            // custom rules not specified in recommended
             'camelcase': 1,
             'curly': [2, 'all'],
             'default-case': 1,
