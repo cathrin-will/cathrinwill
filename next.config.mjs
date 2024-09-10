@@ -7,6 +7,10 @@ const nextConfig = {
             },
         ],
     },
+    eslint: {
+        // eslint issues with v9 and nextjs https://github.com/vercel/next.js/issues/64409
+        ignoreDuringBuilds: true,
+    },
 }
 
 export default nextConfig
