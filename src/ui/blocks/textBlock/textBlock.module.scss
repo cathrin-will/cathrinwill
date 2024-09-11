@@ -1,0 +1,23 @@
+.themed {
+    background-image: var(--header-rev);
+    color: var(--white);
+    padding: 20px;
+    position: relative;
+
+    &:after {
+        background: var(--neon);
+        border-radius: 0 50% 0 0;
+        content: '';
+        filter: blur(30px);
+        height: 100%;
+        left: 0;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    > div {
+        background: var(--terminal);
+        padding: 20px;
+    }
+}

@@ -1,11 +1,12 @@
 export const blocks = [
     { type: 'accordionBlock' },
+    { type: 'cardsBlock' },
+    { type: 'formBlock' },
     { type: 'heroBlock' },
     { type: 'htmlBlock' },
     { type: 'imageBlock' },
-    { type: 'sliderBlock' },
-    { type: 'textBlock' },
-    { type: 'formBlock' },
     { type: 'skillsBlock' },
+    { type: 'sliderBlock' },
     { type: 'statsBlock' },
+    { type: 'textBlock' },
 ]

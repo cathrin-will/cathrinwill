@@ -44,9 +44,11 @@ export default function CreativeBlock({
                             alignItems,
                         }}>
                         {columns?.map(({ subModules }, i) => (
-                            <div key={i}>
-                                <Blocks blocks={subModules} />
-                            </div>
+                            <Blocks
+                                key={i}
+                                blocks={subModules}
+                                wrapIt={false}
+                            />
                         ))}
                     </div>
                 </div>

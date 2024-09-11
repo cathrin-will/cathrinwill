@@ -19,45 +19,55 @@ export default function Text({
 
     return (
         <div className={cn(styles['text'], className)}>
-            <PortableText
-                value={content}
-                components={{
-                    types: {
-                        image: Image,
-                    },
+            <div className='relative z-10'>
+                <PortableText
+                    value={content}
+                    components={{
+                        types: {
+                            image: Image,
+                        },
 
-                    marks: {
-                        highlight({ children }) {
-                            return (
-                                <span className={styles.highlight}>
-                                    {children}
-                                </span>
-                            )
+                        marks: {
+                            highlight({ children }) {
+                                return (
+                                    <span className={styles.highlight}>
+                                        {children}
+                                    </span>
+                                )
+                            },
+                            link: ({ children, value }) => {
+                                value.label = children
+                                return (
+                                    <Button
+                                        link={value}
+                                        style={false}
+                                    />
+                                )
+                            },
                         },
-                        link: ({ children, value }) => {
-                            value.label = children
-                            return (
-                                <Button
-                                    link={value}
-                                    style={false}
-                                />
-                            )
-                        },
-                    },
 
-                    block: {
-                        leftAlign: ({ children }) => {
-                            return <div className='text-left'>{children}</div>
+                        block: {
+                            leftAlign: ({ children }) => {
+                                return (
+                                    <div className='text-left'>{children}</div>
+                                )
+                            },
+                            rightAlign: ({ children }) => {
+                                return (
+                                    <div className='text-right'>{children}</div>
+                                )
+                            },
+                            centerAlign: ({ children }) => {
+                                return (
+                                    <div className='text-center'>
+                                        {children}
+                                    </div>
+                                )
+                            },
                         },
-                        rightAlign: ({ children }) => {
-                            return <div className='text-right'>{children}</div>
-                        },
-                        centerAlign: ({ children }) => {
-                            return <div className='text-center'>{children}</div>
-                        },
-                    },
-                }}
-            />
+                    }}
+                />
+            </div>
         </div>
     )
 }

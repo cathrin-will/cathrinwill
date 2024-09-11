@@ -3,6 +3,12 @@ import type { SanityDocument } from 'next-sanity'
 
 declare global {
     namespace Sanity {
+        type SanityContent = {
+            _type: string
+            style: string
+            children: { _type: string; text: string }[]
+        }[]
+
         // documents
 
         type Site = SanityDocument<{
@@ -69,13 +75,13 @@ declare global {
 
         // blocks
         type accordionBlock = {
-            content: any[]
+            content: SanityContent
             items: { summary: string; details: any[] }[]
             wrapIt?: boolean
         }
 
         type creativeBlock = {
-            content: any[]
+            content: SanityContent
             columns?: [{ percentageWidth?: number; subModules?: Block[] }]
             columnsNumber?: number
             alignItems?: string
@@ -99,20 +105,20 @@ declare global {
         }
 
         type skillsBlock = {
-            content: any[]
-            wrapIt?: boolean
+            content: SanityContent
         }
 
         type textBlock = {
             content: any
+            themed?: boolean
             wrapIt?: boolean
             children?: ReactNode
         }
 
         type statsBlock = {
-            introContent: any[]
-            githubContent: any[]
-            wakaContent: any[]
+            introContent: SanityContent
+            githubContent: SanityContent
+            wakaContent: SanityContent
             placesWorkedStats: {
                 repositoriesContributedTo: number
                 totalPRContributions: number
@@ -126,6 +132,22 @@ declare global {
             content: any
             images: Image[]
             wrapIt?: boolean
+        }
+
+        type cardsBlock = {
+            content?: SanityContent
+            wrapIt?: boolean
+            cards?: {
+                title: string
+                year: number
+                type: string
+                siteType: string
+                details: string
+                myRole: string
+                techStack: string
+                team: string[]
+                tech: string[]
+            }[]
         }
     }
 }

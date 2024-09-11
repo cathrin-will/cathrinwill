@@ -1,13 +1,20 @@
 import Wrap from '@/ui/layout/wrap'
 import Text from '@/ui/components/text'
-import Message from '@/ui/components/message'
+import styles from './textBlock.module.scss'
+
 export default function TextBlock({
     content,
+    themed,
     wrapIt = true,
 }: Sanity.textBlock) {
     return (
-        <Wrap wrapIt={wrapIt}>
-            <Text content={content} />
+        <Wrap
+            wrapIt={wrapIt}
+            containerSize='trim'>
+            <Text
+                content={content}
+                className={themed ? styles.themed : ''}
+            />
         </Wrap>
     )
 }

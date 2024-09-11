@@ -7,31 +7,40 @@ import SliderBlock from './sliderBlock'
 import SkillsBlock from './skillsBlock'
 import StatsBlock from './statsBlock'
 import TextBlock from './textBlock'
+import CardsBlock from './cardsBlock'
 
-export default function Blocks({ blocks }: { blocks?: Sanity.Block[] }) {
+export default function Blocks({
+    blocks,
+    wrapIt,
+}: {
+    blocks?: Sanity.Block[]
+    wrapIt?: boolean
+}) {
     return (
         <>
             {blocks?.map((block) => {
                 // prettier-ignore
                 switch (block._type) {
                     case 'accordionBlock':
-                        return <AccordionBlock {...block} key={block._key} />
+                        return <AccordionBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'creativeBlock':
-                        return <CreativeBlock {...block} key={block._key} />
+                        return <CreativeBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'formBlock':
-                        return <FormBlock {...block} key={block._key} />
+                        return <FormBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'htmlBlock':
-                        return <CustomHTML {...block} key={block._key} />
+                        return <CustomHTML {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'imageBlock':
-                        return <ImageBlock {...block} key={block._key} />
+                        return <ImageBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'skillsBlock':
-                        return <SkillsBlock {...block} key={block._key} />
+                        return <SkillsBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'statsBlock':
-                        return <StatsBlock {...block} key={block._key} />
+                        return <StatsBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'sliderBlock':
-                        return <SliderBlock {...block} key={block._key} />
+                        return <SliderBlock {...block} key={block._key} wrapIt={wrapIt}/>
                     case 'textBlock':
-                        return <TextBlock {...block} key={block._key} />
+                        return <TextBlock {...block} key={block._key} wrapIt={wrapIt}/>
+                    case 'cardsBlock':
+                        return <CardsBlock {...block} key={block._key} wrapIt={wrapIt}/>
 
                     default:
                         return <div data-type={block._type} key={block._key} />
