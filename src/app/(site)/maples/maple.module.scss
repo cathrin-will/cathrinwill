@@ -4,12 +4,12 @@
 .container {
     align-items: center;
     display: flex;
-    height: 100vh;
     justify-content: center;
 }
 
 .wrap {
-    --width: 220px;
+    --width: 420px;
+    --height: 600px;
     padding-left: 5px;
     width: calc(var(--width) * 2 + 10px);
     @include hover {
@@ -29,7 +29,7 @@
         box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
         color: var(--black);
         display: flex;
-        height: 300px;
+        height: var(--height);
         justify-content: center;
         perspective: 2000px;
         position: relative;
@@ -73,5 +73,191 @@
     .h2 {
         font-size: 1.1em;
         font-weight: bold;
+    }
+}
+
+.heart__icon {
+    color: inherit;
+    fill: none;
+    height: 8em;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    vertical-align: sub;
+    width: 8em;
+}
+.heart {
+    color: #8c0a03;
+    margin-top: 24px;
+    &__inner {
+        height: 8em;
+        margin: auto;
+        position: relative;
+        width: 8em;
+        .heart {
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transform: scale(0);
+            transition: 200ms all ease;
+            &.heart__filled {
+                color: #a72727;
+            }
+        }
+        &.heart__selected {
+            .heart {
+                &.heart__filled {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+        &.heart__got-selected .heart.heart__filled {
+            animation: heartAppears 1650ms ease infinite;
+        }
+    }
+}
+.heart__icon_fill {
+    fill: currentColor;
+    stroke-width: 0;
+}
+.heart_explosion {
+    transform: scale(1.5) translateY(-5%);
+    transform-origin: center;
+}
+.heart_explosion .explosion {
+    animation: explosion 1650ms ease infinite;
+    transform: scale(0);
+    transform-origin: center;
+}
+.heart .heart_explosion .explosion {
+    animation-name: explosion-gold;
+}
+.heart_explosion .particle {
+    opacity: 0;
+    transform-origin: center;
+    &.particle-1 {
+        animation: particle-1-explosion 1650ms ease 150ms infinite;
+    }
+    &.particle-2 {
+        animation: particle-2-explosion 1650ms ease 150ms infinite;
+    }
+}
+@keyframes explosion {
+    0% {
+        color: #a72727;
+        stroke: rgba(167, 39, 39, 0);
+        stroke-width: 2;
+        transform: scale(0);
+    }
+    3% {
+        color: #a72727;
+    }
+    9% {
+        stroke: rgba(167, 39, 39, 0);
+    }
+    13% {
+        stroke-width: 2;
+    }
+    14% {
+        color: #a72866;
+        opacity: 1;
+    }
+    17% {
+        stroke: #a72866;
+        transform: scale(1);
+    }
+    19% {
+        color: rgba(167, 39, 39, 0);
+    }
+    30%,
+    100% {
+        color: rgba(167, 39, 39, 0);
+        opacity: 0;
+        stroke: #a72866;
+        stroke-width: 0;
+    }
+}
+@keyframes explosion-gold {
+    0% {
+        color: #ffc000;
+        color: rgba(255, 198, 106, 0);
+        stroke-width: 2;
+        transform: scale(0);
+    }
+    3% {
+        color: #ffc000;
+    }
+    9% {
+        color: rgba(255, 198, 106, 0);
+    }
+    13% {
+        stroke-width: 2;
+    }
+    14% {
+        color: #ffc66a;
+        opacity: 1;
+    }
+    17% {
+        stroke: #ffc66a;
+        transform: scale(1);
+    }
+    19% {
+        color: rgba(255, 198, 106, 0);
+    }
+    30%,
+    100% {
+        color: rgba(255, 198, 106, 0);
+        opacity: 0;
+        stroke: #ffc66a;
+        stroke-width: 0;
+    }
+}
+@keyframes particle-1-explosion {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    9% {
+        opacity: 1;
+    }
+    45% {
+        transform: scale(1.375);
+    }
+    60%,
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+@keyframes particle-2-explosion {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    6% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+        transform: scale(1.15);
+    }
+}
+@keyframes heartAppears {
+    0%,
+    25% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1.15);
+    }
+    30%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
