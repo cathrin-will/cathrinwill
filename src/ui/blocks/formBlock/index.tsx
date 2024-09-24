@@ -288,10 +288,9 @@ export default function FormBlock({
                 </div>
             </form>
             {formMessage.show && (
-                <Message
-                    type={formMessage.type}
-                    content={formMessage.content}
-                />
+                <Message type={formMessage.type}>
+                    <p>{formMessage.content}</p>
+                </Message>
             )}
         </Wrap>
     )

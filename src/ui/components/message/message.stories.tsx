@@ -19,7 +19,6 @@ const meta = {
                 options: ['error', 'success'],
             },
         },
-        content: { control: 'text' },
         className: { control: 'text' },
     },
 } satisfies Meta<typeof Message>
@@ -30,13 +29,13 @@ type Story = StoryObj<typeof meta>
 export const Success: Story = {
     args: {
         type: 'success',
-        content: 'lorem ipsum',
+        children: <p>lorem ipsum</p>,
     },
 }
 
 export const Error: Story = {
     args: {
         type: 'error',
-        content: 'lorem ipsum',
+        children: <p>lorem ipsum</p>,
     },
 }
