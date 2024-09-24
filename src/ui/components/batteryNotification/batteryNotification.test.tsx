@@ -29,30 +29,30 @@ describe('BatteryNotification', () => {
     })
 
     // TODO fix these failing tests
-    // test('should show notification when battery is charging and level is 100%', async () => {
-    //     mockBattery.charging = true
-    //     mockBattery.level = 1
+    test('should show notification when battery is charging and level is 100%', async () => {
+        mockBattery.charging = true
+        mockBattery.level = 1
 
-    //     await act(async () => {
-    //         render(<BatteryNotification />)
-    //         await waitFor(() => {
-    //             expect(
-    //                 screen.getByText(/Your device is already at 100%/),
-    //             ).toBeInTheDocument()
-    //         })
-    //     })
-    // })
+        await act(async () => {
+            render(<BatteryNotification />)
+            await waitFor(() => {
+                expect(
+                    screen.getByText(/Your device is already at 100%/),
+                ).toBeInTheDocument()
+            })
+        })
+    })
 
-    // test('should show notification when override is true', async () => {
-    //     await act(async () => {
-    //         render(<BatteryNotification override={true} />)
-    //         await waitFor(() => {
-    //             expect(
-    //                 screen.getByTitle('battery-notification'),
-    //             ).toBeInTheDocument()
-    //         })
-    //     })
-    // })
+    test('should show notification when override is true', async () => {
+        await act(async () => {
+            render(<BatteryNotification override={true} />)
+            await waitFor(() => {
+                expect(
+                    screen.getByTitle('battery-notification'),
+                ).toBeInTheDocument()
+            })
+        })
+    })
 
     test('should not show notification when getBattery API is not available', async () => {
         global.navigator.getBattery = undefined
