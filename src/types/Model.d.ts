@@ -32,8 +32,8 @@ declare global {
         }
 
         type Message = {
-            type: 'error' | 'success'
-            content: string
+            children: React.ReactNode
+            type: 'error' | 'success' | 'info'
             className?: string
         }
 

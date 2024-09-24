@@ -1,15 +1,27 @@
-import '@/ui/styles/globals.css'
+// sanity
 import { VisualEditing } from 'next-sanity'
 import { draftMode } from 'next/headers'
+
+// store
 import StoreProvider from '@/store/storeProvider'
-import styles from './layout.module.scss'
+
+// ui
 import Header from '@/ui/layout/header'
 import Footer from '@/ui/layout/footer'
-import { Montserrat } from 'next/font/google'
+import BatteryNotification from '@/ui/components/batteryNotification'
+
+//  analytics
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleTagManager } from '@next/third-parties/google'
+
+// styles
+import { Montserrat } from 'next/font/google'
+import '@/ui/styles/globals.css'
+import styles from './layout.module.scss'
+
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
+
 export const metadata = {
     title: 'Ann-Cathrin Will | Front-end Developer ',
     description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
@@ -37,10 +49,10 @@ export default function RootLayout({
                 )}
                 <StoreProvider>
                     <Header />
-
                     <main
                         id='main'
                         className={styles.main}>
+                        <BatteryNotification />
                         <>{children}</>
                     </main>
                     {draftMode().isEnabled && <VisualEditing />}
