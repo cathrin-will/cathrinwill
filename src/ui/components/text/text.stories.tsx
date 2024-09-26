@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { h2withParagraph, oneParagraph } from '@/lib/content/typicalContent'
+import { h2withParagraph } from '@/lib/content/typicalContent'
 import Index from './index'
 
 const meta = {
@@ -41,6 +41,6 @@ export const Default: Story = {
 
 export const SanityCMSContent: Story = {
     args: {
-        content: oneParagraph,
+        content: h2withParagraph,
     },
 }
