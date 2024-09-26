@@ -154,7 +154,7 @@ export default function FormBlock({
                 onSubmit={handleSubmit}>
                 <h2 className='text-3xl bold'>{title}</h2>
                 <Text>{description}</Text>
-                {fields.map((field, index) => {
+                {fields.map((field: any, index) => {
                     switch (field._type) {
                         case 'inputField':
                             return (
@@ -204,8 +204,9 @@ export default function FormBlock({
                                             required={field.required}
                                             onChange={handleChange}
                                             checked={
-                                                formData[field.name.current] ||
-                                                false
+                                                formData[field.name.current]
+                                                    ? true
+                                                    : false
                                             }
                                         />
                                         {stegaClean(field.label)}

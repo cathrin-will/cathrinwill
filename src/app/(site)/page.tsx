@@ -4,14 +4,14 @@ import Blocks from '@/ui/blocks'
 import processMetadata from '@/lib/processMetadata'
 
 export default async function Page() {
-    const page = await getPage()
+    const page = (await getPage()) as Sanity.Page
 
     return <Blocks blocks={page?.blocks} />
 }
 
 export async function generateMetadata() {
     const page = await getPage()
-    return processMetadata(page)
+    return processMetadata(page as Sanity.Page)
 }
 
 async function getPage() {

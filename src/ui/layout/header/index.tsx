@@ -10,7 +10,7 @@ import Navigation from './Navigation'
 import styles from './header.module.scss'
 
 export default async function Header() {
-    const { headerMenu, ctaMenu } = await getSite()
+    const { headerMenu, ctaMenu } = (await getSite()) as Sanity.Site
 
     return (
         <>

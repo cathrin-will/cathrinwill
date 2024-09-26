@@ -14,7 +14,7 @@ export const formNameSchema = defineType({
                 .replace(/\s+/g, '_')
                 .replace(/[^0-9a-z_]/g, '')
                 .slice(0, 200),
-        source: (doc: SanityDocument, context: SlugSourceContext) =>
+        source: (doc: SanityDocument, context: any) =>
             context.parent?.label || doc.title,
     },
 

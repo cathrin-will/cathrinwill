@@ -16,6 +16,7 @@ declare global {
             ctas?: CTA[]
             headerMenu?: Navigation
             footerMenu?: Navigation
+            ctaMenu?: Navigation
             social?: Navigation
             ogimage?: string
         }>
@@ -68,7 +69,7 @@ declare global {
             noIndex: boolean
         }
 
-        type Block<T> = {
+        type Block<T = any> = {
             _type: T
             _key: string
         } & T
@@ -86,6 +87,15 @@ declare global {
             columnsNumber?: number
             alignItems?: string
             wrapIt?: boolean
+        }
+
+        type FormField = {
+            _type: string
+            label: string
+            required: boolean
+            name: { current: string }
+            inputType: string
+            placeholder: string
         }
 
         type formBlock = {
