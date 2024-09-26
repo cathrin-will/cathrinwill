@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { SanityDocument } from '@sanity/client'
 
 export const metaSchema = defineType({
     name: 'metadata',
@@ -20,7 +21,8 @@ export const metaSchema = defineType({
             name: 'slug',
             type: 'slug',
             options: {
-                source: (doc: any) => doc.metadata.title || doc.title,
+                source: (doc: SanityDocument) =>
+                    (doc.metadata?.title as string) || (doc.title as string),
             },
             validation: (Rule) => Rule.required(),
         }),

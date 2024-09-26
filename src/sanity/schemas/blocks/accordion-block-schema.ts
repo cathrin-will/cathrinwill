@@ -49,7 +49,13 @@ export const accordionBlockSchema = {
             content: 'content',
             items: 'items',
         },
-        prepare: ({ content, items }: { content: any; items: any }) => ({
+        prepare: ({
+            content,
+            items,
+        }: {
+            content: Sanity.SanityContent
+            items: []
+        }) => ({
             title: content ? getBlockText(content) : 'Accordion',
             subtitle: `Accordion Block: ${count(items, 'item')}`,
         }),

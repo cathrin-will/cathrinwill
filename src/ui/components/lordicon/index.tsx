@@ -6,12 +6,12 @@ import { useEffect, useState } from 'react'
 export default function Lordicon({ icon, link, text }: Model.Lordicon) {
     const playerRef = useRef<Player>(null)
     const [iconData, setIconData] = useState(null)
-    const loadIcon = async () => {
-        const data = await import(`../../icons/${icon}.json`)
-        setIconData(data)
-    }
 
     useEffect(() => {
+        const loadIcon = async () => {
+            const data = await import(`../../icons/${icon}.json`)
+            setIconData(data)
+        }
         if (icon) {
             loadIcon()
         }

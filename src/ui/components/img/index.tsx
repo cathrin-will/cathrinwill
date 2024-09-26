@@ -21,7 +21,7 @@ export default function Img({
     options?: UseNextSanityImageOptions
 } & Omit<ImageProps, 'src' | 'alt'>) {
     if (!image?.asset) return null
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+
     const imageProps = useNextSanityImage(
         client,
         image,
@@ -52,8 +52,7 @@ export function Source({
 }) {
     if (!image) return null
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { src, loader, ...imageProps } = useNextSanityImage(
+    const { src, ...imageProps } = useNextSanityImage(
         client,
         image,
         imageWidth ? { imageBuilder: (b) => b.width(imageWidth) } : options,

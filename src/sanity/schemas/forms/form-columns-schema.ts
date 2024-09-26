@@ -65,7 +65,7 @@ export const formColumnsSchema = defineType({
             title: 'fields.label',
             col: 'columns',
         },
-        prepare: ({ title, col }: { title: string; col: any }) => ({
+        prepare: ({ title, col }: { title: string; col: [] }) => ({
             title: title,
             subtitle: `Form Columns: ${count(col, 'column')} `,
         }),

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField } from 'sanity'
 import { BsTextCenter, BsTextRight } from 'react-icons/bs'
 import { PiHighlighterDuotone } from 'react-icons/pi'
 import { IoIosImage } from 'react-icons/io'

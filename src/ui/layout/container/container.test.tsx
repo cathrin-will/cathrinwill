@@ -4,6 +4,10 @@ import Container from './index'
 
 describe('Container', () => {
     it('renders without crashing', () => {
-        render(<Container children={''} />)
+        render(
+            <Container>
+                <>Container children</>
+            </Container>,
+        )
     })
 })

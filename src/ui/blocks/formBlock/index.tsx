@@ -1,11 +1,20 @@
 'use client'
+import { useEffect, useState } from 'react'
+
+// sanity
+import sanityClient from '@/lib/sanity/client'
+import { stegaClean } from '@sanity/client/stega'
+
+// ui
 import Wrap from '@/ui/layout/wrap'
 import Text from '@/ui/components/text'
 import Message from '@/ui/components/message'
+
+// utils
 import { cn } from '@/lib/utils'
-import sanityClient from '@/lib/sanity/client'
-import { useEffect, useState } from 'react'
-import { stegaClean } from '@sanity/client/stega'
+import { getErrorMessage } from '@/lib/utils/errorHandler/errorhandler'
+
+// styles
 import buttonStyles from '@/ui/components/button/button.module.scss'
 import styles from './form.module.scss'
 
@@ -76,12 +85,12 @@ export default function FormBlock({
 
         if (type === 'checkbox') {
             const checked = (e.target as HTMLInputElement).checked
-            setFormData((prevData: any) => ({
+            setFormData((prevData: { [key: string]: string }) => ({
                 ...prevData,
                 [name]: checked ? value : '',
             }))
         } else {
-            setFormData((prevData: any) => ({
+            setFormData((prevData: { [key: string]: string }) => ({
                 ...prevData,
                 [name]: value,
             }))
@@ -123,10 +132,10 @@ export default function FormBlock({
                 content: result.message,
                 show: true,
             })
-        } catch (error: any) {
+        } catch (error) {
             setFormMessage({
                 type: 'error',
-                content: `Error submitting form: ${error?.message ?? 'unknown'}`,
+                content: `Error submitting form: ${getErrorMessage(error)}`,
                 show: true,
             })
         }
@@ -142,7 +151,7 @@ export default function FormBlock({
                 className={cn(styles.form)}
                 onSubmit={handleSubmit}>
                 <h2 className='text-3xl bold'>{title}</h2>
-                <Text content={description} />
+                <Text>{description}</Text>
                 {fields.map((field, index) => {
                     switch (field._type) {
                         case 'inputField':

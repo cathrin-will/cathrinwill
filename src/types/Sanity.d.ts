@@ -76,7 +76,7 @@ declare global {
         // blocks
         type accordionBlock = {
             content: SanityContent
-            items: { summary: string; details: any[] }[]
+            items: { summary: string; details: SanityContent }[]
             wrapIt?: boolean
         }
 
@@ -109,7 +109,7 @@ declare global {
         }
 
         type textBlock = {
-            content: any
+            content: SanityContent
             themed?: boolean
             wrapIt?: boolean
             children?: ReactNode
@@ -129,7 +129,7 @@ declare global {
         }
 
         type sliderBlock = {
-            content: any
+            content: SanityContent
             images: Image[]
             wrapIt?: boolean
         }

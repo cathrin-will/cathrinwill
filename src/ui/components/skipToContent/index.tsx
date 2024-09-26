@@ -1,5 +1,5 @@
 import styles from './skipToContent.module.scss'
-export default function SkipToContent({}: {}) {
+export default function SkipToContent() {
     return (
         <a
             href='#main'

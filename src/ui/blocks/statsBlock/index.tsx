@@ -1,5 +1,5 @@
 'use client'
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Octokit } from '@octokit/core'
 import Wrap from '@/ui/layout/wrap'
 import Text from '@/ui/components/text'
@@ -23,6 +23,38 @@ export default function StatsBlock({
     const octokit = new Octokit({
         auth: process.env.GITHUB_TOKEN ?? process.env.NEXT_PUBLIC_GITHUB_TOKEN, // https://github.com/settings/tokens
     })
+
+    const doTheMaths = () => {
+        const totals = placesWorkedStats.reduce(
+            (acc, item) => {
+                acc.totalPRs += item.totalPRs
+                acc.totalPRContributions += item.totalPRContributions
+                acc.repositoriesContributedTo += item.repositoriesContributedTo
+                return acc
+            },
+            {
+                totalPRs: 0,
+                totalPRContributions: 0,
+                repositoriesContributedTo: 0,
+            },
+        )
+        const totalPrs =
+            ~~(stats?.viewer?.pullRequests?.totalCount ?? 0) + totals.totalPRs
+        const totalPrContributions =
+            ~~(
+                stats?.viewer?.contributionsCollection
+                    ?.totalPullRequestReviewContributions ?? 0
+            ) + totals.totalPRContributions
+        const repositoriesContributedTo =
+            ~~(stats?.viewer?.repositoriesContributedTo?.totalCount ?? 0) +
+            totals.repositoriesContributedTo
+
+        setTotalStats({
+            prs: totalPrs,
+            reviews: totalPrContributions,
+            repos: repositoriesContributedTo,
+        })
+    }
 
     useEffect(() => {
         const getStats = async () => {
@@ -56,44 +88,9 @@ export default function StatsBlock({
         }
 
         getStats()
-        doTheMaths()
-    }, [])
 
-    useEffect(() => {
         doTheMaths()
     }, [stats])
-
-    const doTheMaths = () => {
-        const totals = placesWorkedStats.reduce(
-            (acc, item) => {
-                acc.totalPRs += item.totalPRs
-                acc.totalPRContributions += item.totalPRContributions
-                acc.repositoriesContributedTo += item.repositoriesContributedTo
-                return acc
-            },
-            {
-                totalPRs: 0,
-                totalPRContributions: 0,
-                repositoriesContributedTo: 0,
-            },
-        )
-        const totalPrs =
-            ~~(stats?.viewer?.pullRequests?.totalCount ?? 0) + totals.totalPRs
-        const totalPrContributions =
-            ~~(
-                stats?.viewer?.contributionsCollection
-                    ?.totalPullRequestReviewContributions ?? 0
-            ) + totals.totalPRContributions
-        const repositoriesContributedTo =
-            ~~(stats?.viewer?.repositoriesContributedTo?.totalCount ?? 0) +
-            totals.repositoriesContributedTo
-
-        setTotalStats({
-            prs: totalPrs,
-            reviews: totalPrContributions,
-            repos: repositoriesContributedTo,
-        })
-    }
 
     return (
         <Wrap wrapIt={wrapIt}>

@@ -1,4 +1,4 @@
-import { defineType, defineField, defineArrayMember } from 'sanity'
+import { defineType, defineField } from 'sanity'
 import { CiGrid42 } from 'react-icons/ci'
 import { blockField } from '../components/block-object'
 import { count } from '@/sanity/utils'

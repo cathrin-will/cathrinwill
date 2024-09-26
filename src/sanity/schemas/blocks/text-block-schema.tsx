@@ -21,7 +21,7 @@ export const textBlockSchema = {
         select: {
             content: 'content',
         },
-        prepare: ({ content }: { content: any }) => ({
+        prepare: ({ content }: { content: Sanity.SanityContent }) => ({
             title: getBlockText(content),
             subtitle: 'Text Block',
         }),

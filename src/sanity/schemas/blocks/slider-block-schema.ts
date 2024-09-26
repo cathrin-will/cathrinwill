@@ -36,14 +36,15 @@ export const sliderBlockSchema = defineType({
             content: 'content',
             media: 'images.0',
         },
+
         prepare: ({
             content,
             media,
             items,
         }: {
-            content: any
+            content: Sanity.SanityContent
             media: string
-            items: any
+            items: []
         }) => ({
             title: content ? getBlockText(content) : 'Slider',
             subtitle: `Slider Block: ${count(items, 'slide')}`,
