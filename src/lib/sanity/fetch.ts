@@ -5,7 +5,7 @@ import type { QueryParams, ResponseQueryOptions } from 'next-sanity'
 
 export { default as groq } from 'groq'
 
-export function fetchSanity<T = any>(
+export function fetchSanity<T = unknown>(
     query: string,
     {
         params = {},

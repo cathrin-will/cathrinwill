@@ -42,7 +42,7 @@ export function getBlockText(
 }
 
 export function count(
-    arr: Array<any>,
+    arr: Array<unknown>,
     singular: string = 'item',
     plural?: string,
 ) {

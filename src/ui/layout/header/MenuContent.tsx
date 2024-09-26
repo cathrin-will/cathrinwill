@@ -27,37 +27,39 @@ export default function MenuContent({
                 navOpen ? styles['nav--open'] : '',
                 styles.nav,
             )}>
-            {headerMenu?.items?.map((item: any, key: number) => {
-                switch (item._type) {
-                    case 'link':
-                        const currentSlug = `/${item?.internal?.metadata?.slug?.current}`
-                        const active = pathname === currentSlug
+            {headerMenu?.items?.map(
+                (item: Sanity.Link | Sanity.LinkList, key: number) => {
+                    switch (item._type) {
+                        case 'link':
+                            const currentSlug = `/${item?.internal?.metadata?.slug?.current}`
+                            const active = pathname === currentSlug
 
-                        return (
-                            <Button
-                                style='plain'
-                                className={cn(
-                                    styles.link,
-                                    active && styles.active,
-                                )}
-                                link={item}
-                                key={key}
-                                onClick={() => {
-                                    setNavOpen(false)
-                                }}
-                            />
-                        )
-                    case 'link.list':
-                        return (
-                            <LinkList
-                                {...item}
-                                key={key}
-                            />
-                        )
-                    default:
-                        return null
-                }
-            })}
+                            return (
+                                <Button
+                                    style='plain'
+                                    className={cn(
+                                        styles.link,
+                                        active && styles.active,
+                                    )}
+                                    link={item}
+                                    key={key}
+                                    onClick={() => {
+                                        setNavOpen(false)
+                                    }}
+                                />
+                            )
+                        case 'link.list':
+                            return (
+                                <LinkList
+                                    {...item}
+                                    key={key}
+                                />
+                            )
+                        default:
+                            return null
+                    }
+                },
+            )}
         </nav>
     )
 }

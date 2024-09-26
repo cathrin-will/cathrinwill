@@ -10,13 +10,13 @@ export default function Text({
     children,
     className,
 }: {
-    content?: any
+    content?: Sanity.SanityContent
     children?: React.ReactNode
     className?: string
 }) {
     if (children)
         return <div className={cn(styles['text'], className)}>{children}</div>
-
+    if (!content) return null
     return (
         <div className={cn(styles['text'], className)}>
             <div className='relative z-10'>

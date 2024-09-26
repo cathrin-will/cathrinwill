@@ -1,7 +1,5 @@
 'use client'
-import Wrap from '@/ui/layout/wrap'
 import Section from '@/ui/layout/section'
-import Text from '@/ui/components/text'
 import { cn } from '@/lib/utils'
 import { SiSanity } from 'react-icons/si'
 import { MdCss } from 'react-icons/md'
@@ -16,17 +14,12 @@ import { FaGithub } from 'react-icons/fa6'
 
 import { useEffect, useMemo, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
-import {
-    type Container,
-    type ISourceOptions,
-    MoveDirection,
-    OutMode,
-} from '@tsparticles/engine'
+import { type ISourceOptions } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
 import { particlesConfig } from '@/ui/particles/stars'
 import styles from './skills.module.scss'
-export default function SkillsBlock({ content }: Sanity.skillsBlock) {
-    const [particlesInit, setInit] = useState(false)
+export default function SkillsBlock() {
+    const [, setInit] = useState(false)
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -36,7 +29,7 @@ export default function SkillsBlock({ content }: Sanity.skillsBlock) {
         })
     }, [])
 
-    const particlesLoaded = async (container?: Container): Promise<void> => {}
+    const particlesLoaded = async (): Promise<void> => {}
 
     const options: ISourceOptions = useMemo(
         () => ({

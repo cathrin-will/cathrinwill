@@ -48,8 +48,10 @@ export const formColumnsSchema = defineType({
                             return {
                                 title: title
                                     .map(
-                                        (field: any) =>
-                                            field.label || field._type,
+                                        (field: {
+                                            label: string
+                                            _type: string
+                                        }) => field.label || field._type,
                                     )
                                     .filter(Boolean)
                                     .join(' + '),
@@ -65,7 +67,7 @@ export const formColumnsSchema = defineType({
             title: 'fields.label',
             col: 'columns',
         },
-        prepare: ({ title, col }: { title: string; col: any }) => ({
+        prepare: ({ title, col }: { title: string; col: [] }) => ({
             title: title,
             subtitle: `Form Columns: ${count(col, 'column')} `,
         }),

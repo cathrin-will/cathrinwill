@@ -33,14 +33,11 @@ export default function SliderBlock({
             <Slider
                 {...settings}
                 className={cn(styles.slider)}>
-                {images?.map(({ image }: any, key) => (
+                {images?.map((img: Sanity.Image, key) => (
                     <div
                         className={cn(styles.slide)}
                         key={key}>
-                        <Img
-                            image={image}
-                            imageWidth={1312}
-                        />
+                        <Img image={img} />
                     </div>
                 ))}
             </Slider>

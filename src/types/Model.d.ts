@@ -1,4 +1,3 @@
-import { Message } from '@/ui/components/message'
 declare global {
     namespace Model {
         // components

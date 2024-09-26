@@ -13,7 +13,7 @@ declare global {
         level: number
         addEventListener(
             type: 'chargingchange' | 'levelchange',
-            listener: (this: BatteryManager, ev: Event) => any,
+            listener: (this: BatteryManager, ev: Event) => void,
         ): void
     }
 }
@@ -54,7 +54,7 @@ export default function BatteryNotification({ override = false }) {
         if (!override) {
             checkBatteryAPIAndSetup()
         }
-    }, [])
+    }, [override])
 
     useEffect(() => {
         if (override) {
@@ -66,7 +66,7 @@ export default function BatteryNotification({ override = false }) {
                 setShowBatteryNotification(false)
             }
         }
-    }, [batteryLevel, charging])
+    }, [batteryLevel, charging, override])
 
     return (
         showBatteryNotification && (

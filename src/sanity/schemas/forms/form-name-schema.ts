@@ -1,6 +1,5 @@
-// schemas/form.js
-import { defineField, defineType } from 'sanity'
-import { LuFormInput } from 'react-icons/lu'
+import { SanityDocument } from 'next-sanity'
+import { defineType, SlugSourceContext } from 'sanity'
 
 export const formNameSchema = defineType({
     name: 'name',
@@ -15,8 +14,10 @@ export const formNameSchema = defineType({
                 .replace(/\s+/g, '_')
                 .replace(/[^0-9a-z_]/g, '')
                 .slice(0, 200),
-        source: (doc: any, context: any) => context.parent.label,
+        source: (doc: SanityDocument, context: any) =>
+            context.parent?.label || doc.title,
     },
+
     validation: (Rule) =>
         Rule.required().custom((value) => {
             if (String(value?.current).match(/^[A-Za-z]+[0-9A-Za-z_]*$/)) {

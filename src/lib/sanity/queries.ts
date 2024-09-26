@@ -1,6 +1,6 @@
 import { fetchSanity, groq } from './fetch'
 
-const navigationQuery = groq`
+const navigationQuery = `
     title,
     items[]{
         ...,

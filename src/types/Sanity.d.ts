@@ -16,6 +16,7 @@ declare global {
             ctas?: CTA[]
             headerMenu?: Navigation
             footerMenu?: Navigation
+            ctaMenu?: Navigation
             social?: Navigation
             ogimage?: string
         }>
@@ -76,7 +77,7 @@ declare global {
         // blocks
         type accordionBlock = {
             content: SanityContent
-            items: { summary: string; details: any[] }[]
+            items: { summary: string; details: SanityContent }[]
             wrapIt?: boolean
         }
 
@@ -86,6 +87,15 @@ declare global {
             columnsNumber?: number
             alignItems?: string
             wrapIt?: boolean
+        }
+
+        type FormField = {
+            _type: string
+            label: string
+            required: boolean
+            name: { current: string }
+            inputType: string
+            placeholder: string
         }
 
         type formBlock = {
@@ -109,7 +119,7 @@ declare global {
         }
 
         type textBlock = {
-            content: any
+            content: SanityContent
             themed?: boolean
             wrapIt?: boolean
             children?: ReactNode
@@ -129,7 +139,7 @@ declare global {
         }
 
         type sliderBlock = {
-            content: any
+            content: SanityContent
             images: Image[]
             wrapIt?: boolean
         }

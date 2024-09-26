@@ -1,9 +1,4 @@
-import {
-    type Container,
-    type ISourceOptions,
-    MoveDirection,
-    OutMode,
-} from '@tsparticles/engine'
+import { MoveDirection, OutMode } from '@tsparticles/engine'
 export const particlesConfig = {
     pauseOnBlur: true,
     pauseOnOutsideViewport: true,

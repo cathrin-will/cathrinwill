@@ -70,18 +70,15 @@ export const formSubmissionSchema = defineType({
         },
         prepare: ({ title, created, formData }) => {
             const dateObj = new Date(created)
-            const options = {
+
+            const formattedDate = dateObj.toLocaleString('en-UK', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
                 hour: '2-digit',
                 minute: '2-digit',
                 timeZoneName: 'short',
-            }
-            const formattedDate = dateObj.toLocaleString(
-                'en-UK',
-                options as any,
-            )
+            })
 
             const formDataPreview = formData
                 .map(

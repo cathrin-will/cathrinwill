@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField } from 'sanity'
 import { VscCode } from 'react-icons/vsc'
 
 export const htmlBlockSchema = {

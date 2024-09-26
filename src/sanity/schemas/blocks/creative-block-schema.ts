@@ -60,7 +60,11 @@ export const creativeBlockSchema = defineType({
                             return {
                                 title: subModules
                                     .map(
-                                        (subModule: any) =>
+                                        (subModule: {
+                                            title: string
+                                            name: string
+                                            _type: string
+                                        }) =>
                                             subModule.title ||
                                             subModule.name ||
                                             subModule._type,

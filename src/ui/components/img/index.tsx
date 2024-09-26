@@ -8,62 +8,28 @@ import client from '@/lib/sanity/client'
 import Image, { type ImageProps } from 'next/image'
 import { stegaClean } from '@sanity/client/stega'
 
+interface ImgProps extends Omit<ImageProps, 'src' | 'alt'> {
+    image?: Sanity.Image
+    alt?: string
+    options?: UseNextSanityImageOptions
+}
+
 export default function Img({
     image,
-    imageWidth,
     alt = '',
     options,
     ...props
-}: {
-    image?: Sanity.Image
-    imageWidth?: number
-    alt?: string
-    options?: UseNextSanityImageOptions
-} & Omit<ImageProps, 'src' | 'alt'>) {
-    if (!image?.asset) return null
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const imageProps = useNextSanityImage(
-        client,
-        image,
-        imageWidth ? { imageBuilder: (b) => b.width(imageWidth) } : options,
-    )
+}: ImgProps): JSX.Element | null {
+    if (!image || !image.asset) return null
+
+    const imageProps = useNextSanityImage(client, image, options)
 
     return (
         <Image
             {...imageProps}
             alt={image.alt || alt}
-            loading={stegaClean(image.loading) || 'lazy'}
-            unoptimized
+            loading={image.loading ? stegaClean(image.loading) : 'lazy'}
             {...props}
-        />
-    )
-}
-
-export function Source({
-    image,
-    imageWidth,
-    options,
-    media = '(max-width: 768px)',
-}: {
-    image?: Sanity.Image
-    imageWidth?: number
-    options?: UseNextSanityImageOptions
-    media?: string
-}) {
-    if (!image) return null
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { src, loader, ...imageProps } = useNextSanityImage(
-        client,
-        image,
-        imageWidth ? { imageBuilder: (b) => b.width(imageWidth) } : options,
-    )
-
-    return (
-        <source
-            srcSet={src}
-            {...imageProps}
-            media={media}
         />
     )
 }

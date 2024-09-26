@@ -11,7 +11,6 @@ export default function ImageBlock({
                 <Img
                     className={styles.image}
                     image={image}
-                    imageWidth={1312}
                 />
             </figure>
         </Wrap>

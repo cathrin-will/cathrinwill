@@ -77,7 +77,13 @@ export const statsBlockSchema = {
             content: 'introContent',
             items: 'placesWorkedStats',
         },
-        prepare: ({ content, items }: { content: any; items: any }) => ({
+        prepare: ({
+            content,
+            items,
+        }: {
+            content: Sanity.SanityContent
+            items: []
+        }) => ({
             title: content ? getBlockText(content) : 'Stats',
             subtitle: `Stats Block: ${count(items, 'item')}`,
         }),

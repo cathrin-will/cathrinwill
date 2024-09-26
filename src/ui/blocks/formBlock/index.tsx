@@ -1,11 +1,20 @@
 'use client'
+import { useEffect, useState } from 'react'
+
+// sanity
+import sanityClient from '@/lib/sanity/client'
+import { stegaClean } from '@sanity/client/stega'
+
+// ui
 import Wrap from '@/ui/layout/wrap'
 import Text from '@/ui/components/text'
 import Message from '@/ui/components/message'
+
+// utils
 import { cn } from '@/lib/utils'
-import sanityClient from '@/lib/sanity/client'
-import { useEffect, useState } from 'react'
-import { stegaClean } from '@sanity/client/stega'
+import { getErrorMessage } from '@/lib/utils/errorHandler/errorhandler'
+
+// styles
 import buttonStyles from '@/ui/components/button/button.module.scss'
 import styles from './form.module.scss'
 
@@ -24,7 +33,7 @@ export default function FormBlock({
     const { title, description, submitButtonText } = formReference
 
     const [form, setForm] = useState(null)
-    const [formData, setFormData] = useState<any>({})
+    const [formData, setFormData] = useState<{ [key: string]: string }>({})
     const [formMessage, setFormMessage] = useState<FormMessage>({
         type: 'error',
         content: '',
@@ -32,8 +41,10 @@ export default function FormBlock({
     })
     const formId = formReference._id
 
-    const cleanObject = (obj: Record<string, any>): Record<string, any> => {
-        const newObj: Record<string, any> = {}
+    const cleanObject = (
+        obj: Record<string, unknown>,
+    ): Record<string, unknown> => {
+        const newObj: Record<string, unknown> = {}
         Object.keys(obj).forEach((key) => {
             newObj[key] = stegaClean(obj[key])
         })
@@ -51,7 +62,7 @@ export default function FormBlock({
             .then((data) => {
                 setForm(data[0])
                 // Initialize formData with default values
-                const initialFormData: any = {}
+                const initialFormData: { [key: string]: string } = {}
 
                 data[0].fields.forEach(
                     (field: {
@@ -76,12 +87,12 @@ export default function FormBlock({
 
         if (type === 'checkbox') {
             const checked = (e.target as HTMLInputElement).checked
-            setFormData((prevData: any) => ({
+            setFormData((prevData: { [key: string]: string }) => ({
                 ...prevData,
                 [name]: checked ? value : '',
             }))
         } else {
-            setFormData((prevData: any) => ({
+            setFormData((prevData: { [key: string]: string }) => ({
                 ...prevData,
                 [name]: value,
             }))
@@ -123,10 +134,10 @@ export default function FormBlock({
                 content: result.message,
                 show: true,
             })
-        } catch (error: any) {
+        } catch (error) {
             setFormMessage({
                 type: 'error',
-                content: `Error submitting form: ${error?.message ?? 'unknown'}`,
+                content: `Error submitting form: ${getErrorMessage(error)}`,
                 show: true,
             })
         }
@@ -142,8 +153,8 @@ export default function FormBlock({
                 className={cn(styles.form)}
                 onSubmit={handleSubmit}>
                 <h2 className='text-3xl bold'>{title}</h2>
-                <Text content={description} />
-                {fields.map((field, index) => {
+                <Text>{description}</Text>
+                {fields.map((field: any, index) => {
                     switch (field._type) {
                         case 'inputField':
                             return (
@@ -193,8 +204,9 @@ export default function FormBlock({
                                             required={field.required}
                                             onChange={handleChange}
                                             checked={
-                                                formData[field.name.current] ||
-                                                false
+                                                formData[field.name.current]
+                                                    ? true
+                                                    : false
                                             }
                                         />
                                         {stegaClean(field.label)}
