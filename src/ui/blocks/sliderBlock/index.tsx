@@ -37,10 +37,7 @@ export default function SliderBlock({
                     <div
                         className={cn(styles.slide)}
                         key={key}>
-                        <Img
-                            image={img}
-                            imageWidth={1312}
-                        />
+                        <Img image={img} />
                     </div>
                 ))}
             </Slider>

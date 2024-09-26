@@ -68,7 +68,7 @@ declare global {
             noIndex: boolean
         }
 
-        type Block<T = any> = {
+        type Block<T> = {
             _type: T
             _key: string
         } & T

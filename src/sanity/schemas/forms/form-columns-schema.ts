@@ -48,8 +48,10 @@ export const formColumnsSchema = defineType({
                             return {
                                 title: title
                                     .map(
-                                        (field: any) =>
-                                            field.label || field._type,
+                                        (field: {
+                                            label: string
+                                            _type: string
+                                        }) => field.label || field._type,
                                     )
                                     .filter(Boolean)
                                     .join(' + '),

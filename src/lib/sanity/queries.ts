@@ -1,7 +1,6 @@
 import { fetchSanity, groq } from './fetch'
 
-const navigationQuery = groq`
-{
+const navigationQuery = `
     title,
     items[]{
         ...,
@@ -11,34 +10,34 @@ const navigationQuery = groq`
             internal->{ _type, title, metadata }
         }
     }
-}
 `
 
 export const blockQuery = groq`
-    blocks[] {
+blocks[] {
+    ...,
+    _type == 'formBlock' => {
+    ...,
+    formReference->{
+        ...
+    }
+    },
+    _type == 'textBlock' => {
+    ...,
+    content[]{
         ...,
-        _type == 'formBlock' => {
+        markDefs[]{
+        ...,
+        _type == 'internalLink' => {
             ...,
-            formReference->{
-                ...
-            }
-        },
-        _type == 'textBlock' => {
-            ...,
-            content[] {
-                ...,
-                markDefs[] {
-                    ...,
-                    _type == 'internalLink' => {
-                        ...,
-                        reference->{
-                            metadata
-                        }
-                    }
-                }
+            reference->{
+            metadata
             }
         }
+        }
     }
+    }
+}
+
 `
 export const metaQuery = groq`
     metadata {

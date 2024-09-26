@@ -20,43 +20,47 @@ export default function StatsBlock({
         reviews: 0,
         repos: 0,
     })
-    const octokit = new Octokit({
-        auth: process.env.GITHUB_TOKEN ?? process.env.NEXT_PUBLIC_GITHUB_TOKEN, // https://github.com/settings/tokens
-    })
-
-    const doTheMaths = () => {
-        const totals = placesWorkedStats.reduce(
-            (acc, item) => {
-                acc.totalPRs += item.totalPRs
-                acc.totalPRContributions += item.totalPRContributions
-                acc.repositoriesContributedTo += item.repositoriesContributedTo
-                return acc
-            },
-            {
-                totalPRs: 0,
-                totalPRContributions: 0,
-                repositoriesContributedTo: 0,
-            },
-        )
-        const totalPrs =
-            ~~(stats?.viewer?.pullRequests?.totalCount ?? 0) + totals.totalPRs
-        const totalPrContributions =
-            ~~(
-                stats?.viewer?.contributionsCollection
-                    ?.totalPullRequestReviewContributions ?? 0
-            ) + totals.totalPRContributions
-        const repositoriesContributedTo =
-            ~~(stats?.viewer?.repositoriesContributedTo?.totalCount ?? 0) +
-            totals.repositoriesContributedTo
-
-        setTotalStats({
-            prs: totalPrs,
-            reviews: totalPrContributions,
-            repos: repositoriesContributedTo,
-        })
-    }
 
     useEffect(() => {
+        const octokit = new Octokit({
+            auth:
+                process.env.GITHUB_TOKEN ??
+                process.env.NEXT_PUBLIC_GITHUB_TOKEN, // https://github.com/settings/tokens
+        })
+        const doTheMaths = () => {
+            const totals = placesWorkedStats.reduce(
+                (acc, item) => {
+                    acc.totalPRs += item.totalPRs
+                    acc.totalPRContributions += item.totalPRContributions
+                    acc.repositoriesContributedTo +=
+                        item.repositoriesContributedTo
+                    return acc
+                },
+                {
+                    totalPRs: 0,
+                    totalPRContributions: 0,
+                    repositoriesContributedTo: 0,
+                },
+            )
+            const totalPrs =
+                ~~(stats?.viewer?.pullRequests?.totalCount ?? 0) +
+                totals.totalPRs
+            const totalPrContributions =
+                ~~(
+                    stats?.viewer?.contributionsCollection
+                        ?.totalPullRequestReviewContributions ?? 0
+                ) + totals.totalPRContributions
+            const repositoriesContributedTo =
+                ~~(stats?.viewer?.repositoriesContributedTo?.totalCount ?? 0) +
+                totals.repositoriesContributedTo
+
+            setTotalStats({
+                prs: totalPrs,
+                reviews: totalPrContributions,
+                repos: repositoriesContributedTo,
+            })
+        }
+
         const getStats = async () => {
             // https://docs.github.com/en/graphql/overview/explorer
             // https://github.com/octokit/core.js#readme
@@ -88,9 +92,8 @@ export default function StatsBlock({
         }
 
         getStats()
-
         doTheMaths()
-    }, [stats])
+    }, [stats, placesWorkedStats])
 
     return (
         <Wrap wrapIt={wrapIt}>

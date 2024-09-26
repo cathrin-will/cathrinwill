@@ -33,7 +33,7 @@ export default function FormBlock({
     const { title, description, submitButtonText } = formReference
 
     const [form, setForm] = useState(null)
-    const [formData, setFormData] = useState<any>({})
+    const [formData, setFormData] = useState<{ [key: string]: string }>({})
     const [formMessage, setFormMessage] = useState<FormMessage>({
         type: 'error',
         content: '',
@@ -41,8 +41,10 @@ export default function FormBlock({
     })
     const formId = formReference._id
 
-    const cleanObject = (obj: Record<string, any>): Record<string, any> => {
-        const newObj: Record<string, any> = {}
+    const cleanObject = (
+        obj: Record<string, unknown>,
+    ): Record<string, unknown> => {
+        const newObj: Record<string, unknown> = {}
         Object.keys(obj).forEach((key) => {
             newObj[key] = stegaClean(obj[key])
         })
@@ -60,7 +62,7 @@ export default function FormBlock({
             .then((data) => {
                 setForm(data[0])
                 // Initialize formData with default values
-                const initialFormData: any = {}
+                const initialFormData: { [key: string]: string } = {}
 
                 data[0].fields.forEach(
                     (field: {

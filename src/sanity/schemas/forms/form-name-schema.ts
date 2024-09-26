@@ -1,5 +1,5 @@
 import { SanityDocument } from 'next-sanity'
-import { defineType } from 'sanity'
+import { defineType, SlugSourceContext } from 'sanity'
 
 export const formNameSchema = defineType({
     name: 'name',
@@ -14,8 +14,8 @@ export const formNameSchema = defineType({
                 .replace(/\s+/g, '_')
                 .replace(/[^0-9a-z_]/g, '')
                 .slice(0, 200),
-        source: (doc: SanityDocument, context: any) =>
-            context.parent[0]?.label || (doc.title as string),
+        source: (doc: SanityDocument, context: SlugSourceContext) =>
+            context.parent?.label || doc.title,
     },
 
     validation: (Rule) =>
