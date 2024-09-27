@@ -11,28 +11,28 @@ on:
 
 # List of jobs
 jobs:
-  test:
-    # Operating System
-    runs-on: ubuntu-latest
-    # Job steps
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'yarn'
-      - run: yarn
+    test:
+        # Operating System
+        runs-on: ubuntu-latest
+        # Job steps
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: 'yarn'
+            - run: yarn
 
-      # Set environment variables needed for Storybook
-      - name: Set up environment variables
-        run: echo "SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }}" >> $GITHUB_ENV
+            # Set environment variables needed for Storybook
+            - name: Set up environment variables
+              run: echo "SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }}" >> $GITHUB_ENV
 
-      #👇 Adds Chromatic as a step in the workflow
-      - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
-        with:
-          #👇 Chromatic projectToken,
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+            #👇 Adds Chromatic as a step in the workflow
+            - uses: chromaui/action@v1
+              # Options required for Chromatic's GitHub Action
+              with:
+                  #👇 Chromatic projectToken,
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}

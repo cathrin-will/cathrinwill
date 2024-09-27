@@ -1,23 +1,8 @@
-import { defineType, defineField, defineArrayMember } from 'sanity'
-import { FaPlus } from "react-icons/fa";
-
-export const {{camelCase name}}BlockSchema = defineType({
-    type: 'object',
-    name: '{{camelCase name}}Block',
-    icon: FaPlus,
-    fields: [
-        defineField({
-            type: 'string',
-            name: 'example',
-        }),
-    ],
-    preview: {
-        select: {
-            title: 'example',
-        },
-        prepare: ({ title }: { title: string;  }) => ({
-            title: title ?? 'Cards Block',
-            subtitle: `'Cards Block`,
-        }),
-    },
+import { defineType, defineField, defineArrayMember } from 'sanity' import {
+FaPlus } from "react-icons/fa"; export const
+{{camelCase name}}BlockSchema = defineType({ type: 'object', name: '{{camelCase
+    name
+}}Block', icon: FaPlus, fields: [ defineField({ type: 'string', name: 'example',
+}), ], preview: { select: { title: 'example', }, prepare: ({ title }: { title:
+string; }) => ({ title: title ?? 'Cards Block', subtitle: `'Cards Block`, }), },
 })

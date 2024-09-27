@@ -22,7 +22,12 @@ const Page = async ({ params }) => {
                 <div className='flex flex-col gap-4'>
                     {page?.components?.map((component, index) => {
                         const ComponentType = componentMap[component._type]
-                        return <ComponentType key={index} {...component} />
+                        return (
+                            <ComponentType
+                                key={index}
+                                {...component}
+                            />
+                        )
                     })}
                 </div>
             )}
