@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
+import { h2withParagraph } from '@/lib/content/typicalContent'
 import Index from './index'
 
 const meta = {
@@ -17,7 +17,7 @@ export const Default: Story = {
         formReference: {
             _id: 'test',
             title: 'Test',
-            description: 'Test',
+            description: h2withParagraph,
             submitButtonText: 'Test',
             fields: [],
         },

@@ -13,7 +13,7 @@ export default function StatsBlock({
     placesWorkedStats,
     wakaContent,
     wrapIt = true,
-}: Sanity.statsBlock) {
+}: Sanity.StatsBlock) {
     const [stats, setStats] = useState<Model.StatsData | null>(null)
     const [totalStats, setTotalStats] = useState<Model.TotalStatsData>({
         prs: 0,

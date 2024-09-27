@@ -69,19 +69,20 @@ declare global {
             noIndex: boolean
         }
 
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         type Block<T = any> = {
             _type: T
             _key: string
         } & T
 
         // blocks
-        type accordionBlock = {
+        type AccordionBlock = {
             content: SanityContent
             items: { summary: string; details: SanityContent }[]
             wrapIt?: boolean
         }
 
-        type creativeBlock = {
+        type CreativeBlock = {
             content: SanityContent
             columns?: [{ percentageWidth?: number; subModules?: Block[] }]
             columnsNumber?: number
@@ -89,43 +90,53 @@ declare global {
             wrapIt?: boolean
         }
 
-        type FormField = {
-            _type: string
-            label: string
-            required: boolean
-            name: { current: string }
-            inputType: string
-            placeholder: string
+        //  form
+
+        type FormMessage = {
+            type: 'error' | 'success'
+            content: string
+            show: boolean
         }
 
-        type formBlock = {
+        type FormField = {
+            inputType?: string
+            label: string
+            required?: boolean
+            name: { current: string; _type: string }
+            options?: string[]
+            placeholder: string
+            _key: string
+            _type: string
+        }
+
+        type FormBlock = {
             formReference: {
                 _id: string
                 title: string
-                description: string
+                description: SanityContent
                 submitButtonText: string
-                fields: []
+                fields: FormField[]
             }
             wrapIt?: boolean
         }
 
-        type imageBlock = {
+        type ImageBlock = {
             image: Image
             wrapIt?: boolean
         }
 
-        type skillsBlock = {
+        type SkillsBlock = {
             content: SanityContent
         }
 
-        type textBlock = {
+        type TextBlock = {
             content: SanityContent
             themed?: boolean
             wrapIt?: boolean
             children?: ReactNode
         }
 
-        type statsBlock = {
+        type StatsBlock = {
             introContent: SanityContent
             githubContent: SanityContent
             wakaContent: SanityContent
@@ -138,13 +149,13 @@ declare global {
             wrapIt?: boolean
         }
 
-        type sliderBlock = {
+        type SliderBlock = {
             content: SanityContent
             images: Image[]
             wrapIt?: boolean
         }
 
-        type cardsBlock = {
+        type CardsBlock = {
             content?: SanityContent
             wrapIt?: boolean
             cards?: {

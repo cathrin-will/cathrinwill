@@ -15,7 +15,7 @@ export default function SliderBlock({
     content,
     images,
     wrapIt = true,
-}: Sanity.sliderBlock) {
+}: Sanity.SliderBlock) {
     const settings = {
         dots: true,
         infinite: true,
