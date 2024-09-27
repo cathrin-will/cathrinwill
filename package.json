@@ -25,6 +25,7 @@
         "@sanity/preview-url-secret": "^1.6.20",
         "@sanity/react-loader": "^1.10.6",
         "@sanity/vision": "^3.57.2",
+        "@sentry/nextjs": "^8",
         "@tsparticles/engine": "^3.5.0",
         "@tsparticles/react": "^3.0.0",
         "@tsparticles/slim": "^3.5.0",

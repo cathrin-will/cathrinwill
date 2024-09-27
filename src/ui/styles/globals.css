@@ -15,7 +15,7 @@
     --success-color: rgb(23, 82, 58);
     --error-color: rgb(139, 0, 0);
     --particle-bg: rgba(112, 121, 169, 0.8);
-    --particle-fade: rgba(228, 232, 245, .1);
+    --particle-fade: rgba(228, 232, 245, 0.1);
     --terminal: rgb(1, 21, 34);
     --beach: linear-gradient(144deg, #ca1eb3, #fd2e24, #ffd701 70%);
     --neon: linear-gradient(315deg, #03a9f4, #ff0058);
@@ -30,18 +30,18 @@
         rgb(84, 24, 43) 100%
     );
     --sunset: linear-gradient(
-            -45deg,
-            rgb(66, 66, 102) 0%,
-            rgb(75, 73, 113) 10%,
-            rgb(90, 78, 122) 30%,
-            rgb(138, 91, 110) 40%,
-            rgb(214, 72, 98) 50%,
-            rgb(167, 45, 77) 60%,
-            rgb(143, 35, 63) 70%,
-            rgb(120, 30, 58) 80%,
-            rgb(102, 26, 50) 90%,
-            rgb(84, 24, 43) 100%
-        );
+        -45deg,
+        rgb(66, 66, 102) 0%,
+        rgb(75, 73, 113) 10%,
+        rgb(90, 78, 122) 30%,
+        rgb(138, 91, 110) 40%,
+        rgb(214, 72, 98) 50%,
+        rgb(167, 45, 77) 60%,
+        rgb(143, 35, 63) 70%,
+        rgb(120, 30, 58) 80%,
+        rgb(102, 26, 50) 90%,
+        rgb(84, 24, 43) 100%
+    );
 
     /* specifics for dark/light mode */
     --main-bg-color: radial-gradient(
@@ -66,7 +66,7 @@
         --main-bg-color: #424266;
         --text-color: rgba(255, 255, 255, 0.9);
         --accent: var(--rajah);
-        --button-glow: rgba(217, 251, 255 , .5);
+        --button-glow: rgba(217, 251, 255, 0.5);
         --heading-underline: rgba(255, 255, 255, 0.2);
         --footer-bg-color: rgb(1, 15, 23);
         --particle-bg: #22283e;
@@ -77,7 +77,7 @@
     /* todo make DRY */
     [data-theme='light'] {
         --main-bg-color: radial-gradient(
-        circle,
+            circle,
             rgba(244, 222, 232, 0.3660057773109243) 0%,
             rgba(148, 187, 233, 0.53687412464986) 100%
         );
@@ -89,22 +89,20 @@
         --button-glow: rgb(252, 195, 153);
         --footer-bg-color: rgba(41, 51, 106, 1);
         --particle-bg: rgba(112, 121, 169, 0.8);
-        --particle-fade: rgba(228, 232, 245, .1);
+        --particle-fade: rgba(228, 232, 245, 0.1);
         --header: var(--sunrise);
         --header-rev: var(--sunset);
     }
 }
 
 @media (prefers-color-scheme: light) {
-
     /* todo make DRY */
     [data-theme='dark'] {
-
         --bg-image: url('/images/love-city.svg');
         --main-bg-color: #424266;
         --text-color: rgba(255, 255, 255, 0.9);
         --accent: var(--rajah);
-        --button-glow: rgba(217, 251, 255 , .5);
+        --button-glow: rgba(217, 251, 255, 0.5);
         --heading-underline: rgba(255, 255, 255, 0.2);
         --footer-bg-color: rgb(1, 15, 23);
         --particle-bg: #22283e;
