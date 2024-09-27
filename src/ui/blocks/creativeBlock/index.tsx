@@ -9,7 +9,7 @@ export default function CreativeBlock({
     columns,
     columnsNumber,
     alignItems,
-}: Sanity.creativeBlock) {
+}: Sanity.CreativeBlock) {
     alignItems = stegaClean(alignItems)
     const gridPercentage = () => {
         let gridClass = ''

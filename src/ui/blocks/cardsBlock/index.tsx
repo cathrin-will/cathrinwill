@@ -9,7 +9,7 @@ export default function Cards({
     content,
     cards: initialCards,
     wrapIt = true,
-}: Sanity.cardsBlock) {
+}: Sanity.CardsBlock) {
     const [cards, setCards] = useState(initialCards)
 
     const eggTexts = [

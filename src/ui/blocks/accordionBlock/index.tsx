@@ -7,7 +7,7 @@ export default function AccordionBlock({
     content,
     items,
     wrapIt = true,
-}: Sanity.accordionBlock) {
+}: Sanity.AccordionBlock) {
     return (
         <Wrap wrapIt={wrapIt}>
             <div>

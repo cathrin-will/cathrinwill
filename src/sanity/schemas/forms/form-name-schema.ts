@@ -14,8 +14,9 @@ export const formNameSchema = defineType({
                 .replace(/\s+/g, '_')
                 .replace(/[^0-9a-z_]/g, '')
                 .slice(0, 200),
-        source: (doc: SanityDocument, context: any) =>
-            context.parent?.label || doc.title,
+        source: (doc: SanityDocument, context: SlugSourceContext) =>
+            // @ts-expect-error - sanity doesn't know the parent has label - not sure how to bypass that
+            `${doc.title}_${context.parent.label}`,
     },
 
     validation: (Rule) =>

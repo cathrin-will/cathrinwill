@@ -18,43 +18,20 @@ import { getErrorMessage } from '@/lib/utils/errorHandler/errorhandler'
 import buttonStyles from '@/ui/components/button/button.module.scss'
 import styles from './form.module.scss'
 
-type FormMessageType = 'error' | 'success'
-
-interface FormMessage {
-    type: FormMessageType
-    content: string
-    show: boolean
-}
-
 export default function FormBlock({
     formReference,
     wrapIt = true,
-}: Sanity.formBlock) {
+}: Sanity.FormBlock) {
     const { title, description, submitButtonText } = formReference
 
     const [form, setForm] = useState(null)
     const [formData, setFormData] = useState<{ [key: string]: string }>({})
-    const [formMessage, setFormMessage] = useState<FormMessage>({
+    const [formMessage, setFormMessage] = useState<Sanity.FormMessage>({
         type: 'error',
         content: '',
         show: false,
     })
     const formId = formReference._id
-
-    const cleanObject = (
-        obj: Record<string, unknown>,
-    ): Record<string, unknown> => {
-        const newObj: Record<string, unknown> = {}
-        Object.keys(obj).forEach((key) => {
-            newObj[key] = stegaClean(obj[key])
-        })
-        return newObj
-    }
-    const cleanArray = (arr: []) => {
-        return arr.map((item) => cleanObject(item))
-    }
-
-    const fields = cleanArray(formReference.fields)
 
     useEffect(() => {
         sanityClient
@@ -153,8 +130,8 @@ export default function FormBlock({
                 className={cn(styles.form)}
                 onSubmit={handleSubmit}>
                 <h2 className='text-3xl bold'>{title}</h2>
-                <Text>{description}</Text>
-                {fields.map((field: any, index) => {
+                <Text content={description} />
+                {formReference.fields.map((field: Sanity.FormField, index) => {
                     switch (field._type) {
                         case 'inputField':
                             return (
@@ -203,11 +180,6 @@ export default function FormBlock({
                                             name={field.name.current}
                                             required={field.required}
                                             onChange={handleChange}
-                                            checked={
-                                                formData[field.name.current]
-                                                    ? true
-                                                    : false
-                                            }
                                         />
                                         {stegaClean(field.label)}
                                     </label>
@@ -222,11 +194,8 @@ export default function FormBlock({
                                         {field.label}
                                     </label>
                                     <div className='flex gap-4'>
-                                        {field.options.map(
-                                            (
-                                                option: string,
-                                                optionIndex: number,
-                                            ) => (
+                                        {field.options?.map(
+                                            (option, optionIndex) => (
                                                 <label
                                                     className='flex gap-2'
                                                     key={optionIndex}>
@@ -242,12 +211,6 @@ export default function FormBlock({
                                                             field.required
                                                         }
                                                         onChange={handleChange}
-                                                        checked={
-                                                            formData[
-                                                                field.name
-                                                                    .current
-                                                            ] === option
-                                                        }
                                                     />
                                                     {option}
                                                 </label>
@@ -269,14 +232,12 @@ export default function FormBlock({
                                         name={field.name.current}
                                         required={field.required}
                                         onChange={handleChange}
+                                        className={styles.select}
                                         value={
                                             formData[field.name.current] || ''
                                         }>
-                                        {field.options.map(
-                                            (
-                                                option: string,
-                                                optionIndex: number,
-                                            ) => (
+                                        {field.options?.map(
+                                            (option, optionIndex) => (
                                                 <option
                                                     key={optionIndex}
                                                     value={stegaClean(option)}>

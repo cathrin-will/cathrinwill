@@ -4,7 +4,7 @@ import styles from './image.module.scss'
 export default function ImageBlock({
     image,
     wrapIt = true,
-}: Sanity.imageBlock) {
+}: Sanity.ImageBlock) {
     return (
         <Wrap wrapIt={wrapIt}>
             <figure>

@@ -6,7 +6,7 @@ export default function TextBlock({
     content,
     themed,
     wrapIt = true,
-}: Sanity.textBlock) {
+}: Sanity.TextBlock) {
     return (
         <Wrap
             wrapIt={wrapIt}
