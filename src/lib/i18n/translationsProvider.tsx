@@ -9,7 +9,13 @@ interface TranslationsProviderProps {
     children: React.ReactNode
     locale: string
     namespaces: string[]
-    resources: any
+    resources: {
+        [locale: string]: {
+            [namespace: string]: {
+                [key: string]: string
+            }
+        }
+    }
 }
 
 export default function TranslationsProvider({
@@ -18,6 +24,7 @@ export default function TranslationsProvider({
     namespaces,
     resources,
 }: TranslationsProviderProps) {
+    console.log(resources)
     const i18n = createInstance()
 
     initTranslations(locale, namespaces, i18n, resources)

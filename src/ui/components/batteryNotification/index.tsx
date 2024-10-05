@@ -62,7 +62,7 @@ export default function BatteryNotification({ override = false }) {
         if (override) {
             setShowBatteryNotification(true)
         } else {
-            if (charging && batteryLevel > 0) {
+            if (charging && batteryLevel === 1) {
                 setShowBatteryNotification(true)
             } else {
                 setShowBatteryNotification(false)

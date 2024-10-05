@@ -38,7 +38,7 @@ export default async function RootLayout({
     children: React.ReactNode
     params: { locale: string }
 }) {
-    const { t, resources } = await initTranslations(locale, ['common'])
+    const { resources } = await initTranslations(locale, ['common'])
     return (
         <html className={font.className}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />

@@ -9,7 +9,13 @@ export default async function initTranslations(
     locale: string,
     namespaces: string[],
     i18nInstance?: i18n,
-    resources?: any,
+    resources?: {
+        [locale: string]: {
+            [namespace: string]: {
+                [key: string]: string
+            }
+        }
+    },
 ) {
     i18nInstance = i18nInstance || createInstance()
 

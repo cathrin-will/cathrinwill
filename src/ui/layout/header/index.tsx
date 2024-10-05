@@ -1,6 +1,6 @@
 import { getSite } from '@/lib/sanity/queries'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
+
 // ui
 import DayNight from '@/ui/components/dayNight'
 import SkipToContent from '@/ui/components/skipToContent'
