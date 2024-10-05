@@ -15,7 +15,7 @@ export default async function processMetadata(page: Sanity.Page) {
 
     return {
         metadataBase: new URL(SITE_URL),
-        title: `${title} | AC Will De`,
+        title: `${title} | AC Will Dev`,
         description,
         openGraph: {
             type: 'website',
