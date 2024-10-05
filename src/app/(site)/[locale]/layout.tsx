@@ -5,6 +5,10 @@ import { draftMode } from 'next/headers'
 // store
 import StoreProvider from '@/store/storeProvider'
 
+// translations
+import TranslationsProvider from '@/lib/i18n/translationsProvider'
+import initTranslations from '@/lib/i18n/translations'
+
 // ui
 import Header from '@/ui/layout/header'
 import Footer from '@/ui/layout/footer'
@@ -18,7 +22,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 // styles
 import { Montserrat } from 'next/font/google'
 import '@/ui/styles/globals.css'
-import styles from './layout.module.scss'
+import styles from '@/ui/styles/layout.module.scss'
 
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 
@@ -27,15 +31,16 @@ export const metadata = {
     description: 'Ann-Cathrin Will Front-end Developer Portfolio site',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
+    params: { locale },
 }: {
     children: React.ReactNode
+    params: { locale: string }
 }) {
+    const { t, resources } = await initTranslations(locale, ['common'])
     return (
-        <html
-            lang='en'
-            className={font.className}>
+        <html className={font.className}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
             <body className={styles.body}>
                 {draftMode().isEnabled && (
@@ -48,15 +53,21 @@ export default function RootLayout({
                     </div>
                 )}
                 <StoreProvider>
-                    <Header />
-                    <main
-                        id='main'
-                        className={styles.main}>
-                        <BatteryNotification />
-                        <>{children}</>
-                    </main>
-                    {draftMode().isEnabled && <VisualEditing />}
-                    <Footer />
+                    <TranslationsProvider
+                        locale={locale}
+                        namespaces={['common']}
+                        resources={resources}>
+                        <Header />
+                        <main
+                            id='main'
+                            className={styles.main}>
+                            <BatteryNotification />
+                            <>{children}</>
+                        </main>
+                        {draftMode().isEnabled && <VisualEditing />}
+
+                        <Footer />
+                    </TranslationsProvider>
                 </StoreProvider>
                 <Analytics />
                 <SpeedInsights />

@@ -1,12 +1,15 @@
+'use client'
 import { cn } from '@/lib/utils'
 import styles from './footer.module.scss'
 import { FaGithub } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaCodepen } from 'react-icons/fa'
-
 import Lordicon from '@/ui/components/lordicon/index'
 
+import { useTranslation } from 'react-i18next'
+
 const Footer = () => {
+    const { t } = useTranslation()
     return (
         <footer className={styles.footer}>
             <Lordicon
@@ -58,8 +61,8 @@ const Footer = () => {
                     className={cn(styles.link, styles.carbon)}
                     target='_blank'
                     rel='noopener noreferrer'>
-                    This page has an <span className='text-lg'>A+</span> carbon
-                    rating
+                    {t('rating_1')} <span className='text-lg'>A+</span>{' '}
+                    {t('rating_2')}
                     <span className={styles['🌱']}></span>
                 </a>
             </div>
