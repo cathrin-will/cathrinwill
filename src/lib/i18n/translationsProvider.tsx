@@ -24,7 +24,6 @@ export default function TranslationsProvider({
     namespaces,
     resources,
 }: TranslationsProviderProps) {
-    console.log(resources)
     const i18n = createInstance()
 
     initTranslations(locale, namespaces, i18n, resources)
