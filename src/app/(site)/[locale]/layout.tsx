@@ -39,6 +39,7 @@ export default async function RootLayout({
     params: { locale: string }
 }) {
     const { resources } = await initTranslations(locale, ['common'])
+
     return (
         <html className={font.className}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
