@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 // ui
 import DayNight from '@/ui/components/dayNight'
 import SkipToContent from '@/ui/components/skipToContent'
+import LanguageChanger from '@/ui/components/languageChanger'
 import Navigation from './Navigation'
 
 // styles
@@ -24,12 +25,15 @@ export default async function Header() {
                             className={styles['nav--cta']}
                         />
                     )}
-                    {headerMenu && (
-                        <Navigation
-                            headerMenu={headerMenu}
-                            className={styles['nav--main']}
-                        />
-                    )}
+                    <div className='flex flex-row gap-5'>
+                        {headerMenu?.items && (
+                            <Navigation
+                                headerMenu={headerMenu}
+                                className={styles['nav--main']}
+                            />
+                        )}
+                        <LanguageChanger />
+                    </div>
 
                     <DayNight />
                 </div>

@@ -1,6 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 // Extend the Navigator interface to include getBattery
 // https://github.com/microsoft/TypeScript/issues/15314 - issue with battery and typescript
@@ -25,6 +26,7 @@ import Message from '@/ui/components/message'
 import styles from './batteryNotification.module.scss'
 
 export default function BatteryNotification({ override = false }) {
+    const { t } = useTranslation()
     const [showBatteryNotification, setShowBatteryNotification] =
         useState(false)
     const [batteryLevel, setBatteryLevel] = useState(0)
@@ -75,10 +77,7 @@ export default function BatteryNotification({ override = false }) {
                 title='battery-notification'>
                 <Message type='info'>
                     <h2 className='text-2xl mb-2'>⚡ 🌱</h2>
-                    <p>
-                        Your device is already at 100%, save <br /> money and
-                        the environment by unplugging!
-                    </p>
+                    <p>{t('battery_warning')}</p>
                 </Message>
             </div>
         )

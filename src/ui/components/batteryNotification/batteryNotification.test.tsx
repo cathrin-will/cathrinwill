@@ -22,7 +22,7 @@ describe('BatteryNotification', () => {
             render(<BatteryNotification />)
             await waitFor(() => {
                 expect(
-                    screen.queryByText(/Your device is already at 100%/),
+                    screen.getByTitle('battery-notification'),
                 ).not.toBeInTheDocument()
             })
         })
@@ -37,7 +37,7 @@ describe('BatteryNotification', () => {
             render(<BatteryNotification />)
             await waitFor(() => {
                 expect(
-                    screen.getByText(/Your device is already at 100%/),
+                    screen.getByTitle('battery-notification'),
                 ).toBeInTheDocument()
             })
         })
@@ -61,7 +61,7 @@ describe('BatteryNotification', () => {
             render(<BatteryNotification />)
             await waitFor(() => {
                 expect(
-                    screen.queryByText(/Your device is already at 100%/),
+                    screen.getByTitle('battery-notification'),
                 ).not.toBeInTheDocument()
             })
         })
