@@ -1,4 +1,3 @@
-'use client'
 import { Twirl as Hamburger } from 'hamburger-react'
 import { useStore, useAtom } from 'jotai'
 import { navOpenAtom } from '@/store/atoms'

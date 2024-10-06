@@ -1,3 +1,4 @@
+'use client'
 import Button from '@/ui/components/button'
 import LinkList from '@/ui/components/linkList'
 import { cn } from '@/lib/utils'
