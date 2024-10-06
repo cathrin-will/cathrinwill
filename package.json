@@ -12,10 +12,12 @@
         "build-storybook": "storybook build",
         "chromatic": "npx chromatic --project-token=chpt_1a50fe329b469b7",
         "test": "jest",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "analyse": "ANALYZE=true yarn build"
     },
     "dependencies": {
         "@lordicon/react": "^1.10.0",
+        "@next/bundle-analyzer": "^14.2.14",
         "@next/third-parties": "^14.2.9",
         "@octokit/core": "^6.1.2",
         "@portabletext/react": "^3.0.18",

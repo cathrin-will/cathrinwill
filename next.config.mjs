@@ -1,4 +1,5 @@
 import { withSentryConfig } from '@sentry/nextjs'
+import bundleAnalyzer from '@next/bundle-analyzer'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
@@ -14,7 +15,13 @@ const nextConfig = {
     },
 }
 
-export default withSentryConfig(nextConfig, {
+const withBundleAnalyzer = bundleAnalyzer({
+    enabled: process.env.ANALYZE === 'true',
+})
+
+const bundleAnalyser = withBundleAnalyzer(nextConfig)
+
+const sentryConfig = withSentryConfig(nextConfig, {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -53,3 +60,8 @@ export default withSentryConfig(nextConfig, {
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
 })
+
+const defaultConfig =
+    process.env.NODE_ENV === 'development' ? sentryConfig : bundleAnalyser
+
+export default defaultConfig
