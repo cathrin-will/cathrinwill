@@ -18,7 +18,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 // styles
 import { Montserrat } from 'next/font/google'
 import '@/ui/styles/globals.css'
-import styles from './layout.module.scss'
+import styles from '@/ui/styles/layout.module.scss'
 
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 
@@ -35,7 +35,8 @@ export default function RootLayout({
     return (
         <html
             lang='en'
-            className={font.className}>
+            className={font.className}
+            suppressHydrationWarning={true}>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
             <body className={styles.body}>
                 {draftMode().isEnabled && (
