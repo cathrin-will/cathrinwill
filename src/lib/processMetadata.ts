@@ -3,6 +3,7 @@ import processUrl, { SITE_URL } from './processUrl'
 
 export default async function processMetadata(page: Sanity.Page) {
     const site = (await getSite()) as Sanity.Site
+    const baseTitle = 'AC Will Dev'
 
     const url = processUrl(page)
 
@@ -15,12 +16,13 @@ export default async function processMetadata(page: Sanity.Page) {
 
     return {
         metadataBase: new URL(SITE_URL),
-        title: `${title} | AC Will Dev`,
+        title: `${title} | ${baseTitle}`,
         description,
         openGraph: {
             type: 'website',
+            siteName: baseTitle,
             url,
-            title,
+            title: `${title} | ${baseTitle}`,
             description,
             images: ogimage || site.ogimage,
         },
