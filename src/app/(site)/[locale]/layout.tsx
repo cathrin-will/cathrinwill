@@ -41,7 +41,9 @@ export default async function RootLayout({
     const { resources } = await initTranslations(locale, ['common'])
 
     return (
-        <html className={font.className}>
+        <html
+            className={font.className}
+            lang='en'>
             <GoogleTagManager gtmId='G-ZCEH6QHWSV' />
             <body className={styles.body}>
                 {draftMode().isEnabled && (

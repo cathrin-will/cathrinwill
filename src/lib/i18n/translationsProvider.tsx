@@ -4,9 +4,6 @@ import { I18nextProvider } from 'react-i18next'
 import initTranslations from '@/lib/i18n/translations'
 import { createInstance } from 'i18next'
 import React from 'react'
-import common1 from '../../../locales/en/common.json'
-import common2 from '../../../locales/de/common.json'
-import common3 from '../../../locales/es/common.json'
 
 interface TranslationsProviderProps {
     children: React.ReactNode

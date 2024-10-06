@@ -1,12 +1,9 @@
 import { createInstance } from 'i18next'
 import { initReactI18next } from 'react-i18next/initReactI18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
-import i18nConfig from '../../../i18nConfig'
+import i18nConfig from '@/i18nConfig'
 
 import { i18n } from 'i18next'
-import common1 from '../../../locales/en/common.json'
-import common2 from '../../../locales/de/common.json'
-import common3 from '../../../locales/es/common.json'
 
 export default async function initTranslations(
     locale: string,
