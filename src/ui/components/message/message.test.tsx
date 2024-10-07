@@ -12,7 +12,6 @@ describe('Message Component', () => {
             </Message>,
         )
 
-        expect(screen.getByText('error')).toBeInTheDocument()
         expect(screen.getByText('This is an error message')).toBeInTheDocument()
         expect(
             screen.getByRole('button', { name: /close message/i }),

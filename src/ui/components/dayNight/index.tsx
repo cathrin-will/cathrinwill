@@ -34,15 +34,14 @@ export default function DayNight() {
     return (
         <div className={styles['day-night']}>
             <label htmlFor='checkbox'>
-                <label htmlFor='checkbox'>
-                    <input
-                        type='checkbox'
-                        className={styles.checkbox}
-                        id='checkbox'
-                        onChange={toggleTheme}
-                        checked={theme === 'dark'}
-                    />
-                </label>
+                <input
+                    type='checkbox'
+                    className={styles.checkbox}
+                    id='checkbox'
+                    onChange={toggleTheme}
+                    checked={theme === 'dark'}
+                />
+
                 <div className={styles.toggle}>
                     <div className={styles['sun-or-moon']}></div>
                 </div>

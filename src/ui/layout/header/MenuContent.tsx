@@ -1,3 +1,4 @@
+'use client'
 import Button from '@/ui/components/button'
 import LinkList from '@/ui/components/linkList'
 import { cn } from '@/lib/utils'
@@ -9,17 +10,14 @@ import styles from './header.module.scss'
 
 export default function MenuContent({
     headerMenu,
-    navOpen,
     className,
 }: {
     headerMenu: Sanity.Navigation
-    navOpen: boolean
     className?: string | undefined
 }) {
+    const store = useStore()
     const pathname = usePathname()
-    const [, setNavOpen] = useAtom(navOpenAtom, {
-        store: useStore(),
-    })
+    const [navOpen, setNavOpen] = useAtom(navOpenAtom, { store })
     return (
         <nav
             className={cn(

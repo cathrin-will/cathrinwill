@@ -1,4 +1,5 @@
-export const SITE_URL = 'http://localhost:3000/'
+export const SITE_URL =
+    process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://acwill.dev'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (

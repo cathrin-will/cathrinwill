@@ -132,52 +132,60 @@ export default function FormBlock({
                 <h2 className='text-3xl bold'>{title}</h2>
                 <Text content={description} />
                 {formReference.fields.map((field: Sanity.FormField, index) => {
+                    const name = stegaClean(field.name.current)
+                    const placeholder = stegaClean(field.placeholder)
                     switch (field._type) {
                         case 'inputField':
+                            console.log(field.name.current)
                             return (
                                 <div
                                     key={index}
                                     className='flex gap-4 items-center'>
-                                    <label className={styles.label}>
+                                    <label
+                                        className={styles.label}
+                                        htmlFor={name}>
                                         {field.label}
                                         {field.required && '*'}
                                     </label>
                                     <input
                                         type={field.inputType}
                                         className={styles.input}
-                                        name={field.name.current}
-                                        placeholder={field.placeholder}
+                                        id={name}
+                                        name={name}
+                                        placeholder={placeholder}
                                         required={field.required}
                                         onChange={handleChange}
-                                        value={
-                                            formData[field.name.current] || ''
-                                        }
+                                        value={formData[name || '']}
                                     />
                                 </div>
                             )
                         case 'textareaField':
                             return (
                                 <div key={index}>
-                                    <label className={styles.label}>
+                                    <label
+                                        className={styles.label}
+                                        htmlFor={name}>
                                         {field.label}
                                     </label>
                                     <textarea
-                                        name={field.name.current}
-                                        placeholder={field.placeholder}
+                                        id={name}
+                                        name={name}
+                                        placeholder={placeholder}
                                         required={field.required}
                                         onChange={handleChange}
-                                        value={
-                                            formData[field.name.current] || ''
-                                        }></textarea>
+                                        value={formData[name] || ''}></textarea>
                                 </div>
                             )
                         case 'checkboxField':
                             return (
                                 <div key={index}>
-                                    <label className='flex gap-4'>
+                                    <label
+                                        className='flex gap-4'
+                                        htmlFor={name}>
                                         <input
+                                            id={name}
+                                            name={name}
                                             type='checkbox'
-                                            name={field.name.current}
                                             required={field.required}
                                             onChange={handleChange}
                                         />
@@ -190,20 +198,20 @@ export default function FormBlock({
                                 <div
                                     key={index}
                                     className='flex flex-col gap-4'>
-                                    <label className={styles.label}>
+                                    <span className={styles.label}>
                                         {field.label}
-                                    </label>
+                                    </span>
                                     <div className='flex gap-4'>
                                         {field.options?.map(
                                             (option, optionIndex) => (
                                                 <label
                                                     className='flex gap-2'
+                                                    htmlFor={`${name}-${optionIndex}`}
                                                     key={optionIndex}>
                                                     <input
                                                         type='radio'
-                                                        name={
-                                                            field.name.current
-                                                        }
+                                                        id={`${name}-${optionIndex}`}
+                                                        name={`${name}-${optionIndex}`}
                                                         value={stegaClean(
                                                             option,
                                                         )}
@@ -224,18 +232,19 @@ export default function FormBlock({
                                 <div
                                     key={index}
                                     className='flex  gap-4'>
-                                    <label className={styles.label}>
+                                    <label
+                                        className={styles.label}
+                                        htmlFor={name}>
                                         {field.label}
                                     </label>
                                     <select
                                         title='Select an option'
-                                        name={field.name.current}
+                                        id={name}
+                                        name={name}
                                         required={field.required}
                                         onChange={handleChange}
                                         className={styles.select}
-                                        value={
-                                            formData[field.name.current] || ''
-                                        }>
+                                        value={formData[name] || ''}>
                                         {field.options?.map(
                                             (option, optionIndex) => (
                                                 <option
