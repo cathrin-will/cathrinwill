@@ -1,13 +1,14 @@
+import dynamic from 'next/dynamic'
 import AccordionBlock from './accordionBlock'
 import CreativeBlock from './creativeBlock'
 import CustomHTML from './customHTMLBlock'
 import FormBlock from './formBlock'
 import ImageBlock from './imageBlock'
 import SliderBlock from './sliderBlock'
-import SkillsBlock from './skillsBlock'
 import StatsBlock from './statsBlock'
 import TextBlock from './textBlock'
 import CardsBlock from './cardsBlock'
+const SkillsBlock = dynamic(() => import('./skillsBlock'))
 
 export default function Blocks({
     blocks,
