@@ -41,10 +41,11 @@ export default function DayNight() {
                     onChange={toggleTheme}
                     checked={theme === 'dark'}
                 />
+
+                <div className={styles.toggle}>
+                    <div className={styles['sun-or-moon']}></div>
+                </div>
             </label>
-            <div className={styles.toggle}>
-                <div className={styles['sun-or-moon']}></div>
-            </div>
         </div>
     )
 }
