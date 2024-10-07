@@ -54,64 +54,124 @@ export default function SkillsBlock() {
                 <div className={styles.skills}>
                     <ul className={styles['skills__inner']}>
                         <li className={cn(styles.card, styles['card--1'])}>
-                            <FaSquareJs className={styles.icon} />
+                            <FaSquareJs
+                                className={styles.icon}
+                                title='JavaScript'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--2'])}>
-                            <SiTypescript className={styles.icon} />
+                            <SiTypescript
+                                className={styles.icon}
+                                title='TypeScript'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--3'])}>
-                            <FaReact className={styles.icon} />
+                            <FaReact
+                                className={styles.icon}
+                                title='React'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--4'])}>
-                            <TbBrandNextjs className={styles.icon} />
+                            <TbBrandNextjs
+                                className={styles.icon}
+                                title='js'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--5'])}>
-                            <MdHtml className={styles.icon} />
+                            <MdHtml
+                                className={styles.icon}
+                                title='HTML'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--6'])}>
-                            <MdCss className={styles.icon} />
+                            <MdCss
+                                className={styles.icon}
+                                title='CSS'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--7'])}>
-                            <RiTailwindCssFill className={styles.icon} />
+                            <RiTailwindCssFill
+                                className={styles.icon}
+                                title='Tailwind'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--8'])}>
-                            <SiSanity className={styles.icon} />
+                            <SiSanity
+                                className={styles.icon}
+                                title='Sanity'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--9'])}>
-                            <FaGithub className={styles.icon} />
+                            <FaGithub
+                                className={styles.icon}
+                                title='GitHub'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--10'])}>
-                            <TbAccessibleFilled className={styles.icon} />
+                            <TbAccessibleFilled
+                                className={styles.icon}
+                                title='Accessibility'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--1'])}>
-                            <FaSquareJs className={styles.icon} />
+                            <FaSquareJs
+                                className={styles.icon}
+                                title='JavaScript'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--2'])}>
-                            <SiTypescript className={styles.icon} />
+                            <SiTypescript
+                                className={styles.icon}
+                                title='TypeScript'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--3'])}>
-                            <FaReact className={styles.icon} />
+                            <FaReact
+                                className={styles.icon}
+                                title='React'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--4'])}>
-                            <TbBrandNextjs className={styles.icon} />
+                            <TbBrandNextjs
+                                className={styles.icon}
+                                title='js'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--5'])}>
-                            <MdHtml className={styles.icon} />
+                            <MdHtml
+                                className={styles.icon}
+                                title='HTML'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--6'])}>
-                            <MdCss className={styles.icon} />
+                            <MdCss
+                                className={styles.icon}
+                                title='CSS'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--7'])}>
-                            <RiTailwindCssFill className={styles.icon} />
+                            <RiTailwindCssFill
+                                className={styles.icon}
+                                title='Tailwind'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--8'])}>
-                            <SiSanity className={styles.icon} />
+                            <SiSanity
+                                className={styles.icon}
+                                title='Sanity'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--9'])}>
-                            <FaGithub className={styles.icon} />
+                            <FaGithub
+                                className={styles.icon}
+                                title='GitHub'
+                            />
                         </li>
                         <li className={cn(styles.card, styles['card--10'])}>
-                            <TbAccessibleFilled className={styles.icon} />
+                            <TbAccessibleFilled
+                                className={styles.icon}
+                                title='Accessibility'
+                            />
                         </li>
                     </ul>
                 </div>
