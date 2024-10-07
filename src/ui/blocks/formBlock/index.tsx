@@ -136,7 +136,6 @@ export default function FormBlock({
                     const placeholder = stegaClean(field.placeholder)
                     switch (field._type) {
                         case 'inputField':
-                            console.log(field.name.current)
                             return (
                                 <div
                                     key={index}
