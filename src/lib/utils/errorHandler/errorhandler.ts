@@ -27,3 +27,4 @@ export const getErrorMessage = (error: unknown) => {
     console.error(error)
     return toErrorWithMessage(error).message
 }
+//  if (error instanceof Error) return error.message
