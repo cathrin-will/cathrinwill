@@ -1,10 +1,15 @@
 export const maxDuration = 60
 import sanityClient from '@/lib/sanity/client'
 
-import { NextResponse } from 'next/server'
-export async function POST(req: Request) {
+import { NextResponse, NextRequest } from 'next/server'
+
+interface FormSubmission {
+    [key: string]: any
+}
+
+export async function POST(req: NextRequest) {
     try {
-        const body = await req.json()
+        const body = (await req.json()) as FormSubmission
         const response = await sanityClient.create({
             _type: 'formSubmission',
             ...body,

@@ -104,13 +104,19 @@ export default function FormBlock({
                 },
                 body: JSON.stringify(data),
             })
-            const result = await response.json()
 
-            setFormMessage({
-                type: 'success',
-                content: result.message,
-                show: true,
-            })
+            const result = await response.json()
+            if (
+                typeof result === 'object' &&
+                result !== null &&
+                'message' in result
+            ) {
+                setFormMessage({
+                    type: 'success',
+                    content: (result as { message: string }).message,
+                    show: true,
+                })
+            }
         } catch (error) {
             setFormMessage({
                 type: 'error',
