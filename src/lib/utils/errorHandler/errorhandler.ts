@@ -1,10 +1,10 @@
-export const getErrorMessage = (error: unknown) => {
+export const getErrorMessage = (error: unknown): string => {
     console.error(error)
-    let message
+    let message: string
     if (error instanceof Error) {
         message = error.message
     } else if (error && typeof error === 'object' && 'message' in error) {
-        message = error.message
+        message = String(error.message)
     } else if (typeof error === 'string') {
         message = error
     } else {
