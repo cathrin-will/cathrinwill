@@ -4,7 +4,7 @@ import sanityClient from '@/lib/sanity/client'
 import { NextResponse, NextRequest } from 'next/server'
 
 interface FormSubmission {
-    [key: string]: any
+    [key: string]: unknown
 }
 
 export async function POST(req: NextRequest) {
