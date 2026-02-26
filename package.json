@@ -89,7 +89,7 @@
         "jest-environment-jsdom": "^29.7.0",
         "postcss": "^8.4.45",
         "sass": "^1.78.0",
-        "storybook": "^8.2.9",
+        "storybook": "^8.6.17",
         "stylelint": "^16.9.0",
         "stylelint-config-recommended-scss": "^14.1.0",
         "stylelint-order": "^6.0.4",
